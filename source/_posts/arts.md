@@ -1,13 +1,15 @@
 ---
 title: 我的编程ARTS记录
 date: 2018-06-19 07:33:14
-updated: 2018-06-19 07:33:14
+updated: 2018-06-24 23:27:14
 mathjax: true
 tags:
 categories: 编程
 ---
 
-开篇文章，记录一下我每周的 `ARTS`
+开篇文章，记录一下我每周的 `ARTS` 和 技术规划
+
+之后整理一下，把 `ARTS` 放到 `Github`
 
 ## ARTS
 
@@ -19,25 +21,93 @@ categories: 编程
 
 **Share**: 分享一篇有观点和思考的技术文章
 
-## 第25周 2018/06/18-06/24
+关于 `S` 的补充：
 
-- [x] A: leetcode 第一道题 
-- [ ] R: 
-- [ ] T:
-- [ ] S: 
+> 主要是用训练“价值观输出”。
 
-#### 算法题收获：
+> 如果你想要有影响力，就要学会输出观点，输出观点，就会有人同意，有人不同意，甚至还会被骂，但是，有观点的信息交换会让人更巨烈的思考，成长的更快。
+
+## 第一周 2018/06/18-06/24 
+
+#### Algorithm 算法题收获：
+
+我做的 `leetcode` 第一道题 `two-sum`：
+
+开始我用 `for` 循环实现的，时间太长，之后看了一下解析，用 `hash` 表又实现了一次。
+
 相比两次的 `for` 循环遍历，哈希表能够更有效的检查数组中是否存在目标元素。
 
 保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。
 
+#### Review
+
+[A Language for the Next 10 Years](https://programmingzen.com/next-programming-language/?utm_content=buffer3a898&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+
+我们公司部分应用在使用 `elixir` 开发，我自己也写过一点 `elixir` 的项目，我对使用它一点基本的认识是 `elixir` 和 `ruby` 有些类似，有完善的工具生态，能够快速开发应用，是一门可读性良好,优雅,函数式编程语言。
+
+但是对于文章介绍的高并发、出色的 `Erlang VM`、基于宏命令的元编程等等特性，我都没有实践过，没有发言权。
+
+我觉的 `elixir` 会有它擅长的场景，会有它的市场份额，但并不会像 `Java` 那么火爆。
+
+#### Tip
+
+本周写 `css` 的时候，发现父元素为 `display: flex;` 的 `span` 标签，自动具有了 `inline-block ` 的属性。尝试找了一下规范。
+
+可以在 `Google` 里这样定位 `css` 规范里的内容
+
+```
+site:w3.org flex 
+```
+[这一段](https://www.w3.org/TR/css-flexbox-1/#flex-containers)指出部分在 `flex` 布局里会失效的属性
+
+`vertical-align` 、`float` 、`clear` `::first-line`、`::first-letter `
+
+原因是这些属性是专门为 `block` 布局设计的。
+
+#### Share
+
+[Elixir: 编程语言的未来](https://blog.devopszen.com/elixir)
+
+[Comparing Elixir and Go](https://blog.codeship.com/comparing-elixir-go/)
+
+参照皓叔在 [GO语言、DOCKER 和新技术](https://coolshell.cn/articles/18190.html) 对新技术的评判标准，评价一下 `elixir`
+
+**一个技术能不能发展起来的三个关键技术点**
+
+- 有没有一个好的社区 
+  类似 ruby，社区还不错
+
+- 有没有一个工业化的标准
+  No 
+
+- 有没有一个或者多个杀手级应用
+  No
+
+**其他的因素**
+
+- 学习曲线是否低，上手是否快
+  
+  并不像类 `C` 语言一样，语法还是有点特色。[elixir 文档](https://elixir-lang.org/)
+  
+- 有没有一个不错的提高开发效率的开发框架
+  
+  有。[Phoenix](http://phoenixframework.org/)  完善的工具链以及功能齐全的 `lib`。
+  
+- 是否有一个或者多个巨型的技术公司作为后盾
+
+  没有。只是 `Pinterest`、`WhatsApp`、`Slack`、`Adobe` 等公司部分场景在使用。https://elixir-companies.com/
+
+- 有没有解决软件开发中的痛点
+
+  基于 `Erlang` 的 `OTP` 提高了容错的、高可用的、并发的分布式系统的开发效率 
+
+总结一下，我觉的 `Elixir/Erlang` 适合于需要持续运行，并且尽可能持续提供服务的系统。`elixir` 不会像 `Java` 那么火爆，但是在某些领域，也会成为开发者一种不错的选择。
+
 ### 本周的技术计划
 
 ✅ 1、看完《算法图解》第一章
-2、深入 line-height 这个点
-3、完善 webpack 作业，并提交 m 站的一个点
-4、阅读深入浅出 react 和 redux 技术栈 前四章
-5、完成小习惯的基本功能（不包含用户检测）
+✅ 2、阅读深入浅出 react 和 redux 技术栈 前四章
+💪 3、完成小习惯的基本功能（不包含用户检测）
 
 #### 《算法图解》的收获
 
@@ -67,20 +137,14 @@ categories: 编程
 - `O(log n)` 比 `O(n)` 快，当需要搜索的元素越多时，前者比后者快得越多。
 - 二分查找的速度比简单查找快得多。
 
-## 想学
-> 好多要学的，感觉都排在一周，我也做不完，会打击积极性 😭 安排在后面吧。
+## 第二周 2018/06/25-07/01
 
-1、看完你不知道的Javascript 第一章
+### 本周的技术计划 
 
-2、flex 布局。翻一下规范，好好的掌握一下
-
-3、阅读 m 站一个基础库的源码 暂定 ajax
-
-4、JavaScript Math 方法总结
-
-5、错误上报的实现原理
-
-6、JavaScript 的类
+1、图解算法 看完第二章
+2、研究 UI 自动化
+3、深入浅出 react 和 redux 第5、6 章 
+4、git rebase
 
 
 

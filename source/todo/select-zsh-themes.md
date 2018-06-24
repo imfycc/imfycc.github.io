@@ -24,6 +24,14 @@ NO! 💯 `zsh` 可以设置随机主题 🎨 ，每次开新终端的时候，�
 
 **junkfood**
 
+jaischeema
+
+jonathan
+
+obraun
+
+candy
+
 
 
 

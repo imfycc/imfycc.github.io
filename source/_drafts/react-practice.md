@@ -6,7 +6,22 @@ tags:
 categories: 编程
 ---
 
+两本书
+
+深入 react 技术栈 陈屹
+
+深入浅出 React 和 Redux 程墨
+
+
 1、react 带来的新的前端思维方式
+
+2、react 和之前的开发方式的不同，比如 jQuery
+
+3、props 和 state 的对比
+
+4、组件的生命周期
+
+5、redux 的使用
 
 通过组件开发应用 独立、可复用的代码
 
@@ -85,6 +100,37 @@ React严格定义了组件的生命周期，生命周期可能会经历如下三
 3、和传统开发的对比
 
 4、props 和 state
+
+
+5、传入 setState 函数的第二个参数的作用是什么？
+
+6、概述下 React 中的事件处理逻辑
+
+shouldComponentUpdate 的作用是啥以及为何它这么重要？
+
+在生命周期中的哪一步你应该发起 AJAX 请求？
+
+https://zhuanlan.zhihu.com/p/24856035
+
+Controlled Component 与 Uncontrolled Component 之间的区别是什么？
+
+React 中 keys 的作用是什么？
+
+React 中 refs 的作用是什么？
+
+在什么情况下你会优先选择使用 Class Component 而不是 Functional Component？
+
+调用 setState 之后发生了什么？
+
+React解决了什么问题
+
+http://qingbob.com/understand-react-01/
+
+https://wuxinhua.com/2018/03/17/The-questions-about-react-and-redux-in-interview/
+
+https://www.huxinmin.com/home/5a92bf4a117a030debfa108d.html
+
+https://toutiao.io/posts/osehxg/preview
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: 快捷键备忘录
 date: 2017-07-07 15:59:32
-updated: 2018-04-12 15:59:32
+updated: 2018-06-22 15:59:32
 tags:
 categories: 编程
 ---
@@ -64,7 +64,7 @@ gUw       将光标下的单词改成大写。
 
 guw       将光标下的单词改成小写。
 
-vim 屏幕滚动
+3、vim 屏幕滚动
 
 向下滚动一屏(ctrl+f)
 助记: Forwards。
@@ -77,6 +77,12 @@ vim 屏幕滚动
 
 向上滚动半屏(ctrl+u)
 助记: Upwards。
+
+4、dit 删除 HTML 标签内的内容
+
+   dat 删除 HTML 标签以及内容
+   
+   cit 编辑 HTML 标签内的内容
 
 ## iTerm2 
 
