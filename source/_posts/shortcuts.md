@@ -1,16 +1,26 @@
 ---
 title: 快捷键备忘录
 date: 2017-07-07 15:59:32
-updated: 2018-06-22 15:59:32
+updated: 2018-06-26 15:59:32
 tags:
 categories: 编程
 ---
 
-> 小猿大圣的快捷键备忘录，方便查询。学会了就删掉 🐻 
+> 小猿大圣的快捷键备忘录，方便查询 🐻 
+
+## chrome
+
+Chrome 快捷键 [官方帮助地址](https://support.google.com/chrome/answer/157179?hl=zh-Hans)
+
+command + l 选中地址栏
+
+## vimium
 
 ## workflow youdao
 
 shift + enter 发音
+
+control ^ + enter 打开有道翻译的页面
 
 ## vim NerdTree
 
@@ -73,16 +83,18 @@ guw       将光标下的单词改成小写。
 助记: Downwards。
 
 向上滚动一屏(ctrl+b)
-* 助记: Backwards。*
+助记: Backwards。
 
 向上滚动半屏(ctrl+u)
 助记: Upwards。
 
-4、dit 删除 HTML 标签内的内容
+4、`dit` 删除 HTML 标签内的内容
 
-   dat 删除 HTML 标签以及内容
+   `dat` 删除 HTML 标签以及内容
    
-   cit 编辑 HTML 标签内的内容
+   `cit` 编辑 HTML 标签内的内容
+   
+5、选中一个单词 `viw`
 
 ## iTerm2 
 
@@ -92,18 +104,18 @@ guw       将光标下的单词改成小写。
 
 `command + shift + h` 弹出历史记录窗口
 
-Esc+b 移动到当前单词的开头
+`Esc+b` 移动到当前单词的开头
 
-Esc+f 移动到当前单词的结尾
+`Esc+f` 移动到当前单词的结尾
 
-Ctrl+k 剪切命令行中光标所在处之后的所有字符（包括自身）
+`Ctrl+k` 剪切命令行中光标所在处之后的所有字符（包括自身）
 
-Ctrl+d 删除光标所在处字符
+`Ctrl+d` 删除光标所在处字符
 
-Ctrl+h 删除光标所在处前一个字符
+`Ctrl+h` 删除光标所在处前一个字符
 
-Ctrl+y 粘贴刚才所删除的字符
+`Ctrl+y` 粘贴刚才所删除的字符
 
-Ctrl+w 剪切光标所在处之前的一个词（以空格、标点等为分隔符）
+`Ctrl+w` 剪切光标所在处之前的一个词（以空格、标点等为分隔符）
 
 
