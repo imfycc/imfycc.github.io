@@ -1,5 +1,5 @@
 ---
-title: 从哪里了解 Google Chrome 新特性
+title: 从哪里了解 Google Chrome 升级的新特性
 date: 2018-06-26 19:36:25
 updated: 2018-06-26 19:36:25
 tags:

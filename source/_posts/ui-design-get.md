@@ -1,7 +1,7 @@
 ---
 title: 几个不错的 App 设计网站
 date: 2018-06-14 19:13:39
-updated: 2018-06-25 09:28:39
+updated: 2018-07-01 00:28:39
 tags:
 categories: 编程
 ---
@@ -36,12 +36,6 @@ http://www.uipixels.com/
 ## UI 中国
 
 http://www.ui.cn/
-
-## collectui
-
-http://collectui.com/
-
-![](/media/15289480476334.jpg)
 
 ## uplabs
 
