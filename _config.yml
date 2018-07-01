@@ -93,6 +93,11 @@ marked:
   modifyAnchors: ''
   autolink: true
 
+#hexo-image-caption
+image_caption:
+  enable: true
+  class_name: 'img-alt'
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
