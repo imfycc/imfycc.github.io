@@ -17,15 +17,31 @@ categories: 编程
 
 **Review**: 阅读并点评至少一篇英文技术文章
 
-**Tip**: 学习至少一个技术技巧
+**Tip**: 学习至少一个技术技巧。 回想一下本周工作中学到的一个小技巧
 
-**Share**: 分享一篇有观点和思考的技术文章
+**Share**: 分享一篇有观点和思考的技术文章。思考一个技术观点、社会热点、一个产品或是一个困惑。
 
 关于 `S` 的补充：
 
 > 主要是用训练“价值观输出”。
 
 > 如果你想要有影响力，就要学会输出观点，输出观点，就会有人同意，有人不同意，甚至还会被骂，但是，有观点的信息交换会让人更巨烈的思考，成长的更快。
+
+我自己找的几个网站
+
+英文文章的选取地方
+
+- [Medium](https://medium.com/)
+- [掘金翻译计划](https://juejin.im/tag/%E6%8E%98%E9%87%91%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92)
+- [众成翻译](https://www.zcfy.cc/)
+- [Hacker News](https://news.ycombinator.com/)
+
+前端
+
+- [FEX](https://fex.baidu.com/weekly/)
+- [awesome-html5](https://github.com/diegocard/awesome-html5)
+- [awesome-css](https://github.com/awesome-css-group/awesome-css)
+- [awesome-javascript](https://github.com/sorrycc/awesome-javascript)
 
 ## 第一周 2018/06/18-06/24 
 
@@ -193,6 +209,21 @@ O(1) = 常量时间
 1、图解算法 看完第四章
 2、git rebase
 3、react 7 8 章
+
+#### 《算法图解》第四章收获
+
+> 学习分而治之。有时候，你可能会遇到使用任何已知的算法都无法解决的问题。分而治之是一种通用的问题解决方法。
+
+> 快速排序使用分而治之的策略。
+
+分而治之 (divide and conquer，D&C) —— 一种著名的递归式问题解决方法。
+
+使用D&C解决问题的过程包括两个步骤。
+(1) 找出基线条件，这种条件必须尽可能简单。
+(2) 不断将问题分解(或者说缩小规模)，直到符合基线条件。（和递归的两个条件是一样的）
+
+![](/media/15306818577933.jpg)
+
 
 
 

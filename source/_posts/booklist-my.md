@@ -1,10 +1,13 @@
 ---
-title: 我的书单
+title: 我的年度读书清单
 date: 2016-05-23 23:47:28
-updated: 2018-05-05
+updated: 2018-07-05
 tags: 生活
 categories: 读书
 ---
+
+> 👍 是我觉的不错的书籍。
+> 📚 是我写过读书笔记。
 
 ## 2018
 6、程序员的思维修炼 5月5日 👍 📚
@@ -81,94 +84,6 @@ categories: 读书
 57、快速阅读术 👍 11月1日
 
 58、万物有灵且美 👍 11月18日
-
-
-## 技术专业书籍
-### CSS 类
-
-CSS 实战手册（第四版）
-
-CSS权威指南（第三版）
-
-精通CSS（第2版）
-
-图解CSS3：核心技术与案例实践
-
-### JavaScript 类
-
-你不知道的JavaScript
-
-JavaScript语言精粹
-
-JavaScript权威指南
-
-高性能JavaScript
-
-数据结构和算法的JavaScript描述
-
-JavaScript设计模式
-
-锋利的jQuery
-
-JavaScript编程精解
-
-JavaScript异步编程
-
-JavaScript启示录
-
-编写可维护的JavaScript
-
-JavaScript DOM 编程艺术（第二版）
-
-JavaScript忍者秘籍
-
-ECMAScript 6入门(全彩)
-
-Effective JavaScript:编写高质量JavaScript代码的68个有
-效方法
-
-JavaScript框架设计
-
-### 软件开发
-
-敏捷软件开发 原则、模式与实践
-
-易读代码的艺术
-
-重构 改善既有代码的设计
-
-代码整洁之道
-
-unix 编程艺术
-
-软件随想录
-
-最后期限
-
-### 其他
-
-http权威指南
-
-图解HTTP
-
-TCP/IP详解
-
-计算机网络
-
-代码大全
-
-Web性能权威指南
-
-高性能网站建设指南
-
-大型网站技术架构
-
-写给大家看的设计书
-
-HTML5 权威指南
-
-深入理解计算机系统（原书第3版）
-
 
 ## 2016
 > 从今年五月开始,读过的书籍。
