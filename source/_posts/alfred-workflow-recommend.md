@@ -6,7 +6,8 @@ tags:
 categories: 编程
 ---
 
-![Alfred](/media/how-alfred-app-can-make-you-a-more-efficient-and-productive-designer-header.png)
+![自用 Alfred workflow](https://hufangyun.com/how-alfred-app-can-make-you-a-more-efficient-and-productive-designer-header.png)
+
 
 > 以下是我常用的 Alfred workflow
 

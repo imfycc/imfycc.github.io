@@ -98,6 +98,23 @@ image_caption:
   enable: true
   class_name: 'img-alt'
 
+#hexo-qiniu-sync
+qiniu:
+  offline: false
+  sync: true
+  bucket: hexo
+  secret_file: setting/qiniu.json
+  up_host: http://up-z1.qiniu.com
+  local_dir: media
+  update_exist: true
+  image:
+    folder: img
+    extend:
+  js:
+    folder: js
+  css:
+    folder: style
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
