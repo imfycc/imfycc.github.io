@@ -29,7 +29,7 @@ categories: 读书
 
 现代操作系统 🙉
 
-计算机网络 🙉
+计算机网络 🙉 📖
 
 计算机程序的构造和解释 🙉
 
@@ -57,7 +57,7 @@ The TCP/IP Guide 🙉
 
 ### 程序员修养
 
-重构 改善既有代码的设计 🙉
+重构 改善既有代码的设计 🙉 📖
 
 修改代码的艺术 🙉
 
@@ -80,6 +80,8 @@ CSS权威指南（第三版）8.5
 
 #### JavaScript 类
 
+深入浅出 React 和 Redux 📖
+
 你不知道的JavaScript
 
 ECMAScript 6入门(全彩)
@@ -90,21 +92,9 @@ JavaScript权威指南
 
 高性能JavaScript
 
-数据结构和算法的JavaScript描述
-
 JavaScript设计模式
 
-JavaScript编程精解
-
-JavaScript异步编程
-
-JavaScript启示录
-
-编写可维护的JavaScript
-
 JavaScript DOM 编程艺术（第二版）
-
-JavaScript忍者秘籍
 
 Effective JavaScript:编写高质量JavaScript代码的68个有
 效方法
@@ -113,7 +103,7 @@ JavaScript框架设计
 
 ### UI交互
 
-写给大家看的设计书
+写给大家看的设计书 📖
 
 30天学会绘画
 

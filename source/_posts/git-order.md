@@ -1,9 +1,9 @@
 ---
 title: git 常用命令清单
 date: 2017-02-22 14:46:53
-updated: 2018-06-18 19:40
+updated: 2018-07-09 19:40
 tags: git
-categories: 编程
+categories: 最热
 description:
 ---
 
@@ -173,6 +173,12 @@ git commit --amend
 
 ### 分支
 
+切换到上一个分支
+
+```bash
+gco -
+```
+
 新建并切换到分支
 
 ```bash
@@ -274,6 +280,18 @@ git checkout --ours( --theirs)  文件
  🙏：欢迎补充更好的方案。
  
  😂：此方法学自我夫人。。。（让我必须注明）
+
+### 其他 git 工具
+
+#### tig
+[官方地址](https://github.com/jonas/tig)
+> Git repository browser
+> 方便的查找每次的更改记录
+
+上张图片感受一下
+
+![tig](media/15311167451329.jpg)
+
 
 ### 生成 ssh
 
