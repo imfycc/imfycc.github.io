@@ -36,6 +36,8 @@ candy
 
 crunch
 
+sonicradish.zsh 👍
+
 wezm
 
 
