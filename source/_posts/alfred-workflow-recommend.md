@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-08-12 07:26:07
+updated: 2018-08-13 03:17:07
 tags:
 categories: 编程
 ---
@@ -14,9 +14,19 @@ categories: 编程
 
 > 新发现的插件，会添加在最上面的 🎉
 
-![自用 Alfred Workfolw](/media/15340288778895.jpg)
+
+![自用 Alfred Workfolw](/media/15341011707210.jpg)
 
 ## 插件推荐
+### http status code
+> 显示 http 状态码含义
+
+第一款 [下载地址](https://github.com/JoelQ/alfred-http)
+
+第二款 [下载地址](https://github.com/Dreamseer/alfred-http)
+
+![](/media/15341014324735.jpg)
+
 ### codeVar
 > 生成变量名
 > 作为一名开发者，我超级 😍 这款 workflow
