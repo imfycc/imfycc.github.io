@@ -16,6 +16,12 @@ categories: 编程
 
 从指定的范围内，随机取一个整数
 
+```javaScript
+ function randomNum(len) {
+    return Math.floor(Math.random() * len);
+}
+```
+
 指定小数的位数
 
 

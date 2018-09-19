@@ -1,18 +1,24 @@
 ---
 title: git 常用命令清单
 date: 2017-02-22 14:46:53
-updated: 2018-07-09 19:40
+updated: 2018-09-19 18:43
 tags: git
 categories: 最热
 description:
 ---
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1fh37ua0t32j30nc08caav.jpg)
+![图片来自阮一峰的网络日志](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png)
+
+`git` 的几个概念：
+
+- Workspace：工作区
+- Index / Stage：暂存区
+- Repository：仓库区（或本地仓库）
+- Remote：远程仓库
 
 > 下面的 git 
 
 注：简写指的是 `zsh` 自带的 `git` 扩展
-
 
 ## 常用命令
 
@@ -171,6 +177,12 @@ git reset HEAD 文件
 git commit --amend
 ```
 
+修改上次的提交者信息
+
+```bash
+git commit --amend --reset-author
+```
+
 ### 分支
 
 切换到上一个分支
@@ -249,6 +261,10 @@ git tag -a 标签名 -m "提交信息"
 
 ### 其他
 
+#### 如果修改 git 已提交的用户邮箱和用户名
+[请看这篇文章](https://hufangyun.com/2018/git-change-user-info)
+#### 如果分目录配置用户信息
+[请看这篇文章](https://hufangyun.com/2018/git-change-user-info)
 #### 合并某一次提交的内容
 
 ```bash
@@ -280,6 +296,18 @@ git checkout --ours( --theirs)  文件
  🙏：欢迎补充更好的方案。
  
  😂：此方法学自我夫人。。。（让我必须注明）
+ 
+### 同时部署到多个 git 源
+比如同时更新到 `Github` 和 `Coding`
+- 在已有的本地仓库内找到隐藏的 `.git` 文件夹
+- 打开里面的 `config` 文件
+- 添加如下设置：两个远端仓库的 `url`，并命名为 `origin`
+
+```bash
+[remote "origin"]
+    url = git@git.coding.net:user_name/user_name.coding.me.git
+    url = git@github.com:user_name/user_name.github.io.git
+```
 
 ### 其他 git 工具
 

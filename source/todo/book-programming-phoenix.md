@@ -96,3 +96,12 @@ add :user_id, references(:users, on_delete: :delete_all, null: false)
 end
 
 context 的概念是干什么的？
+
+add :user_id, references(:users, on_delete: :delete_all, null: false)
+
+允许没有
+数据库内删除该记录，则删除相关的所有内容
+
+
+ field :password, :string, virtual: true
+ belongs_to :user, Rumbl.Accounts.User

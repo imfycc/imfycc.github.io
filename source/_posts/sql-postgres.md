@@ -1,7 +1,7 @@
 ---
 title: 【随用随查】PostgreSQL 实践笔记
 date: 2017-10-30 22:24:45
-updated: 2018-03-14
+updated: 2018-09-03
 tags:
 categories: 编程
 ---
@@ -21,7 +21,13 @@ categories: 编程
 
 [极客学院SQL教程](http://wiki.jikexueyuan.com/project/sql/)
 
+## 安装
 
+`macOS` 上可以使用 `brew` 安装
+
+```shell
+brew install postgres
+```
 
 ## 使用
 
@@ -143,6 +149,24 @@ psql -d dataname -f file.sql admin
 
 #### 用户、角色、权限管理
 [PostgreSQL学习笔记(九) 用户、角色、权限管理](http://www.jianshu.com/p/b09d0b29faa9)
+
+#### 报错解决
+
+1、macOS postgres 角色不存在
+
+```shell
+** (Postgrex.Error) FATAL 28000 (invalid_authorization_specification): role "postgres" does not exist
+```
+
+**解决**
+
+```sql
+psql -d postgres
+
+CREATE DATABASE postgres WITH OWNER postgres;
+
+CREATE USER postgres SUPERUSER;
+```
 
 
 ## 扩展阅读

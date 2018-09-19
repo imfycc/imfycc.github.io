@@ -1,7 +1,7 @@
 ---
-title: Mac 新装指南
+title: macOS 再装指南
 date: 2016-12-29 13:41:26
-updated: 2018-04-20 10:42:59
+updated: 2018-09-03 10:42:59
 tags:
 categories: 编程
 ---

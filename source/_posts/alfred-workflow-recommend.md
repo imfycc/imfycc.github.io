@@ -1,9 +1,9 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-08-13 03:17:07
+updated: 2018-09-18 03:17:07
 tags:
-categories: 编程
+categories: 最热
 ---
 
 ![自用 Alfred workflow](https://hufangyun.com/how-alfred-app-can-make-you-a-more-efficient-and-productive-designer-header.png)
@@ -15,10 +15,16 @@ categories: 编程
 
 > 新发现的插件，会添加在最上面的 🎉
 
-
 ![自用 Alfred Workfolw](/media/15341011707210.jpg)
 
 ## 插件推荐
+
+### 锁定屏幕
+
+最近同事介绍的，是 `alfred` 自带的功能，不需要付费即可使用。
+
+![](/media/15372303969008.jpg)
+
 ### http status code
 > 显示 http 状态码含义
 
@@ -97,6 +103,16 @@ categories: 编程
 > 快速搜索并打开项目，支持自定义域名的 gitlab
 
 [下载地址](https://github.com/lukewaite/alfred-gitlab)
+
+默认配置的是 [`gitlab`](https://gitlab.com/explore), 也可以设置公司的 `gitlab`
+
+输入 `glseturl` 空格后，输入地址。
+
+```js
+https://<host>/api/v4/projects
+
+// host 换成自己公司的
+```
 
 ![](/media/15337862001223.jpg)
 

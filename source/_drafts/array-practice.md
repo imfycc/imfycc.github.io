@@ -6,6 +6,10 @@ tags:
 categories: 编程
 ---
 
+### 数组 copy 不影响原数组
+
+const newArr = arr.slice(0);
+
 ### 求和
 
 方案一 递归

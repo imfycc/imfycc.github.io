@@ -61,4 +61,7 @@ http://apps.timwhitlock.info/emoji/tables/unicode
 ### 前端入门书籍推荐
 [十本学习前端必看书籍](http://imweb.io/topic/5a0179291f0e50753869bfa4)
 
+- [通过 iTunes 安装 app](https://www.jianshu.com/p/d509ea35dc84)
+- [面向切面编程 aop 埋点 打点](http://www.alloyteam.com/2013/08/yong-aop-gai-shan-javascript-dai-ma/)
+
 
