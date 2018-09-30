@@ -80,6 +80,14 @@ CSS权威指南（第三版）8.5
 
 #### JavaScript 类
 
+JavaScript DOM 编程艺术（第二版）
+
+JavsScript高级程序设计
+
+编写可维护的JavaScript
+
+高性能网站建设指南
+
 深入浅出 React 和 Redux 📖
 
 你不知道的JavaScript
@@ -93,8 +101,6 @@ JavaScript权威指南
 高性能JavaScript
 
 JavaScript设计模式
-
-JavaScript DOM 编程艺术（第二版）
 
 Effective JavaScript:编写高质量JavaScript代码的68个有
 效方法

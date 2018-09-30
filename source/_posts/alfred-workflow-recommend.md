@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-09-18 03:17:07
+updated: 2018-09-30 03:17:07
 tags:
 categories: 最热
 ---
@@ -15,9 +15,17 @@ categories: 最热
 
 > 新发现的插件，会添加在最上面的 🎉
 
-![自用 Alfred Workfolw](/media/15341011707210.jpg)
+![自用 Alfred Workfolw](/media/15382765610815.jpg)
 
 ## 插件推荐
+
+### 快递查询
+> 在 `Alfred` 中查询快递，使用 `kd` 关键字，可以记录已经查过的快递和查询新快递，不需要输入快递公司名称。
+
+![快递查询](/media/15382768416867.jpg)
+
+
+[下载地址](https://github.com/roylez/alfred_kuaidi)
 
 ### 锁定屏幕
 
@@ -32,7 +40,7 @@ categories: 最热
 
 第二款 [下载地址](https://github.com/Dreamseer/alfred-http)
 
-![](/media/15341014324735.jpg)
+![http code](/media/15341014324735.jpg)
 
 ### codeVar
 > 生成变量名
