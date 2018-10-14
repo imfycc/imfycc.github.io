@@ -104,16 +104,16 @@ qiniu:
   sync: true
   bucket: hexo
   secret_file: setting/qiniu.json
+  dirPrefix: hexo
+  urlPrefix: https://static.hufangyun.com/hexo
   up_host: http://up-z1.qiniu.com
-  local_dir: media
+  local_dir: cdn
   update_exist: true
   image:
     folder: img
     extend:
-  js:
-    folder: js
-  css:
-    folder: style
+  ignoring_files:
+    - '**/.DS_Store'
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
