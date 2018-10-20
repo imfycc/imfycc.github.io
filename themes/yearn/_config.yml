@@ -24,3 +24,7 @@ display_updated: true
 # Online contact
 daovoice: true
 daovoice_app_id: 1ff30348
+
+# Data statistics
+baidu_analytics: true
+baidu_analytics_code: ae46047b557574a12bba544bea130043
