@@ -28,3 +28,12 @@ daovoice_app_id: 1ff30348
 # Data statistics
 baidu_analytics: true
 baidu_analytics_code: ae46047b557574a12bba544bea130043
+
+#Comments
+# https://github.com/gitalk/gitalk
+gitalk: true
+gitalk_clientID: 3b064dc018768ed172b8
+gitalk_clientSecret: 403c6f397465f7fa14cfb02668011929102421d1
+gitalk_repo: Youthink.github.io
+gitalk_owner: Youthink
+gitalk_admin: Youthink
