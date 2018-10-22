@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="keywords" content="胡方运,小猿大圣,前端,个人博客,Youthink,Web" />
-	<meta name="description" content="小猿大圣的个人博客，胡方运的博客" />
-	<meta http-equiv="x-dns-prefetch-control" content="on">
-	<link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
-	<link rel="dns-prefetch" href="https://widget.daovoice.io">
-	<link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
-	<link rel="dns-prefetch" href="https://im.daovoice.io">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="<%= theme.seo_keywords %>" />
+  <meta name="description" content="<%= theme.seo_description %>" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <% if (theme.daovoice && theme.daovoice_app_id) { %>
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  <% } %>
   <% if (theme.baidu_analytics) { %>
   <link rel="dns-prefetch" href="https://hm.baidu.com/">
   <% } %>
@@ -20,9 +22,9 @@
   <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   <% } %>
   <%- partial('_partial/css.ejs') %>
-	<link rel="shortcut icon" href="<%= theme.favicon %>" title="Favicon">
+  <link rel="shortcut icon" href="<%= theme.favicon %>" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title><%= page.title ? page.title : config.title %></title>
+  <title><%= page.title ? page.title : config.title %></title>
   <% if (theme.baidu_analytics && theme.baidu_analytics_code) { %>
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?<%= theme.baidu_analytics_code %>";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -36,3 +38,4 @@
 <%- body %>
 </body>
 </html>
+

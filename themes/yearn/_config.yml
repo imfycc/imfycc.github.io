@@ -13,6 +13,10 @@ subnav:
 
 description: 天马行空，爱生活，爱coding
 
+# SEO
+seo_keywords: 胡方运,小猿大圣,编程,程序员,个人博客,Youthink,Web
+seo_description: 小猿大圣的个人博客,胡方运的博客,编程随想
+
 favicon: /favicon.ico
 
 #你的头像url
