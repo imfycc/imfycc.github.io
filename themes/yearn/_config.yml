@@ -26,6 +26,16 @@ favicon: /favicon.ico
 #你的头像url
 avatar: https://tva3.sinaimg.cn/crop.0.0.200.200.180/005Kc3C1jw8f2uep0hhkvj305k05k3yk.jpg
 
+# 首页左侧边栏背景图片
+# 可配置多个 随机挑选一张
+leftBackground:
+  - https://static.hufangyun.com/hexo/bg1.jpg
+  - https://static.hufangyun.com/hexo/bg2.jpg
+  - https://static.hufangyun.com/hexo/bg3.jpg
+  - https://static.hufangyun.com/hexo/bg4.jpg
+  - https://static.hufangyun.com/hexo/bg5.jpg
+  - https://static.hufangyun.com/hexo/bg6.jpg
+
 # 展示更新时间
 display_updated: true
 
