@@ -334,7 +334,7 @@ git checkout --ours( --theirs)  文件
 
 上张图片感受一下
 
-{% qnimg git-order-tig.png 'alt:tig' extend:?imageView2/2/w/500 %}
+{% qnimg git-order-tig.jpg 'alt:tig' extend:?imageView2/2/w/500 %}
 
 
 ### 生成 ssh
