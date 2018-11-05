@@ -1,13 +1,13 @@
 ---
 title: git 常用命令清单
 date: 2017-02-22 14:46:53
-updated: 2018-09-19 18:43
+updated: 2018-11-05 18:43
 tags: git
 categories: 最热
 description:
 ---
 
-![图片来自阮一峰的网络日志](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png)
+{% qnimg git-order.png 'alt:图片来自阮一峰的网络日志' extend:?imageView2/2/w/750 %}
 
 `git` 的几个概念：
 
@@ -36,6 +36,12 @@ git clone https://github.com/Youthink
 git add --all
 
 简写 gaa
+```
+
+指定某个文件的修改添加到下次提交
+
+```bash
+git add -p <file>
 ```
 
 提交修改
@@ -117,10 +123,10 @@ git stash pop
 
 ### 代码回滚
 
-彻底取消最近的提交
+放弃工作目录下的所有更改
 
 ```bash
-git reset --hard
+git reset --hard HEAD
 ```
 
 只取消提交
@@ -163,6 +169,8 @@ git reset --hard origin/master
 
 ```bash
 git reset --hard c011eb3
+
+简写 grhh
 ```
 
 已经 add 了怎么取消
@@ -205,6 +213,14 @@ git checkout -b 分支名
 
 ```bash
 git fetch -p
+```
+
+下载远程端的所有改动到本地，不会自动合并到当前
+
+```bash
+git fetch
+
+简写 gf
 ```
 
 删除本地分支
