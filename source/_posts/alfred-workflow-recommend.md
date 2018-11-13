@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-09-30 03:17:07
+updated: 2018-11-12 03:17:07
 tags:
 categories: 最热
 ---
@@ -15,7 +15,7 @@ categories: 最热
 
 > 新发现的插件，会添加在最上面的 🎉
 
-{% qnimg my-alfred-workfow.jpg 'alt:自用 Alfred Workfolw' extend:?imageView2/2/w/300 %}
+{% qnimg my-alfred-workflow.png 'alt:自用 Alfred Workfolw' extend:?imageView2/2/w/300 %}
 
 
 ## 插件推荐
@@ -80,11 +80,25 @@ categories: 最热
 
 第一款 [下载地址](https://lucifr.com/2013/03/14/douban-workflow-for-alfred-v2/)
 
-第二款 [下载地址](https://github.com/xinhangliu/alfred-workflow/tree/master/douban-search)
+作者个人的 apiKey 失效了，在 workflow 中，去掉 apiKey 即可使用了。
 
 {% qnimg alfred-douban-book.jpg extend:?imageView2/2/w/500 %}
 
 {% qnimg alfred-douban-moive.jpg extend:?imageView2/2/w/500 %}
+
+第二款 [下载地址](https://github.com/xinhangliu/alfred-workflow/tree/master/douban-search)
+
+😄 还支持搜索用户~~
+
+{% qnimg alfred-douban-search.png extend:?imageView2/2/w/500 %}
+
+第三款 [下载地址](https://github.com/swim2sun/Douban-Movie-Workflow)
+
+❗这一款，仅支持豆瓣电影
+
+{% qnimg alfred-douban-movie.png extend:?imageView2/2/w/500 %}
+
+
 
 ### emoji
 > 搜索表情
