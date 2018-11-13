@@ -1,7 +1,7 @@
 ---
 title: zsh oh-my-zsh 插件推荐
 date: 2017-05-04 10:57:31
-updated: 2018-07-16 23:31:31
+updated: 2018-11-12 23:31:31
 tags:
 categories: 最热
 ---
@@ -24,7 +24,7 @@ git add --all ===> gaa
 git commit -m ===> gcmsg
 ```
 
-![](https://ooo.0o0.ooo/2017/05/21/5921b3e1283cf.png)
+{% qnimg zsh-git.png extend:?imageView2/2/w/350 %}
 
 查看所有 `git` 命令缩写
 
@@ -101,19 +101,13 @@ git clone git://github.com/joelthelion/autojump.git
 
 和 `autojump` 除了名字不一样，基本雷同。
 
-⚠️ 2018.07.16更新
-`Z` 会在用户目录下生成很多的缓存文件，如下图
-
-![](media/WX20180716-150719@2x.png)
-
-
 ```
 z -x 无效路径
 ```
 
 效果图
 
-![](https://ww2.sinaimg.cn/large/006tNc79ly1ffqsum0zibj30ey01hjsg.jpg)
+{% qnimg zsh-z.jpg extend:?imageView2/2/w/500 %}
 
 ### zsh-syntax-highlighting
 
@@ -122,7 +116,7 @@ z -x 无效路径
 
 **作用** 平常用的`ls`、`cd` 等命令输入正确会绿色高亮显示，输入错误会显示其他的颜色。
 
-![](https://ooo.0o0.ooo/2017/05/21/5921b54d899d9.png)
+{% qnimg zsh-syntax-highlighting.png extend:?imageView2/2/w/450 %}
 
  **安装**
 
@@ -155,7 +149,7 @@ source ~/.zshrc
 
 如图输入命令时，会给出建议的命令（灰色部分）按键盘 &#8594; 补全
 
-![](https://ww1.sinaimg.cn/large/006tNbRwly1ffanc9rb8pj30ay016q39.jpg)
+{% qnimg zsh-autosuggestions.jpg extend:?imageView2/2/w/350 %}
 
 如果感觉 &#8594; 补全不方便，还可以自定义补全的快捷键，比如我设置的逗号补全
 
@@ -255,7 +249,7 @@ source ~/.zshrc
 HIST_STAMPS="yyyy-mm-dd"
 ```
 
-![](media/15241577143324.jpg)
+{% qnimg zsh-history.jpg extend:?imageView2/2/w/350 %}
 
 时间会按照指定的格式展示，方便搜索查看
 
@@ -300,8 +294,7 @@ alias cp="cp -i
 
 直接上个效果
 
-![](media/15262637829800.jpg)
-
+{% qnimg zsh-bat.jpg extend:?imageView2/2/w/500 %}
 
 [官网](https://github.com/sharkdp/bat)
 
