@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-11-12 03:17:07
+updated: 2018-11-19 07:17:07
 tags:
 categories: 最热
 ---
@@ -103,9 +103,23 @@ categories: 最热
 ### emoji
 > 搜索表情
 
+第一款
+
+* 常用的表情会放在最上面，但是使用的关键词匹配，经常搜不出自己想要的表情
+* 好处是开箱即用，而下面一款，需要安装 `node.js` 环境。
+
 [下载地址](https://github.com/carlosgaldino/alfred-emoji-workflow)
 
 {% qnimg alfred-emoji.jpg extend:?imageView2/2/w/500 %}
+
+第二款
+
+* 搜索结果会把相关的表情都展示出来，不只是关键词匹配。
+* `node.js` 开发的，需要安装一些必要的环境。
+
+[下载地址](https://github.com/sindresorhus/alfred-emoj）
+
+{% qnimg alfred-emoji-npm.jpg extend:?imageView2/2/w/500 %}
 
 ### Encode/Decode
 > 编码解码工具
