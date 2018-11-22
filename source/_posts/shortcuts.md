@@ -16,6 +16,16 @@ command + l 选中地址栏
 
 ## vimium
 
+## vscode
+
+command + b 展示隐藏侧边栏
+
+command + k  v 预览 Markdown
+
+command + shift + p 命令输入
+
+command + p 搜索文件
+
 ## workflow youdao
 
 shift + enter 发音
