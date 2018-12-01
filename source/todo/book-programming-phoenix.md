@@ -62,7 +62,8 @@ $ mix phx.server
 $ iex -S mix phx.server
 
 Atom Keys vs. String Keys?
- In the world action in our controllers, the external parameters have string keys, "name" => name, while internally we use name: name. That’s a convention followed throughout Phoenix. External data can’t safely be converted to atoms, because the atom table isn’t garbage-collected. Instead, we explicitly match on the string keys, and then our application boundaries like controllers and channels will convert them into atom keys, which we’ll rely on everywhere else inside Phoenix.
+ 
+In the world action in our controllers, the external parameters have string keys, "name" => name, while internally we use name: name. That’s a convention followed throughout Phoenix. External data can’t safely be converted to atoms, because the atom table isn’t garbage-collected. Instead, we explicitly match on the string keys, and then our application boundaries like controllers and channels will convert them into atom keys, which we’ll rely on everywhere else inside Phoenix.
 
 We’ve already encountered the .ex files. These contain Elixir code which you’ll compile to the .beam files that run on the Erlang virtual machine. The .exs files are Elixir scripts. They’re not compiled to .beam files. The compilation happens in memory, each time they are run. They’re excellent for quick-changing scripts or stand-alone development-time tasks.
 

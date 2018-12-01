@@ -14,31 +14,35 @@ NO! 💯 `zsh` 可以设置随机主题 🎨 ，每次开新终端的时候，�
 ## 安装主题字体包
 ## zsh 主题推荐
 
-**jnrowe**
+aussiegeek
 
-**aussiegeek**
+candy
 
-> 带时间挺不错，而且有主机名
+crcandy
 
-**kolo**
-
-**junkfood**
+crunch
 
 jaischeema
 
 jonathan
 
+jnrowe
+
+junkfood
+
 jtriley
+
+kolo
+
+murilasso
 
 obraun
 
-candy
-
-crunch
+wezm
 
 sonicradish.zsh 👍
 
-wezm
+目录信息 git 主机信息 时间 日期
 
 
 

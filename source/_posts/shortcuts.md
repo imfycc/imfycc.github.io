@@ -1,22 +1,26 @@
 ---
 title: 快捷键备忘录
 date: 2017-07-07 15:59:32
-updated: 2018-08-09 15:59:32
+updated: 2018-11-28 15:59:32
 tags:
 categories: 编程
 ---
 
 > 小猿大圣的快捷键备忘录，方便查询 🐻 
 
-## chrome
+## 浏览器
+
+### chrome
 
 Chrome 快捷键 [官方帮助地址](https://support.google.com/chrome/answer/157179?hl=zh-Hans)
 
 command + l 选中地址栏
 
-## vimium
+## chrome 插件 vimium
 
-## vscode
+## 编程软件
+
+### vscode
 
 command + b 展示隐藏侧边栏
 
@@ -26,13 +30,31 @@ command + shift + p 命令输入
 
 command + p 搜索文件
 
-## workflow youdao
+## iTerm2 
 
-shift + enter 发音
+`Ctrl+r` 然后输入若干字符，开始向上搜索包含该字符的命令，继续按Ctrl+r，搜索上一条匹配的命令
 
-control ^ + enter 打开有道翻译的页面
+`Ctrl+s` 与Ctrl+r类似,只是正向检索
 
-## vim NerdTree
+`command + shift + h` 弹出历史记录窗口
+
+`Esc+b` 移动到当前单词的开头
+
+`Esc+f` 移动到当前单词的结尾
+
+`Ctrl+k` 剪切命令行中光标所在处之后的所有字符（包括自身）
+
+`Ctrl+d` 删除光标所在处字符
+
+`Ctrl+h` 删除光标所在处前一个字符
+
+`Ctrl+y` 粘贴刚才所删除的字符
+
+`Ctrl+w` 剪切光标所在处之前的一个词（以空格、标点等为分隔符）
+
+## vim
+
+### NerdTree
 
 快键键| 描述
 -----|-----
@@ -50,7 +72,21 @@ q    |  关闭 NerdTree 窗口
 gT   |   前一个 tab
 gt   |   后一个 tab
 
-## 每日Vim 
+### vim-multiple-mouse
+
+1、v 模式选中
+
+2、ctrl + n 选择下一个
+
+3、直接修改
+
+ctrl + x 跳过当前匹配项
+
+ctrl + p 取消当前的匹配项
+
+alt + n 直接选中所有匹配项 
+
+### 每日Vim 
 
 > 征服编辑器之神 💪
 
@@ -108,26 +144,11 @@ guw       将光标下的单词改成小写。
 
 6、强制保存 :w !sudo tee %
 
-## iTerm2 
 
-`Ctrl+r` 然后输入若干字符，开始向上搜索包含该字符的命令，继续按Ctrl+r，搜索上一条匹配的命令
+## alfred workflow
 
-`Ctrl+s` 与Ctrl+r类似,只是正向检索
+### youdao
 
-`command + shift + h` 弹出历史记录窗口
+shift + enter 发音
 
-`Esc+b` 移动到当前单词的开头
-
-`Esc+f` 移动到当前单词的结尾
-
-`Ctrl+k` 剪切命令行中光标所在处之后的所有字符（包括自身）
-
-`Ctrl+d` 删除光标所在处字符
-
-`Ctrl+h` 删除光标所在处前一个字符
-
-`Ctrl+y` 粘贴刚才所删除的字符
-
-`Ctrl+w` 剪切光标所在处之前的一个词（以空格、标点等为分隔符）
-
-
+control ^ + enter 打开有道翻译的页面

@@ -1,18 +1,90 @@
 ---
 title: macOS 再装指南
 date: 2016-12-29 13:41:26
-updated: 2018-09-03 10:42:59
+updated: 2018-11-24 10:42:59
 tags:
 categories: 编程
 ---
 
-先占个坑，未完待续
+最近入手了第一台属于我自己的 MacBook，记录一下配置过程，同时分享一些不错的软件。哈哈，我自认为是工具控 😄。经常研究一些，效率小工具配置什么的~~ ✌️。
 
->有些经过时间检验，被大家推荐来推荐去的软件，是如此的优秀。遇到了他们，生活好像又多了一缕阳光，让人按捺不住发现新大陆的激动心情，一定要让全宇宙的小伙伴都知道，一起享受阳光沐浴，才肯罢休。
+> 遇到好的软件和配置，实在忍不住要安利一下 😂。
 
->遇到好的软件和配置，实在忍不住要安利一下。
+### 系统
 
-1、翻墙
+* 更新系统到最新版本
+
+* 配置科学上网
+
+### 菜单栏
+
+istat Meun
+
+### 浏览器
+
+Google Chrome Canary
+
+    登录 Google 账号，同步 Chrome 配置
+
+Google Chrome
+
+FireFox
+
+### 开发
+
+### 生活
+
+### 系统
+
+
+
+
+7、homebew /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+8、alfred
+9、foxmail 
+10、日历订阅法定节假日 https://p17-calendars.icloud.com/holidays/cn_zh.ics
+11、karabiner HHKB 禁用系统键盘
+12、brew install git
+13、brew install zsh
+14、iterm2
+15、oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+16、nodejs
+17、yarn
+18、n
+19、登录邮箱
+20、item 主题 字体
+
+21、邮箱
+
+22、ssh
+
+23、hlj的数据库
+
+24、zshrc 还要安装字体
+
+25、vim
+
+26、npmrc
+
+27、AutoMute
+
+28、Mvim
+
+29、安装 zsh 的各种插件
+
+30、Mweb
+
+40、QQ邮箱
+
+41、公司的邮箱
+
+
+## IM
+
+微信
+
+钉钉
 
 2、Apple Store 搜索 xcode
 
@@ -47,9 +119,6 @@ SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/
 
 12、升级系统
 
-### 谷歌浏览器 Google Chrome
-火狐浏览器
-谷歌金丝雀版
 ### 抓包神器  Charles
 印象笔记
 护眼宝
@@ -102,9 +171,14 @@ zshrc
 
 vimrc
 
-zsh_history
+zsh_histor
 
 
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fxjf0bed4dj31ch0u0q8s.jpg)
 
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fxjf17ve99j31ch0u0q8s.jpg)
 
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fxjf1oufulj31ki0s6qam.jpg)
 
+touch ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global

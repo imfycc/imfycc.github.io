@@ -73,3 +73,78 @@ letter`、`::before` 和 `::after`。
   clear: both;
 }
 ```
+
+`inline-block ` 的实现方式，外在盒子负责元素是可以一行显示，还是只能换行显示;内在盒子负责宽高、内容呈现什么的。`width/height` 作用在内在盒子上。
+
+按照 `display` 的属性值不同，值为 `block` 的元素的盒子实际由外在的 “块级盒子”和内在的“块级容器盒子”组成，值为 `inline-block` 的元素则由外在的“内联盒子”和内在的“块级容器盒子”组成，值为 `inline` 的元素则内外均是“内联盒子”。
+
+## width/height
+
+width 的默认值是 auto，会有以下 4种宽度表现：
+
+(1)充分利用可用空间。比方说，`<div>`、`<p>` 这些元素的宽度默认是 100% 于父级容器的。 像水流充满容器。
+
+(2)收缩与包裹。典型代表就是浮动、绝对定位、inline-block 元素或 table 元素，
+
+(3)收缩到最小。这个最容易出现在 table-layout 为 auto 的表格中
+
+(4) 超出容器限制。除非有明确的 width 相关设置，否则上面 3 种情况尺寸都不会主动超过父级容器宽度的，但是存在一些特殊情况。例如，内容很长的连续的英文和数字，或者内联元素被设置了 `white-space:nowrap`。
+
+一般会终止于空格(普通空格)、短横线、问号以及其他非英文字符等。例如，“display:inline-block”这几个字符以连接符“-”作为分隔符，形成了“display:inline”和“block”两个连续单元。
+
+`<button>` 标签按钮才会自动换行，`<input>` 标签按钮，默认 `white-space:pre`，是不会换行的，需要将 `pre` 值重置为默认的 `normal`。
+
+## box-sizing
+
+宽度是作用在 `content box` 上的，而外面围绕的 `padding box` 和 `border box` 又不是摆设。
+
+`box-sizing:border-box` 就是让 100 像素的宽度直接作用在 `border box` 上，从默认的 `content box` 变成 `border box`。
+
+在 CSS 世界中，唯一离不开 `box-sizing:border-box` 的就是原生普通文本框 `<input>` 和文本域 `<textarea>` 的 100% 自适应父容器宽度。
+
+```css
+textarea {
+width: 100%;
+-ms-box-sizing: border-box; /* for IE8 */
+box-sizing: border-box;
+}
+```
+`box-sizing` 被发明出来最大的初衷应该是解决替换元素宽度自适应问题。
+
+如果真的如我所言，那 `*{box-sizing:border-box}` 是不是没用在点儿上呢?是不是应该像下面这样 CSS 重置才更合理呢?
+
+```css
+  input, textarea, img, video, object {
+    box-sizing: border-box;
+}
+```
+
+## 内联元素
+
+[所有内联元素清单](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elemente#Elements)
+
+### 幽灵空白节点
+
+“幽灵空白节点”指的是在 HTML5 文档声明中，**内联元素**的所有解析和渲染表现就如同每个行框盒子的前面有一个“空白节点”一样。这个“空白节点”永远透明，不占据任何宽度，看不见也无法通过脚本获取，就好像幽灵一样，但又确确实实地存在，表现如同文本节点一样，因此，我称之为“幽灵空白节点”。
+
+[w3c 幽灵节点相关内容](https://www.w3.org/TR/CSS2/visudet.html#leading)
+
+规范里叫 `strut`
+
+⚠️ 注意，文档声明必须是 HTML5 文档声明，如果还是很多年前的老声明，则不存在“幽灵空白节点”。
+
+我们可以举一个最简单的例子证明“幽灵空白节点”确实存在， CSS 和 HTML 代码如下:
+
+```css
+div {
+  background-color: #cd0000;
+}
+span {
+  display: inline-block;
+}
+```
+```html
+<div><span></span></div>
+```
+
+
