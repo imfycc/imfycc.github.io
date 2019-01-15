@@ -104,9 +104,9 @@ width 的默认值是 auto，会有以下 4种宽度表现：
 
 ```css
 textarea {
-width: 100%;
--ms-box-sizing: border-box; /* for IE8 */
-box-sizing: border-box;
+  width: 100%;
+  -ms-box-sizing: border-box; /* for IE8 */
+  box-sizing: border-box;
 }
 ```
 `box-sizing` 被发明出来最大的初衷应该是解决替换元素宽度自适应问题。
@@ -140,11 +140,13 @@ div {
   background-color: #cd0000;
 }
 span {
-  display: inline-block;
+  display: inline-block; // 如果内联元素内什么都没有，也不会出现。所以设置了 inline-block
 }
 ```
 ```html
-<div><span></span></div>
+<div>
+  <span></span>
+</div>
 ```
 
 

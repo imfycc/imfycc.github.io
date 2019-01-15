@@ -48,6 +48,9 @@ FireFox
 13、brew install zsh
 14、iterm2
 15、oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+
+chsh -s /bin/zsh
+
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 16、nodejs
 17、yarn

@@ -56,6 +56,8 @@ categories: 最热
 
 > 颜色转换工具
 
+⚠️ 需要安装 `node.js` 环境
+
 [下载地址](https://github.com/TylerEich/Alfred-Extras/releases)
 
 {% qnimg alfred-color.jpg extend:?imageView2/2/w/500 %}
