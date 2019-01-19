@@ -1,7 +1,7 @@
 ---
-title: js console 彩蛋的原理与实现
+title: 浏览器 console 彩蛋的原理与实现
 date: 2016-12-12 13:02:07
-updated: 2017-01-15 01:08
+updated: 2019-01-19 22:08
 tags: 好玩
 categories: 编程
 ---
@@ -79,5 +79,34 @@ http://picascii.com/
 1、ES6里有  ` `` ` 这两个点，可以直接处理多行字符串
 
 2、把字符画复制到`Sublime Text`里，全选 然后 `shift + ctrl + l` 多行光标 在每行的开头添加`\n`,然后删除换行，使多行字符串变成单行字符串。
+
+
+### 实践
+
+在当前页面，打开浏览器的控制台。就可以看到我博客设置的 `console` 信息了。
+
+代码实现：
+
+```js
+var consoleConfig = {
+    welcome: '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n',
+    theme: '\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n',
+    qrcode: '\n扫描下面的二维码，在手机上查看博客！\n',
+    search: '\n想知道这个效果如何实现的？博客内搜索 console 彩蛋！\n'
+};
+
+var consoleInfo = (function(consoleConfig) {
+
+    console.log('%c' + consoleConfig.welcome, 'color: #6190e8');
+
+    console.log('%c' + consoleConfig.theme, 'color: #6190e8;','padding: 0 5px;color: #fff;background: #6190e8;','color: #6190e8;','padding: 0 5px;color: #fff;background: #6190e8;','color: #6190e8;');
+
+    console.log('%c' + consoleConfig.qrcode, 'color: #6190e8');
+
+    console.log('%c' + consoleConfig.search, 'color: #6190e8');
+
+    console.log('%c     ', 'background: url(https://static.hufangyun.com/blog-url-qrcode-180-180.png) no-repeat left center;font-size: 180px;');
+}(consoleConfig));
+```
 
 
