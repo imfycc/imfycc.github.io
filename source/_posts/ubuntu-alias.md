@@ -2,6 +2,7 @@
 title: ubuntu 下给软件起别名并创建快捷方式
 date: 2015-11-25 22:00:49
 updated: 2017-07-10 22:00:49
+overdue: true
 tags:
 categories: 编程
 ---

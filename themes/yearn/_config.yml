@@ -64,3 +64,8 @@ console_config:
   - '\n扫描下面的二维码，在手机上查看博客！\n'
   - 'https://static.hufangyun.com/blog-url-qrcode-180-180.png'
   - '\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'
+
+
+# 长时间未更新的博文显示提醒
+overdue_auto_all: false
+overdue_remind: 本文最后更新于$day天前，文中所描述的信息可能已发生改变。

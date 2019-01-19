@@ -2,6 +2,7 @@
 title: Yarn能帮你解决的五件事
 date: 2016-12-14 17:20:31
 updated: 2016-12-14 17:20:31
+overdue: true
 tags: [翻译,yarn,npm,前端,编程]
 categories: 翻译
 description:
