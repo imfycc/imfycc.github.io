@@ -6,7 +6,7 @@ tags: 好玩
 categories: 编程
 ---
 
-> 打开浏览器的开发者模式的控制台，比如 F12（或者 shift + command + j）打开Chrome 的控制台，有些网站，会在这里面展示一些信息，比如招聘信息。话不多说，先上一波演示。
+> 打开浏览器的开发者模式的控制台，比如 F12（或者 shift + command + j）打开Chrome 的控制台，有些网站会在这里面展示一些信息，比如招聘信息。话不多说，先上一波演示。
 
 ### 演示
 
@@ -43,7 +43,7 @@ categories: 编程
 ![](https://ooo.0o0.ooo/2017/01/15/587a5743ac623.png)
 
 ### 实现
->看完，效果。我们一起学习一下，这些是怎么实现这些炫酷的效果
+>看完效果。我们一起学习一下，这些炫酷效果怎么实现的。
 
 ```javascript
 console.log('%c', 'CSS代码');
@@ -51,13 +51,13 @@ console.log('%c', 'CSS代码');
 
 ### 文字实现：
 
-```js
+```javascript
 console.log('%c 你好！', 'background: #008000; color: #fff');
 ```
 
 ### 图片实现：
 
-```js
+```javascript
 console.log('%c            ','background:url(http://7oxgmt.com1.z0.glb.clouddn.com/wp-content/themes/VicSugar-wordpress/public/img/face.jpg) no-repeat left center;font-size:200px');
 ```
 
@@ -76,14 +76,14 @@ http://picascii.com/
 
 ##### 字符画直接复制到 `console.log` 中会报错，处理方式：
 
-1、ES6里有  ` `` ` 这两个点，可以直接处理多行字符串
+1、ES6 里可以使用  ` ``  符号处理多行字符串。
 
-2、把字符画复制到 `Sublime Text` 里，全选 然后 `shift + ctrl + l` 多行光标 在每行的开头添加 `\n` ,然后删除换行，使多行字符串变成单行字符串。
+2、把字符画复制到 `Sublime Text` 里，全选 然后 `shift + ctrl + l` 多行光标 在每行的开头添加 `\n` ，然后删除换行，使多行字符串变成单行字符串。
 
 
 ### 实践
 
-在当前页面，打开浏览器的控制台。就可以看到我博客设置的 `console` 信息了。
+在当前页面，打开浏览器的控制台，就可以看到我博客设置的 `console` 信息了。
 
 代码实现：
 
@@ -96,15 +96,10 @@ var consoleConfig = {
 };
 
 var consoleInfo = (function(consoleConfig) {
-
     console.log('%c' + consoleConfig.welcome, 'color: #6190e8');
-
     console.log('%c' + consoleConfig.theme, 'color: #6190e8;','padding: 0 5px;color: #fff;background: #6190e8;','color: #6190e8;','padding: 0 5px;color: #fff;background: #6190e8;','color: #6190e8;');
-
     console.log('%c' + consoleConfig.qrcode, 'color: #6190e8');
-
     console.log('%c' + consoleConfig.search, 'color: #6190e8');
-
     console.log('%c     ', 'background: url(https://static.hufangyun.com/blog-url-qrcode-180-180.png) no-repeat left center;font-size: 180px;');
 }(consoleConfig));
 ```
