@@ -3,7 +3,7 @@ title: 编程心路
 date: 2017-05-12 14:04:34
 updated: 2017-06-14 09:18:00
 tags:
-categories: 随笔
+categories: 技术成长
 ---
 
 > 虽然我比较菜。
