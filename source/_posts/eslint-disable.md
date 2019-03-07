@@ -1,7 +1,7 @@
 ---
 title: ESLint 的禁用规则
 date: 2018-08-08 14:57:05
-updated: 2018-08-08 14:57:05
+updated: 2019-01-28 14:57:05
 tags:
 categories: 编程
 ---
@@ -14,7 +14,21 @@ categories: 编程
 
 代码块禁用
 
-1、禁用所有规则
+1、
+
+* `"off"` 或者 `0` - 关掉规则
+* `"warn"` 或者 `1` - 打开规则作为一个警告(不影响退出代码)
+* `"error"` 或者 `2` - 打开规则作为一个错误(退出代码为1时触发)
+
+```
+/* eslint react/display-name: 0, curly: 2 */
+
+或者
+
+/* eslint eqeqeq: "off", curly: "error" */
+```
+
+2、禁用所有规则
 ```
 /*eslint-disable */
 
@@ -23,7 +37,7 @@ code...
 /*eslint-enable */
 ```
 
-2、禁用指定的规则
+3、禁用指定的规则
 > 多个规则间用逗号分隔
 
 ```

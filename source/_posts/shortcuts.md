@@ -1,7 +1,7 @@
 ---
 title: 快捷键备忘录
 date: 2017-07-07 15:59:32
-updated: 2019-01-19 15:59:32
+updated: 2019-02-15 15:59:32
 tags:
 categories: 编程
 ---
@@ -86,7 +86,9 @@ ctrl + x 跳过当前匹配项
 
 ctrl + p 取消当前的匹配项
 
-alt + n 直接选中所有匹配项 
+alt + n 直接选中所有匹配项
+
+在 `,` 处换行，v <C-n> c , <CR>(回车)
 
 ### 每日Vim 
 
@@ -146,7 +148,30 @@ guw       将光标下的单词改成小写。
 
 6、强制保存 :w !sudo tee %
 
+7、批量注释
 
+* v 模式
+* 上下选中所需行
+* ctrl + v 进入列模式
+* 大写 i 输入
+* esc 两次
+
+取消注释
+
+* ctrl + v 进入列模式
+* 上下选中所需行
+* x 删除内容
+
+8、buffer
+
+```
+:b num      前往指定buffer
+:bn 下一个   buffer
+:bp 上一个   buffer
+:bw 保存当前 buffer
+:bd 删除当前 buffer
+```
+  
 ## alfred workflow
 
 ### youdao

@@ -202,6 +202,10 @@ $ git checkout -b [branch] [tag]
 # 显示有变更的文件
 $ git status
 
+git log --reverse
+
+倒序展示
+
 # 显示当前分支的版本历史
 $ git log
 
