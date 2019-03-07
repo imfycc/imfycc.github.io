@@ -1,5 +1,5 @@
 ---
-title: JavaScript 文件的异步加载 async和 defer
+title: JavaScript 文件的异步加载 async 和 defer
 date: 2018-11-05 15:32:06
 updated: 2019-03-07 07:32:06
 tags:
