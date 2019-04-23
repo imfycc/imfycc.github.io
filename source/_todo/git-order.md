@@ -783,6 +783,17 @@ You need to fix a bug in the version 1.2 of your app. Checkout the tag v1.2.
 
 答案 https://www.jianshu.com/p/e8e6358e81e0
 
+展示暂存区和最近版本的不同
+输出暂存区和本地最近的版本 (commit) 的 different (不同)。
+
+git diff --cached
+展示暂存区、工作区和最近版本的不同
+输出工作区、暂存区 和本地最近的版本 (commit) 的 different (不同)。
+
+git diff HEAD
+快速切换分支上一个分支
+git checkout -
+
 
 ## 参考
 

@@ -1,7 +1,7 @@
 ---
 title: 快捷键备忘录
 date: 2017-07-07 15:59:32
-updated: 2019-02-15 15:59:32
+updated: 2019-04-15 15:59:32
 tags:
 categories: 编程
 ---
@@ -73,6 +73,7 @@ q    |  关闭 NerdTree 窗口
 ?    |  切换是否显示 Quick Help
 gT   |   前一个 tab
 gt   |   后一个 tab
+ma   |  选中目录后，在当前目录创建文件。
 
 ### vim-multiple-mouse
 
@@ -124,6 +125,10 @@ gUw       将光标下的单词改成大写。
 
 guw       将光标下的单词改成小写。
 
+w         单词末尾
+
+b         单词开头
+
 3、vim 屏幕滚动
 
 向下滚动一屏(ctrl+f)
@@ -171,6 +176,28 @@ guw       将光标下的单词改成小写。
 :bw 保存当前 buffer
 :bd 删除当前 buffer
 ```
+
+<Leader> b  搜索当前打开的 buffers
+
+9、分栏
+
+:vsp 文件  左右两栏
+
+10、删除单词
+
+daw 删除光标所在的单词
+
+bdw 删除光标所在的单词，并将光标重置到单词开头处
+
+10、删除引号内的内容
+
+ci'、ci"、ci(、ci[、ci{、ci< - 分别更改这些配对标点符号中的文本内容
+
+di'、di"、di(或dib、di[、di{或diB、di< - 分别删除这些配对标点符号中的文本内容
+
+yi'、yi"、yi(、yi[、yi{、yi< - 分别复制这些配对标点符号中的文本内容
+
+vi'、vi"、vi(、vi[、vi{、vi< - 分别选中这些配对标点符号中的文本内容
   
 ## alfred workflow
 
