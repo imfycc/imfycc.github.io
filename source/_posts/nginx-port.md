@@ -1,7 +1,7 @@
 ---
 title: nginx 端口转发 使用域名访问不显示端口
 date: 2017-07-09 21:42:15
-updated: 2017-07-15 21:42:15
+updated: 2019-05-20 21:42:15
 overdue: true
 tags:
 categories: 编程
@@ -11,7 +11,7 @@ categories: 编程
 
 端口转发的方式有很多种，我这里选择使用的 `nginx`
 
-服务器使用的 `ubuntu 16.04` 首先安装 `nginx`
+服务器使用的 `ubuntu` 首先安装 `nginx`
 
 ```bash
 sudo apt-get install nginx
@@ -48,3 +48,33 @@ sudo service nginx restart
 ```
 /var/log/nginx/error.log
 ```
+
+或者使用以下命令查看 nginx 状态，会输出报错信息
+
+```shell
+sudo systemctl status -l nginx.service
+```
+
+## 遇到的问题
+
+按照上面配置完后，`nginx` 启动失败 🙈，报错如下：
+
+重复的定义了 default server 80 端口
+
+```
+a duplicate default server for 0.0.0.0:80 in /etc/nginx/sites-enabled/default:22
+```
+
+使用以下命令搜索哪些地方用到了 `default_server`
+
+```shell
+grep -R default_server /etc/nginx
+```
+
+原因是 nginx 的默认配置文件也定义了 80 端口
+
+备份一下 `/etc/nginx/sites-enabled/default`
+
+然后删除该文件。
+
+再次重启 nginx 服务，成功 🦊。

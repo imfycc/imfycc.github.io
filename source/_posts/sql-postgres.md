@@ -1,7 +1,7 @@
 ---
 title: 【随用随查】PostgreSQL 实践笔记
 date: 2017-10-30 22:24:45
-updated: 2018-09-03
+updated: 2019-05-20
 tags:
 categories: 编程
 ---
@@ -23,10 +23,33 @@ categories: 编程
 
 ## 安装
 
+### macOS
+
 `macOS` 上可以使用 `brew` 安装
 
 ```shell
 brew install postgres
+```
+
+### Ubuntu
+
+安装
+
+```shell
+sudo apt install postgresql-11
+```
+
+查看状态
+
+```shell
+sudo systemctl status postgresql
+```
+
+切换用户
+
+```shell
+sudo -i -u postgres
+psql
 ```
 
 ## 使用
@@ -52,7 +75,7 @@ pg_ctl -D /usr/local/var/postgres start
 \l：列出所有数据库。
 \c [database_name]：连接其他数据库。
 \d：列出当前数据库的所有表格。
-\d [table_name]：列出某一张表格的结构。
+\d [table_name]：列出某一张表格的结构(包含索引)。
 \du：列出所有用户。
 \q：退出数据库。
 \conninfo：列出当前数据库和连接的信息。
@@ -149,6 +172,17 @@ psql -d dataname -f file.sql admin
 
 #### 用户、角色、权限管理
 [PostgreSQL学习笔记(九) 用户、角色、权限管理](http://www.jianshu.com/p/b09d0b29faa9)
+
+创建用户并赋予权限
+
+```ebnf
+CREATE USER www WITH PASSWORD 'u867#eDgg6#2@elo098OIUh';
+
+CREATE DATABASE my_app_prod OWNER www;
+
+alter role www login createdb;
+
+```
 
 #### 报错解决
 

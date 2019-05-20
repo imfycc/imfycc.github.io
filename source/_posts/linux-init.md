@@ -158,6 +158,34 @@ sudo apt-get upgrade
 
 最后，再根据需要，做一些安全设置，比如搭建防火墙，关闭 `HTTP`、`HTTPs`、`SSH` 以外的端口，详细可参考这篇 [《Securing a Linux Server》](http://spenserj.com/blog/2013/07/15/securing-a-linux-server/)。
 
+## 设置时区
+
+使用 tzselect 命令选择需要的时区。
+
+```shell
+tzselect
+```
+
+设置完后，命令行会提示我们将时区的配置文件添加到 `.profile`
+
+```shell
+TZ='Asia/Hong_Kong'; export TZ
+```
+
+执行完后，重新登录系统或者刷新 `~/.bashrc` 文件使其生效
+
+```shell
+source ~/.bashrc
+```
+
+更改 Linux 整个系统范围的时区可以使用如下命令：
+
+```shell
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+现在使用 `date` 命令查看一下时间。
+
 ## 特别番
 
 ### 阿里云服务器

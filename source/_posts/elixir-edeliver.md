@@ -1,7 +1,7 @@
 ---
 title: 使用 edeliver 部署 Elixir 应用程序
 date: 2017-12-11 00:00:00
-updated: 2018-03-01 00:00:00
+updated: 2019-05-20 00:00:00
 overdue: true
 tags:
 categories: 编程
@@ -18,7 +18,8 @@ categories: 编程
 
 ```elixir
 def application, do: [
-  applications: [
+  extra_applications: [
+    ...
     :edeliver
   ]
 ]
@@ -26,13 +27,13 @@ def application, do: [
 defp deps do
   [
     ...
-    {:edeliver, "~> 1.4.4"},
-    {:exrm, ">= 0.16.0", warn_missing: false},
+    {:edeliver, ">= 1.6.0"},
+    {:distillery, "~> 2.0", warn_missing: false},
   ]
 end
 ```
 
-这里有两种组合 `edeliver` + `distillery` 或者 `edeliver` + `exrm`，我选用了后者。因为配置更简单一点。🐒
+执行 `mix release.init` 生成 `rel` 配置文件夹，里面的配置默认即可。
 
 ## edeliver 配置
 
@@ -72,14 +73,14 @@ pre_erlang_get_and_update_deps() {
 ```bash
 #!/usr/bin/env bash
 
-APP="short_url"
+APP="habit"
 
 # 自动以 git revision 作为发布名称
 AUTO_VERSION="revision"
 
 BUILD_HOST="url"
 BUILD_USER="web"
-BUILD_AT="/tmp/edeliver/short_url/builds"
+BUILD_AT="/tmp/edeliver/habit/builds"
 
 # 我只有正式环境，所以没有配置 STAGING 环境
 PRODUCTION_HOSTS="url"
@@ -91,7 +92,7 @@ DELIVER_TO="/home/web/"
 HEX_MIRROR_URL="https://hexpm.upyun.com" 
 
 pre_erlang_get_and_update_deps() {
-  local _prod_secret_path="/home/builder/short_url.prod.secret.exs"
+  local _prod_secret_path="/home/builder/habit.prod.secret.exs"
   if [ "$TARGET_MIX_ENV" = "prod" ]; then
     __sync_remote "
       ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'
@@ -107,10 +108,10 @@ pre_erlang_get_and_update_deps() {
 echo ".deliver/releases/" >> .gitignore
 ```
 
-`config/prod.exs` 部署配置默认有这样一句话，从系统里加载环境变量。如果你没有在部署的主机上添加变量，这句话就删除掉。别问我怎么知道的。😭
+`config/prod.exs` 部署配置默认有这样一句话，从系统里加载环境变量。如果你没有在部署的主机上添加变量，这句话就注释掉。别问我怎么知道的。😭
 
 ```yaml
-﻿load_from_system_env: true,
+#load_from_system_env: true,
 ```
 
 提交刚才配置文件的修改，并且下载依赖编译
@@ -120,12 +121,25 @@ git add -A && git commit -m "Setting up edeliver"
 mix do deps.get, compile
 ```
 
+创建好数据库后，就可以使用以下命令启动发布应用
+
+```shell
+# 更新应用
+mix edeliver update
+
+# 启动应用
+mix edeliver start
+
+# 创建数据库表
+mix edeliver migrate
+```
+
 其他的配置可以参考 [项目文档](https://github.com/edeliver/edeliver)
 
-我们的配置文件里配置的线上环境的隐私信息从 `/home/builder/short_url.prod.secret.exs` 目录获取，所以运行下面的命令。上传我们的线上配置文件。该文件是不会记录到 `git` 版本里的。
+我们的配置文件里配置的线上环境的隐私信息从 `/home/builder/habit.prod.secret.exs` 目录获取，所以运行下面的命令。上传我们的线上配置文件。该文件是不会记录到 `git` 版本里的。
 
 ```
-scp ~/你的项目/config/prod.secret.exs 主机名:/home/builder/short_url.prod.secret.exs
+scp ~/你的项目/config/prod.secret.exs 主机名:/home/builder/habit.prod.secret.exs
 ```
 
 ## 数据库设置配置
@@ -148,7 +162,7 @@ psql
 ```sql
 CREATE USER www WITH PASSWORD 'u867#eDgg6#2@elo098OIUh';
 
-CREATE DATABASE short_url_prod OWNER www;
+CREATE DATABASE habit_prod OWNER www;
 
 alter role www login createdb;
 ```
@@ -187,11 +201,25 @@ mix edeliver migrate production down # 逆向执行数据库构建 会删除所�
 mix edeliver show migrations production # 执行上面的 down 命令后会显示状态
 ```
 
+### 遇到的问题
+
+如果发布成功，但是应用没有在配置的端口启动服务，检查 `config/prod.exs` 以下配置： service 和 serve_endpoints 是 true
+
+```yml
+config :habit, HabitWeb.Endpoint,
+  http: [port: 4000],
+  url: [scheme: "http", host: "test.com", port: 80],
+  service: true,
+  cache_static_manifest: "priv/static/cache_manifest.json"
+
+config :phoenix, :serve_endpoints, true
+```
+
 ## 日志
 
 如果不幸，发布出现问题。可以在一下目录查看日志
 
-配置文件里的 `DELIVER_TO="/home/web/"` 就是我们项目的部署目录，对应的日志文件也在这里。比如我的：`/home/web/short_url/log`
+配置文件里的 `DELIVER_TO="/home/web/"` 就是我们项目的部署目录，对应的日志文件也在这里。比如我的：`/home/web/habit/log`
 
 ```
 tail -f erlang.log.1
@@ -199,8 +227,19 @@ tail -f erlang.log.1
 
 ## 查看端口使用
 
+```shell
+lsof -i :80
 ```
+
+```shell
 netstat -tlunp
 ```
 
+```shell
+netstat -anp|grep 80
+```
+
+## 可能会用到的文章
+
+[Elixir Phoenix 1.4 Deployments with Distillery and Edeliver on Ubuntu](https://devato.com/automate-elixir-phoenix-1-4-deployment-with-distillery-and-edeliver-on-ubuntu/)
 
