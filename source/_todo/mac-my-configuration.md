@@ -176,12 +176,9 @@ vimrc
 
 zsh_histor
 
+{% qnimg iterm2-config-work-dir.jpg 'alt:iterm2' extend:?imageView2/2/w/500 %}
 
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fxjf0bed4dj31ch0u0q8s.jpg)
-
-![](https://ws2.sinaimg.cn/large/006tNbRwly1fxjf17ve99j31ch0u0q8s.jpg)
-
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fxjf1oufulj31ki0s6qam.jpg)
+{% qnimg iterm2-config-scroll-wheel.jpg 'alt:iterm2' extend:?imageView2/2/w/500 %}
 
 touch ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global

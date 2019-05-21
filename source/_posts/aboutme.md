@@ -5,7 +5,7 @@ updated: 2017-04-12 16:05
 tags:
 ---
 
-![](https://wx1.sinaimg.cn/mw690/005Kc3C1ly1fehyat40f5j31400qo0ya.jpg)
+{% qnimg hello-world-home-img.jpg 'alt:图片来自国风美唐“家”' %}
 
 > 年轻无为，卖码为生
 

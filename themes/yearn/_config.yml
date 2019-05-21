@@ -24,7 +24,9 @@ beian_info: 胡方运的博客 鲁ICP备15009509号
 favicon: /favicon.ico
 
 #你的头像url
-avatar: https://tva3.sinaimg.cn/crop.0.0.200.200.180/005Kc3C1jw8f2uep0hhkvj305k05k3yk.jpg
+
+
+avatar: https://static.hufangyun.com/face.jpg
 
 # 首页左侧边栏背景图片
 # 可配置多个 随机挑选一张

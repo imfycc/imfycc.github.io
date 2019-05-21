@@ -10,7 +10,8 @@ description:
 >最近做了一个CMS系统，设计的小伙伴提供了视觉规范。里面定义了字体、颜色、按钮、布局等等的规范，以后相关的CMS系统都会使用这套规范，所以代码的复用性就显得相当重要了。
 
 如图：
-![视觉规范](https://ww1.sinaimg.cn/large/006tKfTcjw1fcqylahattj30l90jnt9o.jpg)
+
+{% qnimg css-specification.jpg 'alt:视觉规范' extend:?imageView2/2/w/500 %}
 
 >借此机会，学习一下bootstrap的代码设计理念及其思路，在之后的项目里实践一下。
 

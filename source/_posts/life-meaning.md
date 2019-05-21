@@ -12,7 +12,7 @@ description:
 今天我找到了这样的答案：
 <!--more-->
 
-![](https://ww2.sinaimg.cn/large/006tNbRwly1fdb6pvtskfj30go3vh7k9.jpg)
+{% qnimg life-meaning.jpg 'alt:生活的意义' %}
 
 下面这段来自知乎：（如果觉得不错，请给原作者点赞 https://www.zhihu.com/question/24329745/answer/28988224）
 

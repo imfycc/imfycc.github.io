@@ -6,7 +6,7 @@ tags:
 categories: 编程
 ---
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1fhwyaee42hj306b02n3yg.jpg)
+{% qnimg elixir-logo.jpg 'alt:elixir' %}
 
 >"不要咖啡，不要大象，不要蟒蛇，不要红宝石，只要万金油。""
 
