@@ -6,7 +6,7 @@ tags:
 categories: 编程
 ---
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1fheey71uuuj305x0103yi.jpg)
+{% qnimg https.jpg 'alt:iyearn.top 的 https 证书' %}
 
 😄  给域名加了个小绿锁
 
@@ -29,9 +29,9 @@ categories: 编程
 
 如下图，选择证书服务，进入后，选择 “购买证书”，然后选择 “免费型DV SSL”，价格就自动变成零了。😉
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1fhlh8rcx3fj30qf0dygoc.jpg)
+{% qnimg aliyun-https-1.jpg 'alt:阿里云证书' extend:?imageView2/2/w/500 %}
 
-![](https://ws4.sinaimg.cn/large/006tNc79ly1fhli7ls7z4j30xq0hm0uz.jpg)
+{% qnimg aliyun-https-2.jpg 'alt:阿里云证书购买' extend:?imageView2/2/w/500 %}
 
 有效期是一年，而且只能绑定一个域名。绑定在主域上，子域名是不能使用的。😵
 

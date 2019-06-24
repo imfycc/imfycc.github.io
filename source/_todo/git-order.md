@@ -804,3 +804,12 @@ git checkout -
 https://git-scm.com/docs/git-bisect
 
 
+撤销add
+
+git reset --mixed
+
+git reset HEAD .
+
+git reset HEAD -filename
+
+

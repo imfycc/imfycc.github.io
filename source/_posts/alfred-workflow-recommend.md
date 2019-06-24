@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2018-11-19 07:17:07
+updated: 2019-05-21 07:17:07
 tags:
 categories: 最热
 ---
@@ -19,6 +19,25 @@ categories: 最热
 
 
 ## 插件推荐
+
+### 网易云音乐
+> 控制网易云音乐的播放、下一首、喜欢等需要操作。
+
+[下载地址](https://github.com/Ironaki/Netease-Alfred-Controller)
+
+### Fixum
+> 这款 workflow 可以检测其他 workflow 是否有可更新版本，以及处理兼容性问题，只是其他 workflow 的 “医生” 🏥 ️
+
+{% qnimg alfred-fixum.jpg 'alt:workflow 医生' extend:?imageView2/2/w/500 %}
+
+[下载地址](https://github.com/deanishe/alfred-fixum)
+
+### ip 查询
+> 查询本机的公网 ip 和局域网 ip
+
+{% qnimg alfred-ip.jpg 'alt:ip查询' extend:?imageView2/2/w/500 %}
+
+[下载地址](https://github.com/zenorocha/alfred-workflows/tree/master/ip-address)
 
 ### 快递查询
 > 在 `Alfred` 中查询快递，使用 `kd` 关键字，可以记录已经查过的快递和查询新快递，不需要输入快递公司名称。
@@ -99,8 +118,6 @@ categories: 最热
 ❗这一款，仅支持豆瓣电影
 
 {% qnimg alfred-douban-movie.png extend:?imageView2/2/w/500 %}
-
-
 
 ### emoji
 > 搜索表情

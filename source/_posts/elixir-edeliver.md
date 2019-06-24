@@ -141,6 +141,14 @@ mix edeliver migrate
 scp ~/你的项目/config/prod.secret.exs 主机名:/home/builder/habit.prod.secret.exs
 ```
 
+## 遇到的问题
+
+如果发布成功，但是应用没有在配置的端口启动服务，检查 `config/prod.exs` 以下配置
+
+```yml
+config :phoenix, :serve_endpoints, true
+```
+
 ## 数据库设置配置
 
 `phoenix` 默认使用的 `postgreSQL` 数据库
@@ -198,20 +206,6 @@ mix edeliver migrate production  # 运行数据库构建
 mix edeliver migrate production up # 同上面的命令
 mix edeliver migrate production down # 逆向执行数据库构建 会删除所有的数据表和数据
 mix edeliver show migrations production # 执行上面的 down 命令后会显示状态
-```
-
-### 遇到的问题
-
-如果发布成功，但是应用没有在配置的端口启动服务，检查 `config/prod.exs` 以下配置： service 和 serve_endpoints 是 true
-
-```yml
-config :habit, HabitWeb.Endpoint,
-  http: [port: 4000],
-  url: [scheme: "http", host: "test.com", port: 80],
-  service: true,
-  cache_static_manifest: "priv/static/cache_manifest.json"
-
-config :phoenix, :serve_endpoints, true
 ```
 
 ## 日志
