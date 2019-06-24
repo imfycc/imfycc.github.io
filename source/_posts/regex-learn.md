@@ -134,3 +134,12 @@ isMobileValid(number) {
   return number && (/^1[345678]\d{9}$/).test(number);
 }
 ```
+
+## Js 字符处理
+
+截取字符串的第一位和最后一位
+
+```js
+let str = 'abc';
+str.substring(1, str.length-1); // b
+```
