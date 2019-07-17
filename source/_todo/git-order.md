@@ -812,4 +812,8 @@ git reset HEAD .
 
 git reset HEAD -filename
 
+二分法查找 bug
+
+https://juejin.im/post/5a39dbfe6fb9a044fc44e0ea
+
 

@@ -90,7 +90,7 @@ JavsScript高级程序设计
 
 深入浅出 React 和 Redux 📖
 
-你不知道的JavaScript
+你不知道的JavaScript 📖
 
 ECMAScript 6入门(全彩)
 
@@ -114,5 +114,9 @@ JavaScript框架设计
 30天学会绘画
 
 文字设计的原理
+
+## 编程语言
+
+七周七语言
 
 
