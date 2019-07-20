@@ -8,7 +8,6 @@ categories: 最热
 
 {% qnimg alfred.png 'alt:alfred' extend:?imageView2/2/w/750 %}
 
-
 > 以下是我常用的 Alfred workflow
 
 ⚠️ 不同插件，可能有不同作者开发的版本，我推荐的不一定是最好的，只是我一直在用的。比如像有道翻译，可以找到很多版本，选择自己喜欢的即可。
@@ -21,6 +20,17 @@ categories: 最热
 ## 插件推荐
 
 > 以下 workflow 按更新排序，新发现的插件会添加在最上面。 🎉
+> 点击 ⬇️后的链接，可以直接下载 workflow 文件 。 🚀
+
+## SwitchHosts
+
+> 切换 SwitchHosts 内配置的 host 文件
+
+{% qnimg alfred-switchhosts.png extend:?imageView2/2/w/500 %}
+
+🏠 [主页](http://www.packal.org/workflow/switchhosts)
+
+⬇️ [下载地址](https://github.com/h3l/douban-workflow/blob/master/douban.alfredworkflow)
 
 ## 豆瓣
 
