@@ -1,7 +1,7 @@
 ---
 title: 正则表达式学习笔记
 date: 2017-03-23 13:59:29
-updated: 2018-11-24
+updated: 2019-10-45
 tags:
 categories: 编程
 description: 
@@ -36,7 +36,7 @@ description:
 
 [正则表达式教程](http://www.runoob.com/regexp/regexp-syntax.html)
 
-[学习正则表达式的简单方法](https://github.com/ziishaned/learn-regex/blob/master/README-cn.md)
+[学习正则表达式的简单方法](https://github.com/ziishaned/learn-regex/)
 
 [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 
@@ -44,7 +44,9 @@ description:
 
 [RegexGolf](https://alf.nu/RegexGolf)
 
-[RegexGolf 答案](https://gist.github.com/jonathanmorley/8058871)
+[我整理的答案](https://github.com/Youthink/Regex-Golf-Answer)
+
+[RegexGolf 答案](https://gist.github.com/jonathanmorley/8058871)
 
 [答案二](https://blog.csdn.net/NJYR21/article/details/79600217)
 
@@ -66,28 +68,28 @@ https://regexr.com/
 
 ## 语法
 
-语法  | 含义 |语法|含义
------|------|---|---
-[abc]|单个字符 a或b或c|[^abc]| a,b,c以外的单个字符
-[a-zA-Z0-9]| 字符范围|.| 任意字符
-\s|空字符|\S|非空字符
-\d|数字字符|\D|非数字字符
-\w|单词(字母，数字，下划线)|\W|非单词
-\b|单词边界|\B|非单词边界
-^|开头|$|结尾
-(...)|分组|(a\|b)|a或b
-a*|重复0次或多次|a?|重复0次或1次
-a+|重复1次或多次|a{3}|重复3次
-a{3,}|重复3次或多次|a{3,5}|重复3到5次
-?|非贪婪匹配|(?:abc)|非捕获分组
-(?=abc)|正向匹配abc|(?!abc)|正向不匹配abc
-\xhh|十六进制hh字符|\uhhhh|十六进制hhhh字符
-\u{hhhh}|(仅当设置了u标志时)十六进制hhhh字符|\cX|控制字符
-\0|空字符|\数字（n）| 匹配第 n 个（）内的值
-\a|alert字符|\t|制表符
-\n|换行符|\v|垂直制表符
-\f|换页符|\r|回车符
-\e|escape字符|[\b]|退格符
+语法  | 含义 |遗忘|语法|含义|遗忘
+-----|------|---|---|---|---
+[abc]|单个字符 a或b或c||[^abc]| a,b,c以外的单个字符
+[a-zA-Z0-9]| 字符范围||.| 任意字符
+\s|空字符||\S|非空字符
+\d|数字字符||\D|非数字字符
+\w|单词(字母，数字，下划线)||\W|非单词
+\b|单词边界|+1|\B|非单词边界
+^|开头||$|结尾
+(...)|分组||(a\|b)|a或b
+a*|重复0次或多次||a?|重复0次或1次
+a+|重复1次或多次|+1|a{3}|重复3次
+a{3,}|重复3次或多次||a{3,5}|重复3到5次
+?|非贪婪匹配||(?:abc)|非捕获分组
+(?=abc)|正向匹配abc||(?!abc)|正向不匹配abc| +1
+\xhh|十六进制hh字符||\uhhhh|十六进制hhhh字符
+\u{hhhh}|(仅当设置了u标志时)十六进制hhhh字符||\cX|控制字符
+\0|空字符||\数字（n）| 匹配第 n 个（）内的值| +1
+\a|alert字符||\t|制表符
+\n|换行符||\v|垂直制表符
+\f|换页符||\r|回车符
+\e|escape字符||[\b]|退格符
 
 
 ## 理解
@@ -125,6 +127,15 @@ aaaaaabaaaaaa
 
 详情[看这里](https://stackoverflow.com/questions/233243/how-to-check-that-a-string-is-a-palindrome-using-regular-expressions)
 
+### 非
+
+`(?!)`
+
+比如匹配非 `abba` 格式的字符串
+
+`^(?!.*(.)(.)\2\1)`
+
+
 ## 实践
 
 匹配手机号
@@ -143,3 +154,7 @@ isMobileValid(number) {
 let str = 'abc';
 str.substring(1, str.length-1); // b
 ```
+
+文章
+
+https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
