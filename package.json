@@ -6,7 +6,6 @@
     "version": "3.9.0"
   },
   "dependencies": {
-    "everblog-adaptor-hexo-html": "^0.4.1",
     "hexo": "^3.9.0",
     "hexo-deployer-git": "^1.0.0",
     "hexo-filter-flowchart": "^1.0.4",
