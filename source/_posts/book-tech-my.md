@@ -119,4 +119,6 @@ JavaScript框架设计
 
 七周七语言
 
+Github 上的一份书单：https://github.com/guanpengchn/awesome-books
+
 

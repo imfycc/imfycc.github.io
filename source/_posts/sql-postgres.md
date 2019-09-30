@@ -1,7 +1,7 @@
 ---
 title: 【随用随查】PostgreSQL 实践笔记
 date: 2017-10-30 22:24:45
-updated: 2019-05-20
+updated: 2019-09-17
 tags:
 categories: 编程
 ---
@@ -58,8 +58,13 @@ psql
 
 ##### mac 启动 postgreSQL 服务
 
-```
+```shell
 pg_ctl -D /usr/local/var/postgres start
+
+or
+
+# 服务在后台运行
+brew services start postgresql
 ```
 ##### 连接远程数据库
 
