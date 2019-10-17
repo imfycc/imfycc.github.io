@@ -6,7 +6,7 @@ tags:
 categories: 编程
 ---
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1fh37ua0t32j30nc08caav.jpg)
+{% qnimg git.jpg extend:?imageView2/2/w/600 %}
 
 ### 1、修改上一次提交的邮箱和用户名
 

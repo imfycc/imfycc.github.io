@@ -6,8 +6,7 @@ tags:
 categories: 编程
 ---
 
-![1786864843-5a2b22b4e6cd1_articlex](/media/1786864843-5a2b22b4e6cd1_articlex.png)
-
+{% qnimg elixir-deploy.png extend:?imageView2/2/w/600 %}
 
 > 最近使用 `Elixir` 的 web 框架 `Phoenix` 开发了一个简单的应用，部署的时候踩了不少坑。做一下笔记。
 

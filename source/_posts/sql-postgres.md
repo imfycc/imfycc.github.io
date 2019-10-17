@@ -8,9 +8,7 @@ categories: 编程
 
 > 本文记录了 `PostgreSQL` 基本操作，入门的 `SQL` 语句以及高阶的联表查询等内容。本文自用，时常更新。`PostgreSQL` 和 `MySQL` 的 `SQL` 语句基本相同，应该选择哪个？可以参考文末的[扩展阅读](#扩展阅读)。
 
-![postgresql-logo](/media/postgresql-logo.png)
-
-
+{% qnimg sql-postgresql.png extend:?imageView2/2/w/600 %}
 
 ## 文档
 [PostgreSQL轻松学](https://pg.sjk66.com/)

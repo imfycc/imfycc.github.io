@@ -14,33 +14,33 @@ categories: 编程
 
 1、[天猫](https://www.tmall.com)
 
-![天猫](https://ooo.0o0.ooo/2017/01/15/587a4df9ce5d4.png)
+{% qnimg console-eggs-tmall.png extend:?imageView2/2/w/500 %}
 
 <!--more-->
 
 2、[百度](https://www.baidu.com)
 
-![百度](https://ooo.0o0.ooo/2017/01/15/587a565731626.png)
+{% qnimg console-eggs-baidu.png extend:?imageView2/2/w/500 %}
 
 3、[更炫酷的](http://stackoverflow.com/questions/7505623/colors-in-javascript-console)
 
-![](https://ooo.0o0.ooo/2017/01/15/587a566f32813.png)
+{% qnimg console-eggs-example.png extend:?imageView2/2/w/500 %}
 
 #### 字符画类型：
 
 4、[知乎](https://www.zhihu.com)
 
-![知乎](https://ooo.0o0.ooo/2017/01/15/587a52811c543.png)
+{% qnimg console-eggs-zhihu.png extend:?imageView2/2/w/500 %}
 
 5、[hrwhisper](https://www.hrwhisper.me/site-console-log/)
 
-![](https://ooo.0o0.ooo/2017/01/15/587a56e4a2dfc.png)
+{% qnimg console-aggs-character-painting.png extend:?imageView2/2/w/500 %}
 
 #### 图片类型：
 
 6、[凹凸实验室](http://labs.qiang.it/qqpai/test/wcn/console/console.html)
 
-![](https://ooo.0o0.ooo/2017/01/15/587a5743ac623.png)
+{% qnimg console-aggs-jd.png extend:?imageView2/2/w/500 %}
 
 ### 实现
 >看完效果。我们一起学习一下，这些炫酷效果怎么实现的。
