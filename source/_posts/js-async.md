@@ -1,7 +1,7 @@
 ---
 title: JavaScript 文件的异步加载 async 和 defer
 date: 2018-11-05 15:32:06
-updated: 2019-03-07 07:32:06
+updated: 2019-10-17
 tags:
 categories: 编程
 ---
@@ -51,7 +51,7 @@ categories: 编程
 
 加载外部脚本时，浏览器会暂停页面渲染，等待脚本下载并执行完成后再继续渲染。
 
-![](https://ws1.sinaimg.cn/large/006tKfTcgy1g0u4n0mieqj30it04y3yb.jpg)
+{% qnimg js-async-2.jpg extend:?imageView2/2/w/600 %}
 
 这就是为什么我们一般建议把 `<script>` 标签放在 `</body>` 之前，而不是放在 `<head></head>` 中，因为加载 `<script>` 中的脚本并执行会阻塞 HTML 页面的渲染，当 JavaScript 文件很大的时候，甚至会长时间出现白屏。
 
@@ -85,7 +85,7 @@ categories: 编程
 
 4、如果设置了 async 属性，会并行加载脚本文件并执行，下载时不会阻塞 HTML 的解析，但是脚本执行的时候会阻塞 HTML 的解析。如果没有设置 async 属性，但是设置了 defer 属性，也会并行加载脚本文件，但是会等到页面完成解析再去执行。如果这两个属性都没有设置，会阻塞页面解析，加载并执行脚本文件。三种方式的对比图如下：
 
-![图片来源：www.w3c.org](https://ws1.sinaimg.cn/large/006tKfTcgy1g0u4yijbn8j315s082q2z.jpg)
+{% qnimg js-async-1.jpg 'alt:图片来源：www.w3c.org' extend:?imageView2/2/w/600 %}
 
 [HTML5.3](https://www.w3.org/TR/html53/semantics-scripting.html#element-attrdef-script-defer)的文档把第四条补充了一下。。。
 
