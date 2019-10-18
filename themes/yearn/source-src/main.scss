@@ -540,14 +540,21 @@ h2, h3, h4 {
       }
     }
     a {
-       color: #49be38;
-       border-bottom: 1px solid #49be38;
+      color: #49be38;
+      border-bottom: 1px solid #49be38;
 
-       &:hover {
+      &:hover {
         color:  #c7254e;
         border-bottom: 1px solid  #c7254e;
         background: none;
-       }
+      }
+    }
+
+    a[title='image'] {
+      border: none;
+      &:hover {
+        border: none;
+      }
     }
 
     ol, ul {
