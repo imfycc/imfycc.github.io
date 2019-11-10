@@ -1,72 +1,69 @@
 ---
 title: 几个不错的 App 设计网站
 date: 2018-06-14 19:13:39
-updated: 2018-09-02 00:28:39
+updated: 2019-10-10
 tags:
 categories: 编程
 ---
 
 > [小猿大圣](https://hufangyun.com)的 UI 学习自留地
 
+## 配色
 
-## sketchappsources
+[uigradients](https://uigradients.com/)
+
+> 获取渐变色的网站
+
+## 设计图
+
+### sketchappsources
 
 https://www.sketchappsources.com/
 
-![](/media/15289473088372.jpg)
-
-## dribbble
+### dribbble
 
 https://dribbble.com/
 
 ![](/media/15289473603818.jpg)
 
-## sketchrepo
+### sketchrepo
 
 https://sketchrepo.com/
 
 ![](/media/15289475696821.jpg)
 
-## uipixels
+### uipixels
 
 http://www.uipixels.com/
 
 ![](/media/15289475478955.jpg)
 
-## UI 中国
+### UI 中国
 
 http://www.ui.cn/
 
-## uplabs
+### uplabs
 
 https://www.uplabs.com/
 
 ![](/media/15289481019068.jpg)
 
-## unsplash
-> 图片
+## 图片
+[unsplash](https://unsplash.com/)
 
-https://unsplash.com/
+## 素材
 
-## sketchactive
+[花瓣网](https://huaban.com/)
 
-> 图标
+[千图网](https://588ku.com/)
 
-http://aegeank.com/sketchactive/
+[pinterest](https://www.pinterest.com/)
 
-![](/media/15289474299421.jpg)
+## 图标
+[flaticon](https://www.flaticon.com/)
 
-> 免费图标
-
-![](https://www.flaticon.com/)
-
-## 创造狮
-
-> 导航
-
-http://chuangzaoshi.com/
-
-![](/media/15289478996799.jpg)
+## 导航
+[创造狮](http://chuangzaoshi.com/)
 
 
 
