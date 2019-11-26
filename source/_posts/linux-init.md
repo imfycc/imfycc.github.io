@@ -1,7 +1,7 @@
 ---
 title: linux 服务器初始化配置流程
-date: 2017-12-9 00:00:00
-updated: 2017-12-9 00:00:00
+date: 2017-12-9
+updated: 2019-11-26
 tags:
 categories: 编程
 ---
@@ -83,8 +83,31 @@ www    ALL=(ALL:ALL) ALL
 直接使用下面的命令
 
 ```
+// 默认端口 22
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@123.456.78
+
+// 带端口 25000
+ssh-copy-id -i ~/.ssh/id_rsa.pub -p 25000 root@123.456.78
 ```
+
+本地电脑配置 ssh config
+
+修改 `~/.ssh/config` 文件
+
+```
+// Host 字段后面的名称自定义
+Host day-root
+  hostname 132.111.111.111
+  port 25000
+  user root
+
+Host day
+  hostname 132.111.111.111
+  port 25000
+  user www
+```
+
+之后 `ssh day` 无须输入密码，就可以登入服务器了。
 
 然后，进入服务器，编辑SSH配置文件/etc/ssh/sshd_config。
 
@@ -107,7 +130,7 @@ Protocol 2  | ssh 协议使用新版的
 PermitRootLogin no |不允许 root 登录
 PermitEmptyPasswords no |  不允许空密码登录
 PasswordAuthentication no |  使用密码授权登录
-RSAAuthentication yes | 使用RSA算法进行安全验证
+GSSAPIAuthentication no | 加快连接
 PubkeyAuthentication yes | 允许公钥认证
 UseDNS no | 禁用DNS反向解析 会加快速度
 SyslogFacility AUTHPRIV | 记录用户登录信息
@@ -203,6 +226,22 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 > 安全组是一种虚拟防火墙，具备状态检测包过滤功能。安全组用于设置单台或多台云服务器的网络访问控制，它是重要的网络安全隔离手段，用于在云端划分安全域。
 
 >安全组是一个逻辑上的分组，这个分组是由同一个地域（Region）内具有相同安全保护需求并相互信任的实例组成。每个实例至少属于一个安全组，在创建的时候就需要指定。同一安全组内的实例之间网络互通，不同安全组的实例之间默认内网不通。可以授权两个安全组之间互访。
+
+### 腾讯云服务器
+
+默认账户是 ubuntu，初始密码是自己设置的。忘记的话可以重置密码。
+
+修改 root 密码
+
+```shell
+sudo passwd root
+```
+
+切换用户
+
+```shell
+su www
+```
 
 ## 参考
 [Linux服务器的初步配置流程](http://www.ruanyifeng.com/blog/2014/03/server_setup.html)
