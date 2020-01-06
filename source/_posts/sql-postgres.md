@@ -1,7 +1,7 @@
 ---
 title: 【随用随查】PostgreSQL 实践笔记
 date: 2017-10-30 22:24:45
-updated: 2019-09-17
+updated: 2019-12-02
 tags:
 categories: 编程
 ---
@@ -204,6 +204,25 @@ CREATE DATABASE postgres WITH OWNER postgres;
 
 CREATE USER postgres SUPERUSER;
 ```
+
+2、升级版本后，数据库无法启动
+
+报错如下：
+
+```
+could not connect to server: No such file or directory
+Is the server running locally and accepting
+connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+FATAL:  database files are incompatible with server
+```
+
+解决：
+
+```shell
+brew postgresql-upgrade-database
+```
+
 
 
 ## 扩展阅读
