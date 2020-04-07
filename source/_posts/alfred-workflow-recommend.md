@@ -1,7 +1,7 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2019-07-20 07:17:07
+updated: 2020-03-20 07:17:07
 tags:
 categories: 最热
 ---
@@ -225,7 +225,7 @@ categories: 最热
 
 ⬇️ [下载地址](https://github.com/gharlan/alfred-github-workflow/releases/download/v1.6.2/github.alfredworkflow)
 
-### Gitlab 
+### Gitlab
 > 快速搜索并打开项目，支持自定义域名的 gitlab
 
 {% qnimg alfred-gitlab.jpg extend:?imageView2/2/w/500 %}
@@ -242,6 +242,11 @@ categories: 最热
 https://<host>/api/v4/projects
 
 // host 换成自己公司的
+```
+
+如果发现部分项目搜索不到，可以使用以下命令清除缓存
+```js
+gl workflow:delcache
 ```
 
 ### nameBeta
