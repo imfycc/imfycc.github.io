@@ -1,7 +1,7 @@
 ---
 title: 从哪里了解 Google Chrome 升级的新特性
 date: 2018-06-26 19:36:25
-updated: 2018-06-26 19:36:25
+updated: 2020-05-23
 tags:
 categories: 编程
 ---
@@ -13,17 +13,16 @@ categories: 编程
 ```
 canary -> dev -> beta -> stable
 ```
-![ustream-techtalks-google-chrome-developer-tools-5-638](/media/ustream-techtalks-google-chrome-developer-tools-5-638.jpg)
 
+{% qnimg chrome-version-diff.jpg 'alt:chrome version' extend:?imageView2/2/w/750 %}
 
 `canary` 是最激进的，几乎每天都更新。
 
-`stable` 是稳定版，是面向普通用户，平均六个月更新一次
+`stable` 是稳定版，是面向普通用户，平均六周更新一次
 
 `canary` 和 `stable` 会相差 2 个左右的版本。比如 `stable` 版本现在（2018年6月26日）是 67，`canary` 现在是 69。
 
-![C12Q3aEWgAAwhBE](/media/C12Q3aEWgAAwhBE.jpg)
-
+{% qnimg chrome-update-time.jpg 'alt:chrome update' extend:?imageView2/2/w/750 %}
 
 ## Chromium 和 Chrome 的区别
 
