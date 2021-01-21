@@ -1,8 +1,6 @@
 # SubNav
 menu:
-  笔记: "https://hufangyun.com/MyTech"
   关于: /2014/aboutme/
-  #友链: /2014/friends/
 subnav:
   github: "https://github.com/Youthink"
   weibo: "http://weibo.com/u/5263249441"
