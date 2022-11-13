@@ -125,7 +125,7 @@ theme: yearn
 deploy:
   type: git
   repo:
-    coding: https://git.coding.net/Youthink/Youthink.git
+    coding: https://e.coding.net/Youthink/Youthink.git
     github: https://github.com/Youthink/Youthink.github.io.git
   name: Youthink
   email: hufy3651@foxmail.com
