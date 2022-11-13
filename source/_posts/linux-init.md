@@ -1,7 +1,7 @@
 ---
 title: linux 服务器初始化配置流程
 date: 2017-12-9
-updated: 2019-11-26
+updated: 2022-11-13
 tags:
 categories: 编程
 ---
@@ -11,11 +11,28 @@ categories: 编程
 > 开发 `web` 应用的时候，经常需要配置服务器。我在阮一峰老师的 [Linux服务器的初步配置流程](http://www.ruanyifeng.com/blog/2014/03/server_setup.html) 的基础上，整理了这篇笔记。节约以后配置服务器的时间。 
 
 ## 修改 root 密码
+如果服务器的默认账号是 root
 
 `root` 账户默认没有密码 安全起见 先初始化一个
 
 ```
 passwd
+```
+
+### 腾讯云服务器
+
+默认账户是 ubuntu，初始密码是自己设置的。忘记的话可以重置密码。
+
+修改 root 密码
+
+```shell
+sudo passwd root
+```
+
+切换用户
+
+```shell
+su ubuntu
 ```
 
 ## 创建 Linux 管理员账户
@@ -64,13 +81,6 @@ root    ALL=(ALL:ALL) ALL
 
 ```
 root    ALL=(ALL:ALL) ALL
-www    ALL=(ALL) NOPASSWD: ALL
-```
-
-上面的 `NOPASSWD` 表示，切换 sudo 的时候，不需要输入密码。如果出于安全考虑，也可以强制要求输入密码。
-
-```
-root    ALL=(ALL:ALL) ALL
 www    ALL=(ALL:ALL) ALL
 ```
 
@@ -97,12 +107,12 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub -p 25000 root@123.456.78
 ```
 // Host 字段后面的名称自定义
 Host day-root
-  hostname 132.111.111.111
+  hostname 123.456.78
   port 25000
   user root
 
 Host day
-  hostname 132.111.111.111
+  hostname 123.456.78
   port 25000
   user www
 ```
@@ -122,11 +132,15 @@ sudo vi /etc/ssh/sshd_config
 Port 25000
 ```
 
+如果修改了端口，记的也修改:
+* 本地的 ssh 配置 ~/.ssh/config 内的端口 
+* 云服务器的防火墙 ssh 的端口设置
+
 然后，检查几个设置是否设成下面这样，确保去除前面的#号。
 
 选项|含义
 ---|---
-Protocol 2  | ssh 协议使用新版的
+~~Protocol 2~~  | ssh 协议使用新版的
 PermitRootLogin no |不允许 root 登录
 PermitEmptyPasswords no |  不允许空密码登录
 PasswordAuthentication no |  使用密码授权登录
@@ -156,6 +170,35 @@ sudo service ssh restart
 ```
 sudo /etc/init.d/ssh restart
 ```
+
+如果重启失败，报错如下：
+
+```sh
+root@VM-24-5-ubuntu:/home/lighthouse# sudo service ssh restart
+Job for ssh.service failed because the control process exited with error code.
+See "systemctl status ssh.service" and "journalctl -xeu ssh.service" for details.
+root@VM-24-5-ubuntu:/home/lighthouse# systemctl status ssh.service
+× ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Sun 2022-11-13 15:44:49 CST; 5s ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 9511 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=255/EXCEPTION)
+        CPU: 6ms
+
+Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Scheduled restart job, restart counter is at 5.
+Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: Stopped OpenBSD Secure Shell server.
+Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Start request repeated too quickly.
+Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Failed with result 'exit-code'.
+Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: Failed to start OpenBSD Secure Shell server.
+```
+
+大概率是配置文件修改错了，可以使用以下命令检查配置错误。
+```
+/usr/sbin/sshd -T
+```
+根据提示进行修改。
+
 
 ## 运行环境配置
 
@@ -226,22 +269,6 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 > 安全组是一种虚拟防火墙，具备状态检测包过滤功能。安全组用于设置单台或多台云服务器的网络访问控制，它是重要的网络安全隔离手段，用于在云端划分安全域。
 
 >安全组是一个逻辑上的分组，这个分组是由同一个地域（Region）内具有相同安全保护需求并相互信任的实例组成。每个实例至少属于一个安全组，在创建的时候就需要指定。同一安全组内的实例之间网络互通，不同安全组的实例之间默认内网不通。可以授权两个安全组之间互访。
-
-### 腾讯云服务器
-
-默认账户是 ubuntu，初始密码是自己设置的。忘记的话可以重置密码。
-
-修改 root 密码
-
-```shell
-sudo passwd root
-```
-
-切换用户
-
-```shell
-su www
-```
 
 ## 参考
 [Linux服务器的初步配置流程](http://www.ruanyifeng.com/blog/2014/03/server_setup.html)
