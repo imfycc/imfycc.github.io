@@ -319,6 +319,12 @@ h2, h3, h4 {
         img {
           width:100%;
         }
+        &.website-info {
+          width: unset;
+          height: 63px;
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
