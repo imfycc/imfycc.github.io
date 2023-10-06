@@ -1,12 +1,23 @@
 ---
 title: 如何给网站添加免费的 https 证书
 date: 2019-11-27
-updated: 2019-11-27
+updated: 2023-10-06
 tags:
 categories: 编程
 ---
 
 {% qnimg https-config.jpg 'alt:https' %}
+
+> 2023年10月06更新
+>
+> 已经好久没搞过 SSL 证书的申请了，感觉折腾起来应该挺麻烦的，第一反应先去谷歌了一下。然后在前几条搜索里居然看到了自己的博文，哈哈哈。一看时间是 4 年前写的了，但是按照内容走了一遍流程居然没过时，依然适用，太意外了。而且设置证书挺简单的，整个流程输入几个命令就自动设置好了，全程不到 5 分钟。So easy!
+>
+> certbot 的命令自动帮你申请证书、配置到 nginx 上，都不需要自己修改和重启 nginx 服务。整个流程很简单。
+>
+> 这也是写博文的好处吧。做个记录，方便大家，也方便以后的自己。😆
+
+以下是正文
+---
 
 最近部署了一个新服务，想给域名启用 `https`，结果搜了半天，在我的博客里只发现了这一篇笔记：[阿里云免费证书域名启用 https](https://hufangyun.com/2017/https-aliyun-free/)
 
@@ -18,7 +29,7 @@ categories: 编程
 
 1、去 [certbot](https://certbot.eff.org/) 官网。
 
-2、在页面上选择一下你用的 `Web` 服务器和操作系统。比如，我选的 `Nginx` 和 `Ubuntu 18.04`
+2、在页面上选择一下你用的 `Web` 服务器和操作系统。比如，我选的 `Nginx` 和 `Ubuntu 22.04`。选项里没找到 Ubuntu 22 版本，我选了个 20 的，也是一样的。
 
 3、页面上会出现操作步骤，按照提示的步骤一步步执行命令就可以了。
 
@@ -47,4 +58,3 @@ ssl_certificate_key /etc/letsencrypt/live/coolshell.cn/privkey.pem; # managed by
 include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
 ```
 然后，`nginx -s reload` 就好了。
-
