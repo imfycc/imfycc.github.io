@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>npm 技巧汇总(含国内填坑指南)</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    npm 技巧汇总(含国内填坑指南)
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-08-05T12:32:05.000Z" itemprop="datePublished">2017-08-05</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2018-04-26T12:32:05.000Z" itemprop="dateUpdated">2018-04-26</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="针对国内的-npm-配置"><a href="#针对国内的-npm-配置" class="headerlink" title="针对国内的 npm 配置"></a>针对国内的 <code>npm</code> 配置</h2><blockquote>
+<p>因为中国社会主义特色，部分代码库在下载的时候，有些坎坷。可以做以下的配置优化</p>
+</blockquote>
+<h3 id="npm-使用国内源"><a href="#npm-使用国内源" class="headerlink" title="npm 使用国内源"></a><code>npm</code> 使用国内源</h3><p>使用 <code>cnpm</code> 的源</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry http:&#x2F;&#x2F;registry.cnpmjs.org</span><br></pre></td></tr></table></figure>
+<p>或者使用淘宝的源</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>除了上面使用命令的方式，也可以直接在 <code>~/.npmrc</code> 文件添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置变量"><a href="#设置变量" class="headerlink" title="设置变量"></a>设置变量</h3><blockquote>
+<p>以下几个地址，也替换成淘宝的源，加快下载速度。</p>
+</blockquote>
+<p>在 <code>~/.npmrc</code> 文件添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass&#x2F;</span><br><span class="line">phantomjs_cdnurl&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;phantomjs&#x2F;</span><br><span class="line">electron_mirror&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;electron&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-其他技巧"><a href="#npm-其他技巧" class="headerlink" title="npm 其他技巧"></a><code>npm</code> 其他技巧</h2><h3 id="npm-检查-package-json-中未声明的-package"><a href="#npm-检查-package-json-中未声明的-package" class="headerlink" title="npm 检查 package.json 中未声明的 package"></a><code>npm</code> 检查 <code>package.json</code> 中未声明的 <code>package</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm prune</span><br></pre></td></tr></table></figure>
+
+<p>运行 <code>prune</code> 命令，<code>npm CLI</code> 会读取 <code>package.json</code>，并将结果与项目的 <code>/node_modules</code> 目录进行对比，并打印出不在 <code>package.json</code> 之列的模块列表。</p>
+<h3 id="npm-改变所有项目的默认前缀"><a href="#npm-改变所有项目的默认前缀" class="headerlink" title="npm 改变所有项目的默认前缀"></a><code>npm</code> 改变所有项目的默认前缀</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set save-prefix ~</span><br></pre></td></tr></table></figure>
+<p>使用 <code>~</code> 比默认的 <code>^</code> 行为更加保守。</p>
+<p><code>~</code> 将依赖锁定在小版本，允许使用 <code>npm update</code> 安装补丁版本。</p>
+<p><code>^</code> 将依赖锁定在主版本，允许使用 <code>npm update</code> 更新小版本。</p>
+<h3 id="设置-pyhton-版本"><a href="#设置-pyhton-版本" class="headerlink" title="设置 pyhton 版本"></a>设置 pyhton 版本</h3><blockquote>
+<p>有些库可能需要 <code>python</code> 辅助编译, 比如 <code>node-sass</code> 相关的 <code>node-gyp</code></p>
+</blockquote>
+<p>大部分库默认使用的 <code>python2</code>,因为 <code>Mac</code> 本身就内置了。如果你的电脑上安装了 <code>python</code> 的默认版本是 <code>3.x</code>,打包的时候就会报错。可以这样设置：</p>
+<p>使用命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set python python2.7</span><br></pre></td></tr></table></figure>
+
+<p>或者在 <code>~/.npmrc</code> 文件添加下面这一行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python&#x3D;python2.7</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2018 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

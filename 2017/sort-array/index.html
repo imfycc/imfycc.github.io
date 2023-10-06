@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>深入浅出 JavaScript 的Array.prototype.sort 排序算法</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    深入浅出 JavaScript 的Array.prototype.sort 排序算法
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-08-07T11:56:42.000Z" itemprop="datePublished">2017-08-07</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2017-08-13T11:56:42.000Z" itemprop="dateUpdated">2017-08-13</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <div class="overdue-remind">
+          本文最后更新于$day天前，文中所描述的信息可能已发生改变。
+        </div>
+        
+        <h2 id="本文要解决的问题"><a href="#本文要解决的问题" class="headerlink" title="本文要解决的问题"></a>本文要解决的问题</h2><blockquote>
+<p>1、找出 <code>Array.prototype.sort</code> 使用的什么排序算法</p>
+</blockquote>
+<blockquote>
+<p>2、用一种直观的方式展示 <code>Array.prototype.sort</code> 的时间复杂度，看看它有多快？</p>
+</blockquote>
+<blockquote>
+<p>3、实际开发中要注意的问题</p>
+</blockquote>
+<h2 id="Array-prototype-sort-各浏览器的算法实现"><a href="#Array-prototype-sort-各浏览器的算法实现" class="headerlink" title="Array.prototype.sort 各浏览器的算法实现"></a><code>Array.prototype.sort</code> 各浏览器的算法实现</h2><p><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.11" target="_blank" rel="noopener">ECMAScript 5.1</a></p>
+<p><a href="http://www.ecma-international.cma-262/6.0/#sec-array.prototype.sort" target="_blank" rel="noopener">ECMAScript 6.0</a></p>
+<p><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.sort" target="_blank" rel="noopener">ECMAScript 草案</a></p>
+<p>看完上面三个规范中 <code>Array.prototype.sort</code> 部分，我们会发现 <code>ECMAScript</code> 不同版本规范对 <code>Array.prototype.sort</code> 的定义中没有要求用什么样的排序方式实现 <code>sort()</code> 方法，也没有要求是否要采用稳定算法（下文会解释什么是稳定算法）。</p>
+<p>因此各浏览器都给出自己的实现方式：</p>
+<p>表格内容部分来自于<a href="https://zh.wikipedia.org/wiki/JavaScript%E5%BC%95%E6%93%8E" target="_blank" rel="noopener">维基百科</a></p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>使用的 JavaScript 引擎</th>
+<th>排序算法</th>
+<th>源码地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Google Chrome</td>
+<td>V8</td>
+<td>插入排序和快速排序</td>
+<td><a href="https://github.com/v8/v8/blob/master/src/js/array.js#L768" target="_blank" rel="noopener"><code>sort</code> 源码实现</a></td>
+</tr>
+<tr>
+<td>Mozilla Firefox</td>
+<td>SpiderMonkey</td>
+<td>归并排序</td>
+<td><a href="https://github.com/mozilla/gecko-dev/blob/master/js/src/jsarray.cpp" target="_blank" rel="noopener"><code>sort</code> 源码实现</a></td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Nitro（JavaScriptCore ）</td>
+<td>归并排序和桶排序</td>
+<td><a href="https://github.com/WebKit/webkit/blob/master/Source/JavaScriptCore/builtins/ArrayPrototype.js#L423" target="_blank" rel="noopener"><code>sort</code> 源码实现 </a></td>
+</tr>
+<tr>
+<td>Microsoft Edge 和 IE(9+)</td>
+<td>Chakra</td>
+<td>快速排序</td>
+<td><a href="https://github.com/Microsoft/ChakraCore/blob/master/lib/Common/DataStructures/QuickSort.h" target="_blank" rel="noopener"> <code>sort</code> 源码实现</a></td>
+</tr>
+</tbody></table>
+<h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><p>V8引擎的一段注释</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// In-place QuickSort algorithm.</span></span><br><span class="line"><span class="comment">// For short (length &lt;= 10) arrays, insertion sort is used for efficiency.</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Google Chrome</code> 对 <code>sort</code> 做了特殊处理，对于长度 <code>&lt;= 10</code> 的数组使用的是插入排序(稳定排序算法) ，<code>&gt;10</code> 的数组使用的是快速排序。快速排序是不稳定的排序算法。</p>
+<p>但是很明显比我们常见的快速排序要复杂得多，不过核心算法还是快速排序。算法复杂的原因在于v8出于性能考虑进行了很多优化。</p>
+<p>再看 <code>safari</code> <code>Nitro</code> 引擎的一段代码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> comparator == <span class="string">"function"</span>)</span><br><span class="line">  comparatorSort(array, length, comparator);</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (comparator === <span class="literal">null</span> || comparator === @<span class="literal">undefined</span>)</span><br><span class="line">  stringSort(array, length);</span><br><span class="line"></span><br><span class="line">  省略....</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringSort</span>(<span class="params">array, length</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> valueCount = compact(array, length);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> strings = @newArrayWithSize(valueCount);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; valueCount; ++i)</span><br><span class="line">      strings[i] = &#123; <span class="attr">string</span>: @toString(array[i]), <span class="attr">value</span>: array[i] &#125;;</span><br><span class="line"></span><br><span class="line">  bucketSort(array, <span class="number">0</span>, strings, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  省略....</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">comparatorSort</span>(<span class="params">array, length, comparator</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> valueCount = compact(array, length);</span><br><span class="line">  mergeSort(array, valueCount, comparator);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认使用的桶排序，如果 <code>sort</code> 传入的自定义函数作为参数，就是用归并排序（稳定排序算法）</p>
+<p><code>Firefox</code> 源码就不贴了，上面的表格有源码地址，使用的稳定排序算法 — 归并算法。<br><code>Microsoft Edge</code> 和 <code>IE(9+)</code> 使用的不稳定排序算法 - 快速排序。<br>但是 IE（6、7、8）使用的稳定算法。</p>
+<h3 id="各种算法的对比"><a href="#各种算法的对比" class="headerlink" title="各种算法的对比"></a>各种算法的对比</h3><table>
+<thead>
+<tr>
+<th>排序类型</th>
+<th>平均情况</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>辅助空间</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>快速排序</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(n²)</td>
+<td>O(nlogn)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(n)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>O(n+k)</td>
+<td>O(n+k)</td>
+<td>O(n²)</td>
+<td>O(n+k)</td>
+<td>(不)稳定</td>
+</tr>
+</tbody></table>
+<p>注: 桶排序的稳定性取决于桶内排序的稳定性, 因此其稳定性不确定。</p>
+<p><strong>算法时间复杂度</strong></p>
+<pre><code>在进行算法分析时，语句总的执行次数T(n)是关于问题规模n的函数，
+进而分析T(n)随着n的变化情况并确定T(n)的数量级。
+算法的时间复杂度，也就是算法的时间度量，记作：T(n)=O(f(n))。
+它表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，
+称作算法的时间复杂度，简称为时间复杂度。
+其中f(n)是问题规模n的某个函数。</code></pre><p><strong>常用的时间复杂度所耗费的时间从小到大依次是</strong></p>
+<p>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n²) &lt; O(n³) &lt; O(2^n) &lt; O(n!) &lt; O(n^n)</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fij5oloa7fj319o0wo424.jpg" alt=""></p>
+<p><a href="http://bigocheatsheet.com/" target="_blank" rel="noopener">图片来源</a></p>
+<p>算法的时间复杂度与运行时间有一些常见的比例关系 <a href="http://www.cnblogs.com/gaochundong/p/complexity_of_algorithms.html" target="_blank" rel="noopener">查看图表来源</a></p>
+<table>
+<thead>
+<tr>
+<th>复杂度</th>
+<th>10</th>
+<th>20</th>
+<th>50</th>
+<th>100</th>
+<th>1,000</th>
+<th>10,000</th>
+<th>100,000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(1)</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+</tr>
+<tr>
+<td>O(log(n))</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+</tr>
+<tr>
+<td>O(n*log(n))</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>2 s</td>
+<td>3-4 min</td>
+</tr>
+<tr>
+<td>O(n³)</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>20 s</td>
+<td>5 hours</td>
+<td>231 days</td>
+</tr>
+<tr>
+<td>O(2^n)</td>
+<td>&lt; 1s</td>
+<td>&lt; 1s</td>
+<td>260 days</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+</tr>
+<tr>
+<td>O(n!)</td>
+<td>&lt; 1s</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+</tr>
+<tr>
+<td>O(n^n)</td>
+<td>3-4 min</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+<td>hangs</td>
+</tr>
+</tbody></table>
+<p><strong>维基百科关于算法稳定性的解释</strong></p>
+<blockquote>
+<p>当相等的元素是无法分辨的，比如像是整数，稳定性并不是一个问题。然而，假设以下的数对将要以他们的第一个数字来排序。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(4, 1)  (3, 1)  (3, 7)（5, 6）</span><br></pre></td></tr></table></figure>
+<p>在这个状况下，有可能产生两种不同的结果，一个是让相等键值的纪录维持相对的次序，而另外一个则没有：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(3, 1)  (3, 7)  (4, 1)  (5, 6)  (维持次序）</span><br><span class="line">(3, 7)  (3, 1)  (4, 1)  (5, 6)  （次序被改变）</span><br></pre></td></tr></table></figure>
+<p><strong>想看自己浏览器排序算法的稳定性？</strong> <a href="http://ofb.net/~sethml/is-sort-stable.html" target="_blank" rel="noopener">点我</a></p>
+<h2 id="有多快哪"><a href="#有多快哪" class="headerlink" title="有多快哪"></a>有多快哪</h2><p>我们先通过这个<a href="http://math.hws.edu/eck/js/sorting/xSortLab.html" target="_blank" rel="noopener">在线网站</a>大体测试一下</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fij7d6mhr8j314607i75u.jpg" alt=""></p>
+<h2 id="浏览器的实现不同有什么影响"><a href="#浏览器的实现不同有什么影响" class="headerlink" title="浏览器的实现不同有什么影响"></a>浏览器的实现不同有什么影响</h2><p>排序算法不稳定有什么影响</p>
+<p>举个例子：</p>
+<p>某市的机动车牌照拍卖系统，最终中标的规则为：</p>
+<p> 1、按价格进行倒排序；</p>
+<p> 2、相同价格则按照竞标顺位（即价格提交时间）进行正排序。</p>
+<p>排序若是在前端进行，那么采用快速排序的浏览器中显示的中标者很可能是不符合预期的。</p>
+<p><strong>解决办法</strong></p>
+<p><a href="http://ued.ctrip.com/blog/array-prototype-sort-differences-in-different-browsers-and-solution.html" target="_blank" rel="noopener">Array.prototype.sort 在不同浏览器中的差异和解决办法</a></p>
+<p>大体的思路就是，自己写一个稳定的排序函数，以保持各浏览器的一致性。</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="http://www.ruanyifeng.com/blog/2011/04/quicksort_in_javascript.html?bsh2、_bid=124324679" target="_blank" rel="noopener">快速排序（Quicksort）的Javascript实现</a></p>
+<p><a href="http://louiszhai.github.io/2016/12/23/sort/#归并排序" target="_blank" rel="noopener">JS中可能用得到的全部的排序算法</a></p>
+<p><a href="http://www.cnblogs.com/tsingke/p/5347660.html" target="_blank" rel="noopener">7 种常用的排序算法-可视化</a></p>
+<p><a href="http://www.iteye.com/topic/1138374" target="_blank" rel="noopener">深入了解javascript的sort方法</a></p>
+<p><a href="http://www.qcyoung.com/2016/12/18/JavaScript%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%B1%87%E6%80%BB/" target="_blank" rel="noopener">JavaScript 排序算法汇总</a></p>
+<p><a href="http://louiszhai.github.io/2016/12/23/sort/#归并排序" target="_blank" rel="noopener">JS中可能用得到的全部的排序算法</a></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://efe.baidu.com/blog/talk-about-sort-in-front-end/" target="_blank" rel="noopener">聊聊前端排序的那些事</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95#.E7.A9.A9.E5.AE.9A.E6.80.A7" target="_blank" rel="noopener">排序算法</a></p>
+<p><a href="http://www.qcyoung.com/2016/12/18/JavaScript%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%B1%87%E6%80%BB/" target="_blank" rel="noopener">JavaScript排序算法汇总</a></p>
+<p><a href="https://segmentfault.com/a/1190000008138236" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008138236</a></p>
+<p><a href="http://www.iteye.com/topic/1138374" target="_blank" rel="noopener">http://www.iteye.com/topic/1138374</a></p>
+<p><a href="http://www.chongchonggou.com/g_41116884.html" target="_blank" rel="noopener">http://www.chongchonggou.com/g_41116884.html</a></p>
+<p><a href="https://www.teakki.com/p/57dfbf44d3a7507f975f1dd4" target="_blank" rel="noopener">https://www.teakki.com/p/57dfbf44d3a7507f975f1dd4</a></p>
+<p><a href="http://www.cfei.net/archives/21242" target="_blank" rel="noopener">http://www.cfei.net/archives/21242</a><br><a href="http://bbs.it-home.org/thread-71910-1-1.html" target="_blank" rel="noopener">http://bbs.it-home.org/thread-71910-1-1.html</a></p>
+<p><a href="https://www.ctolib.com/topics-74795.html" target="_blank" rel="noopener">https://www.ctolib.com/topics-74795.html</a></p>
+<p><a href="http://www.techug.com/post/sort-in-browser.html" target="_blank" rel="noopener">http://www.techug.com/post/sort-in-browser.html</a></p>
+<p><a href="http://imweb.io/topic/565cf7253ad940357eb99881" target="_blank" rel="noopener">http://imweb.io/topic/565cf7253ad940357eb99881</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2018 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

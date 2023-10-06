@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>JavaScript 文件的异步加载 async 和 defer</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    JavaScript 文件的异步加载 async 和 defer
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2018-11-05T07:32:06.000Z" itemprop="datePublished">2018-11-05</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-10-16T16:00:00.000Z" itemprop="dateUpdated">2019-10-17</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在 webpack 等工具的照料下，我们忘记了很多的东西，比如说 JavaScript 文件的异步加载，异步执行等等内容。唯一能记起是关于 script 的优化可能是把 script 标签放到页面底部。</p>
+<p>某次你看到 ‘<script src="mylib.js" async></script>‘ 这样的引入语句，请问这 async 到底是什么意义呢？</p>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>1、学习 async 的作用，使用限制等。</p>
+<p>2、有没有其他类似的属性呢？</p>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><p>性能优化</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>聊 JavaScript 文件的异步加载之前，我们先来看一段 HTML 文档的加载流程。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://a.com/a.js"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span></span><br><span class="line">  这里有很多的 HTML 标签和内容</span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>对于上面的 HTML 文档，浏览器的解析过程如下：</p>
+<p>1、浏览器一边下载 HTML 网页，一边开始解析(并不是下载完之后，才开始开始解析)。</p>
+<p>2、解析过程中，浏览器发现 <code>&lt;script&gt;</code> 标签就暂停解析，把网页渲染的控制权转交给 JavaScript 引擎。</p>
+<p>3、如果 <code>&lt;script&gt;</code> 标签引用了外部脚本，就下载该脚本再执行，否则就直接执行代码。</p>
+<p>4、JavaScript 引擎执行完毕，控制权交还渲染引擎，继续解析 HTML 网页。</p>
+<p>加载外部脚本时，浏览器会暂停页面渲染，等待脚本下载并执行完成后再继续渲染。</p>
+<img src="https://static.hufangyun.com/hexo/img/js-async-2.jpg?imageView2/2/w/600">
+
+<p>这就是为什么我们一般建议把 <code>&lt;script&gt;</code> 标签放在 <code>&lt;/body&gt;</code> 之前，而不是放在 <code>&lt;head&gt;&lt;/head&gt;</code> 中，因为加载 <code>&lt;script&gt;</code> 中的脚本并执行会阻塞 HTML 页面的渲染，当 JavaScript 文件很大的时候，甚至会长时间出现白屏。</p>
+<p>有没有什么办法可以优化 JavaScript 文件的加载执行，提高页面加载的效率？</p>
+<h2 id="解读-async-和-defer-属性"><a href="#解读-async-和-defer-属性" class="headerlink" title="解读 async 和 defer 属性"></a>解读 async 和 defer 属性</h2><p>翻阅 <a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5 的文档</a> 就会发现，<code>&lt;script&gt;</code> 还有 <code>async</code> 和 <code>defer</code> 两个和脚本加载执行有关的属性。</p>
+<blockquote>
+<p>async - Execute script in parallel //并行执行脚本</p>
+<p>defer - Defer script execution // 延迟执行脚本</p>
+</blockquote>
+<p><a href="https://www.w3.org/TR/html4/interact/scripts.html#18.2.1" target="_blank" rel="noopener">HTML4.1</a>是这么解释 defer 的：</p>
+<blockquote>
+<p>When set, this boolean attribute provides a hint to the user agent that the script is not going to generate any document content (e.g., no “document.write” in javascript) and thus, the user agent can continue parsing and rendering.</p>
+</blockquote>
+<p>就是说浏览器在遇到设置了 defer 的 <code>&lt;script&gt;</code> 时，加载了 JavaScript 文件后，不会立即执行，不会阻塞浏览器解析 HTML，而且如果设置了 defer 不要在 JavaScript 脚本里写 <code>document.write</code>。</p>
+<p><a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a>这么解释 defer 和 async 的：</p>
+<p>此处省略将近 1500 字的英文引用，感兴趣点击的 <a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a> 文档。</p>
+<p>对省略的原文总结如下：</p>
+<p>1、defer 和 async 只对外部加载的脚本有效果，<code>&lt;script&gt;</code> 包含的 JavaScript 代码块无效。</p>
+<p>2、必须设置了 <code>src</code> 属性，不然 defer 和 async 也无效。</p>
+<p>3、defer 和 async 这两个值是布尔类型的。</p>
+<p>4、如果设置了 async 属性，会并行加载脚本文件并执行，下载时不会阻塞 HTML 的解析，但是脚本执行的时候会阻塞 HTML 的解析。如果没有设置 async 属性，但是设置了 defer 属性，也会并行加载脚本文件，但是会等到页面完成解析再去执行。如果这两个属性都没有设置，会阻塞页面解析，加载并执行脚本文件。三种方式的对比图如下：</p>
+<img alt="图片来源：www.w3c.org" src="https://static.hufangyun.com/hexo/img/js-async-1.jpg?imageView2/2/w/600"><span class="img-alt">图片来源：www.w3c.org</span>
+
+<p><a href="https://www.w3.org/TR/html53/semantics-scripting.html#element-attrdef-script-defer" target="_blank" rel="noopener">HTML5.3</a>的文档把第四条补充了一下。。。</p>
+<p>1、defer 对 module 脚本是无效的，但是 async 是有效的</p>
+<p>2、如果同时设置了 defer 和 async 为 true， 以 defer 为准</p>
+<h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p>通过给 <code>&lt;script&gt;</code> 标签设置 defer 属性，将脚本文件设置为延迟加载，当浏览器遇到带有 defer 属性的 <code>&lt;script&gt;</code> 标签时，会再开启一个线程去下载 JavaScript 文件，同时继续解析 HTML 文档，等 HTML 全部解析完毕 DOM 加载完成之后(也就是DOMContentLoaded 事件之后 onload 事件之前)，再去执行加载好的 JavaScript 文件。多个js文件的执行顺序就是它们在页面中出现的顺序。</p>
+<p>async 属性和 defer 属性类似，也是会开启一个线程去下载 JavaScript 文件，但和defer 不同的是，它会在下载完成后立刻执行，而不是会等到 DOM 加载完成之后再执行，所以还是有可能会造成阻塞。对多个带有 async 的 JavaScript 文件，它不能像defer 那样保证按顺序执行，它是哪个 JavaScript 文件先下载完就先执行哪个。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>什么时候用 defer，什么时候用 async 呢？</p>
+<p>一般来说，两者之间的选择则是看脚本之间是否有依赖关系，有依赖的话应当要保证执行顺序，应当使用 defer 没有依赖的话使用 async。要注意的是两者都不应该使用 <code>document.write</code>，这个导致整个页面被清除。</p>
+<p>模块化的代码、测试代码或者监听代码使用 async。</p>
+<p>这两个值是布尔类型的，在 HTML 里面只写属性名即可。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://a.com/a.js"</span> <span class="attr">async</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不考虑兼容 IE 浏览器，完全可以将 <code>&lt;script&gt;</code> 放在 <code>&lt;head&gt;</code> 里，同时守设置 defer 属性，这样 HTML 解析的时候，可以并行下载 JavaScript 脚本，等 HTML 页面解析完，JavaScript 脚本在开始执行，充分利用资源。比如查看 gitlab 页面源码。</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>defer 是 HTML4 就有的属性，而 async 是 HTML5 新加入的属性。defer 出现的早，IE6 及以上的浏览器基本都支持，可以放心用。 async IE10 就开始支持了，移动端的支持比较好。不考虑 IE 的话，两个属性都可以放心使用。</p>
+<p>兼容性可以点击这里查看<a href="https://caniuse.com" target="_blank" rel="noopener">caniuse</a></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>如果同时设置了 defer 和 async 为 true，浏览器会怎么执行？</p>
+<p>我们做个小实验。</p>
+<p>新建一个文件夹，文件结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── 1.js</span><br><span class="line">├── 2.js</span><br><span class="line">└── index.html</span><br></pre></td></tr></table></figure>
+
+<p>1.js 如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alert(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>2.js 如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>index.html 的内容如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"./1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"./2.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试 async 和 defer <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  alert(3);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>设置两个 js 是为了排除 async 和 defer 先后顺序的影响。</p>
+<p>FireFox、Chrome、Safari、三个浏览器的执行结构都是 3、1、2，说明同时设置了 defer 和 async 为 true， 以 defer 为准。</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" target="_blank" rel="noopener">async vs defer attributes</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5bcdaed7e51d457a8254e1b7" target="_blank" rel="noopener">网页性能优化之异步加载js文件 - 掘金</a></p>
+<p><a href="https://www.w3.org/TR/html4/interact/scripts.html#18.2.1" target="_blank" rel="noopener">HTML4.1</a></p>
+<p><a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a></p>
+<p><a href="https://www.w3.org/TR/html53/semantics-scripting.html#element-attrdef-script-defer" target="_blank" rel="noopener">HTML5.3</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2018 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+
