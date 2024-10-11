@@ -255,9 +255,9 @@ gl workflow:delcache
 
 {% qnimg alfred-namebeta.jpg extend:?imageView2/2/w/500 %}
 
-🏠 [主页](https://github.com/Youthink/alfred-namebeta-workflow)
+🏠 [主页](https://github.com/imfycc/alfred-namebeta-workflow)
 
-⬇️ [下载地址](https://github.com/Youthink/alfred-namebeta-workflow/blob/master/alfred-namebeta.com-workflow.alfredworkflow)
+⬇️ [下载地址](https://github.com/imfycc/alfred-namebeta-workflow/blob/master/alfred-namebeta.com-workflow.alfredworkflow)
 
 ### node
 > 搜索 npm 包

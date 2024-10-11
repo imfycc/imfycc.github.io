@@ -203,7 +203,7 @@ links 表
 
 ## 项目源码
 
-使用 Elixir + phoenix 技术栈 [short_url](https://github.com/Youthink/short_url) 
+使用 Elixir + phoenix 技术栈 [short_url](https://github.com/imfycc/short_url) 
 
 
     

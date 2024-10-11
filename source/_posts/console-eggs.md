@@ -90,7 +90,7 @@ http://picascii.com/
 ```js
 var consoleConfig = {
     welcome: '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n',
-    theme: '\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n',
+    theme: '\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n',
     qrcode: '\n扫描下面的二维码，在手机上查看博客！\n',
     search: '\n想知道这个效果如何实现的？博客内搜索 console 彩蛋！\n'
 };

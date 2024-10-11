@@ -1,5 +1,5 @@
 {
-  "name": "VicSugar",
+  "name": "Yearn",
   "version": "1.0.1",
   "description": "a theme for hexo",
   "scripts": {
@@ -13,8 +13,8 @@
     "blog"
   ],
   "main": "index.js",
-  "repository": "https://github.com/Youthink/VicSugar.git",
-  "author": "Youthink <hufy78@gmail.com>",
+  "repository": "https://github.com/imfycc/hexo-themes-yearn.git",
+  "author": "imfycc <hufy3651@foxmail.com>",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8",

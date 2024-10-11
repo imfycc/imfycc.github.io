@@ -44,7 +44,7 @@ description:
 
 [RegexGolf](https://alf.nu/RegexGolf)
 
-[我整理的答案](https://github.com/Youthink/Regex-Golf-Answer)
+[我整理的答案](https://github.com/imfycc/Regex-Golf-Answer)
 
 [RegexGolf 答案](https://gist.github.com/jonathanmorley/8058871)
 

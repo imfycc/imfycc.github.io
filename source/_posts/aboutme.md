@@ -1,11 +1,11 @@
 ---
 title: 关于我
 date: 2014-01-15 00:00:00
-updated: 2020-03-09 13:24
+updated: 2024-10-11 22:35
 tags:
 ---
 
-[![Youthink`s Github Chart](http://ghchart.rshah.org/Youthink)](https://github.com/Youthink "image")
+[![imfycc`s Github Chart](http://ghchart.rshah.org/imfycc)](https://github.com/imfycc "image")
 
 > 年轻无为，卖码为生
 
