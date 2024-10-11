@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hufangyun.com/"/>
-  <updated>2021-05-14T00:27:00.000Z</updated>
+  <updated>2024-10-11T15:14:55.000Z</updated>
   <id>https://hufangyun.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>follow-app</title>
+    <link href="https://hufangyun.com/2024/follow-app/"/>
+    <id>https://hufangyun.com/2024/follow-app/</id>
+    <published>2024-10-11T15:14:55.000Z</published>
+    <updated>2024-10-11T15:14:55.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>记录一次服务器重启应用恢复过程</title>
@@ -482,31 +496,6 @@
     </summary>
     
       <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>短网址(short URL)系统的原理及其实现</title>
-    <link href="https://hufangyun.com/2017/short-url/"/>
-    <id>https://hufangyun.com/2017/short-url/</id>
-    <published>2017-11-09T11:00:35.000Z</published>
-    <updated>2019-10-02T10:32:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文仅授权过： <code>segmentfault</code> 转载</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote><p>提供一个短址服务<br>你有没有发现，我们的任务中出现长 URL 就会比较麻烦？如果有一个短址生成器就好了。虽然市面上有很多，但是我们可以重复发明一个轮子，利用这个机会尝试一下简单的 Web 全栈开发。</p></blockquote><h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>做一个短链接生成器，可以将一个长链接缩短成一个短链接。 </p><h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><blockquote><p>由 <a href="https://gigalixir.com/" target="_blank" rel="noopener">Gigalixir</a> 提供免费部署服务，该地址只用于体验，⚠️ 不提供数据维护存储。</p></blockquote><p><a href="https://fearless-trustworthy-aidi.gigalixirapp.com/" target="_blank" rel="noopener">体验地址</a></p><h2 id="要发车了-🚌"><a href="#要发车了-🚌" class="headerlink" title="要发车了 🚌"></a>要发车了 🚌</h2><p>发车前，和大家说一下</p><p>如果不想重复的造轮子，想开箱即用，可以使用基于 <code>PHP</code> 的开源软件 <a href="https://github.com/YOURLS/YOURLS" target="_blank" rel="noopener">YOURLS</a>。<code>YOURLS</code> 还可以和 <code>WordPress</code> 整合到一起，功能强大，可扩展性高。</p><blockquote><p>本文记录了开发短网址系统的整个过程，包括初期的算法调研、模块设计、数据库设计、功能扩展等。</p></blockquote><h2 id="什么是短链接-🔗"><a href="#什么是短链接-🔗" class="headerlink" title="什么是短链接 🔗"></a>什么是短链接 🔗</h2><blockquote><p>就是把普通网址，转换成比较短的网址。比如：<a href="http://t.cn/RlB2PdD" target="_blank" rel="noopener">http://t.cn/RlB2PdD</a> 这种，在微博这些限制字数的应用里。好处不言而喻。短、字符少、美观、便于发布、传播。 </p></blockquote><p>百度短网址 <a href="http://dwz.cn/" target="_blank" rel="noopener">http://dwz.cn/</a><br>谷歌短网址服务 <a href="https://goo.gl/" target="_blank" rel="noopener">https://goo.gl/</a> （需科学上网）号称是最快的 🚀</p><h2 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h2><p>当我们在浏览器里输入 <a href="http://t.cn/RlB2PdD" target="_blank" rel="noopener">http://t.cn/RlB2PdD</a> 时</p><ol><li>DNS首先解析获得 <a href="http://t.cn" target="_blank" rel="noopener">http://t.cn</a> 的 <code>IP</code> 地址</li><li>当 <code>DNS</code> 获得 <code>IP</code> 地址以后（比如：74.125.225.72），会向这个地址发送 <code>HTTP</code> <code>GET</code> 请求，查询短码 <code>RlB2PdD</code></li><li><a href="http://t.cn" target="_blank" rel="noopener">http://t.cn</a> 服务器会通过短码 <code>RlB2PdD</code> 获取对应的长 URL</li><li>请求通过 <code>HTTP</code> <code>301</code> 转到对应的长 URL <a href="https://m.helijia.com" target="_blank" rel="noopener">https://m.helijia.com</a> 。</li></ol><p>这里有个小的知识点，为什么要用 301 跳转而不是 302 呐？</p><blockquote><p>301 是永久重定向，302 是临时重定向。短地址一经生成就不会变化，所以用 301 是符合 <code>http</code> 语义的。同时对服务器压力也会有一定减少。<br>但是如果使用了 <code>301</code>，我们就无法统计到短地址被点击的次数了。而这个点击次数是一个非常有意思的大数据分析数据源。能够分析出的东西非常非常多。所以选择302虽然会增加服务器压力，但是我想是一个更好的选择。 </p></blockquote><blockquote><p>来自知乎 iammutex 的<a href="https://www.zhihu.com/question/29270034/answer/46446911" target="_blank" rel="noopener">答案</a></p></blockquote><h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>网上比较流行的算法有两种 自增序列算法、 摘要算法</p><h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><p><strong>自增序列算法</strong> 也叫永不重复算法</p><p>设置 id 自增，一个 10进制 id 对应一个 62进制的数值，1对1，也就不会出现重复的情况。这个利用的就是低进制转化为高进制时，字符数会减少的特性。</p><p>如下图：十进制 10000，对应不同进制的字符表示。 </p><img src="https://static.hufangyun.com/hexo/img/short-url.png?imageView2/2/w/300"><p>短址的长度一般设为 6 位，而每一位是由 <code>[a - z, A - Z, 0 - 9]</code> 总共 62 个字母组成的，所以 6 位的话，总共会有 62^6 ~= 568亿种组合，基本上够用了。</p><p>哈哈，这里附上一个进制转换工具 <a href="http://tool.lu/hexconvert/" target="_blank" rel="noopener">http://tool.lu/hexconvert/</a> 上图的数据就是用这个工具生成的。</p><p>具体的算法实现，自行谷歌。</p><h3 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h3><ol><li>将长网址 <code>md5</code> 生成 32 位签名串,分为 4 段, 每段 8 个字节</li><li>对这四段循环处理, 取 8 个字节, 将他看成 16 进制串与 0x3fffffff(30位1) 与操作, 即超过 30 位的忽略处理</li><li>这 30 位分成 6 段, 每 5 位的数字作为字母表的索引取得特定字符, 依次进行获得 6 位字符串</li><li>总的 <code>md5</code> 串可以获得 4 个 6 位串,取里面的任意一个就可作为这个长 url 的短 url 地址</li></ol><p>这种算法,虽然会生成4个,但是仍然存在重复几率</p><h3 id="两种算法对比"><a href="#两种算法对比" class="headerlink" title="两种算法对比"></a>两种算法对比</h3><p>第一种算法的好处就是简单好理解，永不重复。但是短码的长度不固定，随着 id 变大从一位长度开始递增。如果非要让短码长度固定也可以就是让 id 从指定的数字开始递增就可以了。百度短网址用的这种算法。上文说的开源短网址项目 <code>YOURLS</code> 也是采用了这种算法。<a href="https://github.com/YOURLS/YOURLS/blob/master/includes/functions.php" target="_blank" rel="noopener">源码学习</a></p><p>第二种算法，存在碰撞（重复）的可能性，虽然几率很小。短码位数是比较固定的。不会从一位长度递增到多位的。据说微博使用的这种算法。</p><p>我使用的算法一。有一个不太好的地方就是出现的短码是有序的，可能会不安全。我的处理方式是构造 62进制的字母不要按顺序排列。因为想实现自定义短码的功能，我又对算法一进行了优化，下文会介绍。</p><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><h3 id="自增序列算法流程图"><a href="#自增序列算法流程图" class="headerlink" title="自增序列算法流程图"></a>自增序列算法流程图</h3><div id="flowchart-0" class="flow-chart"></div><blockquote><p>只实现长链接转化为短链接的功能，不是很麻烦。在调研的过程中我发现<a href="https://www.dwz.cn" target="_blank" rel="noopener">百度短网址</a>可以自定义短码，我觉的这个功能挺不错，结果复杂度就是上图到下图的变化。😭</p></blockquote><h3 id="自增序列算法-用户自定义短码-流程图"><a href="#自增序列算法-用户自定义短码-流程图" class="headerlink" title="自增序列算法 + 用户自定义短码 流程图"></a>自增序列算法 + 用户自定义短码 流程图</h3><div id="flowchart-1" class="flow-chart"></div><p>百度短网址还允许用户自定义短码，算法二 摘要算法，不和 id 绑定，好像挺好实现这个功能的。</p><p>但是自增序列算法是和 id 绑定的，如果允许自定义短码就会占用之后的短码，之后的 id 要生成短码的时候就发现短码已经被用了，那么 id 自增一对一不冲突的优势就体现不出来了。</p><p><strong>那么怎么实现自定义短码呐？</strong></p><p>我是这样处理的：</p><blockquote><p>数据库增加一个类型 type 字段，用来标记短码是用户自定义生成的，还是系统自动生成的。<br>如果有用户自定义过短码，把它的类型标记自定义。每次根据 id 计算短码的时候，如果发现对应的短码被占用了，就从类型为自定义的记录里选取一条记录，用它的 id 去计算短码。<br>这样既可以区分哪些长连接是用户自己定义还是系统自动生成的，还可以不浪费被自定义短码占用的 id</p></blockquote><p>我保留了 1 到 2 位的 短码，从三位的短码开始生成的。就像域名的保留域名一样，好的要自己预留 😏 </p><table><thead><tr><th>位数</th><th>个数</th><th>区间</th></tr></thead><tbody><tr><td>1位</td><td>62</td><td>0 - 61</td></tr><tr><td>2位</td><td>3844</td><td>62 - 3843</td></tr><tr><td>3位</td><td>约 23万</td><td>3844 - 238327</td></tr><tr><td>4位</td><td>约 1400万</td><td>238328 - 14776335</td></tr><tr><td>5位</td><td>约 9.1亿</td><td>14776336 - 916132831</td></tr><tr><td>6位</td><td>约 568亿</td><td>916132832 - 56800235583</td></tr></tbody></table><h3 id="数据表设计"><a href="#数据表设计" class="headerlink" title="数据表设计"></a>数据表设计</h3><p>links 表</p><table><thead><tr><th>字段</th><th>含义</th></tr></thead><tbody><tr><td>id</td><td>link_id</td></tr><tr><td>url</td><td>长连接</td></tr><tr><td>keyword</td><td>短链接码</td></tr><tr><td>type</td><td>系统: “system” 自定义: “custom”</td></tr><tr><td>insert_at</td><td>插入时间</td></tr><tr><td>updated_at</td><td>更新时间</td></tr></tbody></table><h2 id="后期功能扩展"><a href="#后期功能扩展" class="headerlink" title="后期功能扩展"></a>后期功能扩展</h2><p>统计：点击量、访问的 ip 地域、用户使用的设备</p><p>管理后台：删除、数据量</p><p>登录：权限管理</p><p>设置密码：输入密码才可以继续访问</p><h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p>使用 Elixir + phoenix 技术栈 <a href="https://github.com/imfycc/short_url" target="_blank" rel="noopener">short_url</a> </p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始e=>end: 结束io1=>inputoutput: 输入网址io2=>inputoutput: 返回短网址op1=>operation: 返回对应的短码op2=>operation: 保存输入的网址到数据库op3=>operation: 根据id计算对应的短码op4=>operation: 更新短码到数据库cond1=>condition: 查询数据库是否存在对应的短码st->io1->cond1cond1(no,bottom)->op2->op3->op4->op1->io2->econd1(yes)->op1->io2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始e=>end: 结束io1=>inputoutput: 输入网址io2=>inputoutput: 返回短网址io3=>inputoutput: 提示用户该短码已存在io4=>inputoutput: 提示用户不能输入短链接op1=>operation: 返回短码op2=>operation: 保存输入的网址到数据库op3=>operation: 根据id计算对应的短码op4=>operation: 查询数据库获得一条自定义短码的url对应的id记录op5=>operation: 更新短码到数据库cond1=>condition: 查询数据库是否存在该URLcond2=>condition: 用户选择自定义短码cond3=>condition: 生成的短码是否存在cond4=>condition: 短码是否存在cond5=>condition: 短码是否存在cond6=>condition: 自定义的短码是否存在cond7=>condition: 用户输入的是短链接st->io1->cond7cond7(no,bottom)->cond1cond7(yes)->io4->econd1(no,bottom)->cond2cond1(yes)->op1->io2->econd2(no,bottom)->op3->cond4cond2(yes)->cond5cond4(no, bottom)->op5->op1->io2->econd4(yes)->op4->op3->cond4cond5(no,bottom)->op5cond5(yes)->io3->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本文仅授权过： &lt;code&gt;segmentfault&lt;/code&gt; 转载&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;提供一个短址服务&lt;br&gt;你
-      
-    
-    </summary>
-    
-      <category term="最热" scheme="https://hufangyun.com/categories/%E6%9C%80%E7%83%AD/"/>
     
     
   </entry>
