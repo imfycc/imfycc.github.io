@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>定时任务 crontab 命令的使用</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    定时任务 crontab 命令的使用
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-08-05T11:47:32.000Z" itemprop="datePublished">2017-08-05</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2017-08-04T16:00:00.000Z" itemprop="dateUpdated">2017-08-05</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <p>每个系统用户都可以有自己的 <code>crontab</code>（在 <code>/var/spool/cron/</code> 下</p>
+<p>要查看当前用户的 <code>crontab</code>，输入 <code>crontab -l</code></p>
+<p>要编辑 <code>crontab</code>，输入 <code>crontab -e</code></p>
+<p>要删除 <code>crontab</code>，输入 <code>crontab -r</code></p>
+<h3 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式 :"></a>基本格式 :</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*　　*　　*　　*　　*　　command</span><br><span class="line">分　 时　 日　 月　 周　 命令</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">第 1 列表示分钟 1～59 每分钟用 * 或者 *&#x2F;1 表示</span><br><span class="line">第 2 列表示小时 1～23（0 表示 0 点）</span><br><span class="line">第 3 列表示日期 1～31</span><br><span class="line">第 4 列表示月份 1～12</span><br><span class="line">第 5 列标识号星期 0～6（0 表示星期天）</span><br><span class="line">第 6 列要运行的命令</span><br><span class="line">* 逗号( , ) 指定列表值。如:  1, 3, 4, 7, 8</span><br><span class="line">* 中横线( - ) 指定范围值 如  1-6, 代表 1, 2, 3, 4, 5, 6</span><br><span class="line">* 星号 ( * ) 代表所有可能的值</span><br></pre></td></tr></table></figure>
+
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">30 21 * * * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>上面的例子表示每晚的21:30重启 <code>apache</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">45 4 1,10,22 * * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>上面的例子表示每月1、10、22日的4 : 45重启 <code>apache</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">10 1 * * 6,0 &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>上面的例子表示每周六、周日的1 : 10重启 <code>apache</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0,30 18-23 * * * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>上面的例子表示在每天 18 : 00 至 23 : 00 之间每隔30分钟重启 <code>apache</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 23 * * 6 &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>上面的例子表示每星期六的11 : 00 pm重启 <code>apache</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* *&#x2F;1 * * * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>每一小时重启 <code>apache</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 23-7&#x2F;1 * * * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>晚上11点到早上7点之间，每隔一小时重启 <code>apache</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 11 4 * mon-wed &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>每月的4号与每周一到周三的11点重启 <code>apache</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 4 1 jan * &#x2F;usr&#x2F;local&#x2F;etc&#x2F;rc.d&#x2F;lighttpd restart</span><br></pre></td></tr></table></figure>
+<p>一月一号的4点重启 <code>apache</code></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html" target="_blank" rel="noopener">crontab命令</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

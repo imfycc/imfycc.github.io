@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>实现 JavaScript 异步方法 Promise.all</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    实现 JavaScript 异步方法 Promise.all
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-08-15T11:59:17.000Z" itemprop="datePublished">2017-08-15</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2017-08-15T11:59:17.000Z" itemprop="dateUpdated">2017-08-15</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <blockquote>
+<p>没办法，谁让我是超级英雄呐，又要拯救世界了。</p>
+</blockquote>
+<p><strong>本次的任务</strong></p>
+<p>假如。。。。。</p>
+<p><code>JavaScript</code> v8 引擎发生了重大故障，<code>Promise.all</code> 方法变成了 <code>undefined</code> ，为了拯救 <code>JavaScript</code> 世界，我需要开发一个模块来解决此问题。</p>
+<p>使用者需要在代码入口处引入我的模块就可渡过此劫，但要求三个月后官方修改此版本，代码无修改就能自动切换到官方版本。实现 <code>Promise.all</code></p>
+<h2 id="首先要知道-Promise-是什么"><a href="#首先要知道-Promise-是什么" class="headerlink" title="首先要知道 Promise 是什么"></a>首先要知道 <code>Promise</code> 是什么</h2><p><code>promise</code> 是对异步编程的一种抽象。它是一个代理对象，代表一个必须进行异步处理的函数返回的值或抛出的异常。</p>
+<p><code>promise</code> 最早是在 <code>commonjs</code> 社区提出来的，当时提出了很多规范。比较接受的是 <code>promise/A</code> 规范。后来人们在这个基础上。提出了 <code>promise/A+</code>规范，也就是实际上的业内推行的规范。<code>ECMAScript 6.0</code> 也是采用的这种规范。</p>
+<p>英文版：<a href="https://promisesaplus.com/" target="_blank" rel="noopener">https://promisesaplus.com/</a></p>
+<p>中文版：<a href="http://link.zhihu.com/?target=http%3A//www.ituring.com.cn/article/66566">【翻译】Promises/A+规范</a></p>
+<p>上面的规范中主要定义的 <code>then</code> 的实现方式，也就是只规定了 <code>Promise</code> 的核心， <code>Promise.race</code>，<code>Promise.all</code> 等 <code>api</code> 没有规定。</p>
+<p><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-promise-constructor" target="_blank" rel="noopener">ECMAScript 6.0 Promise.all 规范</a></p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>** <code>Promise</code> 不需要编译器/解释器的支持**</p>
+<p>将来可能成为主流的 <code>async-await</code>，以及曾经火过一把的 <code>generator</code> + <code>co</code>，这些都是需要编译器或者解释器级别的支持才能使用。</p>
+<p>而 <code>Promise</code>，是完全可以利用语言已有特性，作为一个库来实现！即使在非常原始的JS运行环境，你也可以自己实现一个 <code>Promise</code>，而不需要等待其他人的帮助。</p>
+<p>** <code>Promise</code> 是语言无关的**</p>
+<p><code>Promise</code> 还是独立于语言的，如果你要给另外一种编程语言实现 <code>Promise</code>，只要照葫芦画瓢就行了。</p>
+<h2 id="promise-怎么用呐"><a href="#promise-怎么用呐" class="headerlink" title="promise 怎么用呐"></a><code>promise</code> 怎么用呐</h2><p>请看这里：</p>
+<p><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">ECMAScript 6 Promise入门</a></p>
+<h2 id="实现-Promise-all"><a href="#实现-Promise-all" class="headerlink" title="实现 Promise.all"></a>实现 <code>Promise.all</code></h2><p><code>Promise.all</code> 接收一个 <code>promise</code> 对象的数组作为参数，当这个数组里的所有 <code>promise</code> 对象全部变为<code>resolve</code>或 有 <code>reject</code> 状态出现的时候，它才会去调用 <code>.then</code> 方法,它们是并发执行的。</p>
+<h3 id="Promise-all-简介"><a href="#Promise-all-简介" class="headerlink" title="Promise.all() 简介"></a>Promise.all() 简介</h3><p><code>Promise.all(promiseArray)</code> 方法是 <code>Promise</code> 对象上的静态方法，该方法的作用是将多个 <code>Promise</code> 对象实例包装，生成并返回一个新的 <code>Promise</code> 实例。</p>
+<p>参数：<code>promiseArray</code>，是一个 <code>Promise</code> 实例数组</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var p1 &#x3D; Promise.resolve(1),</span><br><span class="line">    p2 &#x3D; Promise.resolve(2),</span><br><span class="line">    p3 &#x3D; Promise.resolve(3);</span><br><span class="line">Promise.all([p1, p2, p3]).then(function (results) &#123;</span><br><span class="line">    console.log(results);  &#x2F;&#x2F; [1, 2, 3]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在上面的方法中，<code>promise</code> 数组中所有的 <code>promise</code> 实例都变为<code>resolve</code> 的时候，该方法才会返回，并将所有结果传递 <code>results</code> 数组中。<code>promise</code> 数组中任何一个 <code>promise</code> 为 <code>reject</code> 的话，则整个 <code>Promise.all</code> 调用会立即终止，并返回一个 <code>reject</code> 的新的 <code>promise</code> 对象。<code>reject</code> 使用示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var p1 &#x3D; Promise.resolve(1),</span><br><span class="line">    p2 &#x3D; Promise.reject(2),</span><br><span class="line">    p3 &#x3D; Promise.resolve(3);</span><br><span class="line">Promise.all([p1, p2, p3]).then(function (results) &#123;</span><br><span class="line">    &#x2F;&#x2F;then方法不会被执行</span><br><span class="line">    console.log(results);</span><br><span class="line">&#125;).catch(function (e)&#123;</span><br><span class="line">    &#x2F;&#x2F;catch方法将会被执行，输出结果为：2</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现-Promise-all-方法"><a href="#实现-Promise-all-方法" class="headerlink" title="实现 Promise.all 方法"></a>实现 Promise.all 方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function promiseAll(promises) &#123;</span><br><span class="line">  return new Promise(function(resolve, reject) &#123;</span><br><span class="line">    if (!isArray(promises)) &#123;</span><br><span class="line">      return reject(new TypeError(&#39;arguments must be an array&#39;));</span><br><span class="line">    &#125;</span><br><span class="line">    var resolvedCounter &#x3D; 0;</span><br><span class="line">    var promiseNum &#x3D; promises.length;</span><br><span class="line">    var resolvedValues &#x3D; new Array(promiseNum);</span><br><span class="line">    for (var i &#x3D; 0; i &lt; promiseNum; i++) &#123;</span><br><span class="line">      (function(i) &#123;</span><br><span class="line">        Promise.resolve(promises[i]).then(function(value) &#123;</span><br><span class="line">          resolvedCounter++</span><br><span class="line">          resolvedValues[i] &#x3D; value</span><br><span class="line">          if (resolvedCounter &#x3D;&#x3D; promiseNum) &#123;</span><br><span class="line">            return resolve(resolvedValues)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, function(reason) &#123;</span><br><span class="line">          return reject(reason)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/48e193c4662e" target="_blank" rel="noopener">自己动手实现ES6 Promise</a></p>
+<p><a href="http://liubin.org/promises-book/#ch2-promise-all" target="_blank" rel="noopener">JavaScript Promise迷你书</a></p>
+<p><a href="https://itbilu.com/javascript/js/41KMSZ9a.html" target="_blank" rel="noopener">Promise对象Promise.all()方法的使用</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/25178630" target="_blank" rel="noopener">深入 Promise(一)——Promise 实现详解</a></p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="https://i5ting.github.io/asynchronous-flow-control/#101" target="_blank" rel="noopener">深入浅出js（Node.js）异步流程控制</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

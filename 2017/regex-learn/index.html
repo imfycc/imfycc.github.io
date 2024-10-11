@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>正则表达式学习笔记</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    正则表达式学习笔记
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-03-23T05:59:29.000Z" itemprop="datePublished">2017-03-23</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-09-14T16:00:00.000Z" itemprop="dateUpdated">2019-09-15</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <img src="https://static.hufangyun.com/hexo/img/learn-regex.jpg">
+
+<blockquote>
+<p>之前看过<a href="https://book.douban.com/subject/2154713/" target="_blank" rel="noopener">《精通正则表达式》</a>，也翻阅过很多次的文档，但是缺乏实践，理解的也不深刻，很快就忘记了，和没看一样 😂 。</p>
+</blockquote>
+<p>所以，看再多次文档，没用！！！😂 要动手写，实践出真知。💪</p>
+<h2 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h2><p>我觉得正则的学习方法是这样的:</p>
+<p>1、大体翻阅一遍文档，20 ~ 30 分钟左右。当然聪明的你，可能花的时间更少。😄</p>
+<p>2、做题练习，在实践中加深理解。</p>
+<p>  ① 做题的时候先自己思考，尝试着去解决。✌️<br>  ② 如果没有思路，再翻阅文档，思考一下那些组合可能解决问题。😄<br>  ③ 如果还是不行，就搜索相关的思路。再尝试解决。⚠️ 注意，不是搜索答案。<br>  ④ 还是解决不了，就去看答案吧。</p>
+<p>  经过这么长时间的思考、折腾。当你看到答案的时候，印象会更加的深刻。对很多用法理解的也更加的透彻。💯</p>
+<p>3、平常的使用过程中，再查漏补缺。</p>
+<h2 id="文档选择"><a href="#文档选择" class="headerlink" title="文档选择"></a>文档选择</h2><p>文档的话，可以从下面根据喜好任选一款。</p>
+<p><a href="http://www.runoob.com/regexp/regexp-syntax.html" target="_blank" rel="noopener">正则表达式教程</a></p>
+<p><a href="https://github.com/ziishaned/learn-regex/" target="_blank" rel="noopener">学习正则表达式的简单方法</a></p>
+<p><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p>
+<h2 id="正则题库"><a href="#正则题库" class="headerlink" title="正则题库"></a>正则题库</h2><p><a href="https://alf.nu/RegexGolf" target="_blank" rel="noopener">RegexGolf</a></p>
+<p><a href="https://github.com/Youthink/Regex-Golf-Answer" target="_blank" rel="noopener">我整理的答案</a></p>
+<p><a href="https://gist.github.com/jonathanmorley/8058871" target="_blank" rel="noopener">RegexGolf 答案</a></p>
+<p><a href="https://blog.csdn.net/NJYR21/article/details/79600217" target="_blank" rel="noopener">答案二</a></p>
+<p>如果有更好的题库，希望能分享给我。😄</p>
+<h2 id="正则工具"><a href="#正则工具" class="headerlink" title="正则工具"></a>正则工具</h2><p>正则网站</p>
+<p><a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></p>
+<p><a href="http://tool.chinaz.com/regex" target="_blank" rel="noopener">http://tool.chinaz.com/regex</a></p>
+<p><a href="https://regexr.com/" target="_blank" rel="noopener">https://regexr.com/</a></p>
+<p><a href="https://regexper.com/" target="_blank" rel="noopener">正则语法可视化分析工具</a></p>
+<p><a href="http://zhoushengfe.com/rline.html" target="_blank" rel="noopener">正则语法可视化分析工具2</a></p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义 </th>
+<th>遗忘</th>
+<th>语法</th>
+<th>含义</th>
+<th>遗忘</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[abc]</td>
+<td>单个字符 a或b或c</td>
+<td></td>
+<td>[^abc]</td>
+<td>a,b,c以外的单个字符</td>
+<td></td>
+</tr>
+<tr>
+<td>[a-zA-Z0-9]</td>
+<td>字符范围</td>
+<td></td>
+<td>.</td>
+<td>任意字符</td>
+<td></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>空字符</td>
+<td></td>
+<td>\S</td>
+<td>非空字符</td>
+<td></td>
+</tr>
+<tr>
+<td>\d</td>
+<td>数字字符</td>
+<td></td>
+<td>\D</td>
+<td>非数字字符</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>单词(字母，数字，下划线)</td>
+<td></td>
+<td>\W</td>
+<td>非单词</td>
+<td></td>
+</tr>
+<tr>
+<td>\b</td>
+<td>单词边界</td>
+<td>+1</td>
+<td>\B</td>
+<td>非单词边界</td>
+<td></td>
+</tr>
+<tr>
+<td>^</td>
+<td>开头</td>
+<td></td>
+<td>$</td>
+<td>结尾</td>
+<td></td>
+</tr>
+<tr>
+<td>(…)</td>
+<td>分组</td>
+<td></td>
+<td>(a|b)</td>
+<td>a或b</td>
+<td></td>
+</tr>
+<tr>
+<td>a*</td>
+<td>重复0次或多次</td>
+<td></td>
+<td>a?</td>
+<td>重复0次或1次</td>
+<td></td>
+</tr>
+<tr>
+<td>a+</td>
+<td>重复1次或多次</td>
+<td>+1</td>
+<td>a{3}</td>
+<td>重复3次</td>
+<td></td>
+</tr>
+<tr>
+<td>a{3,}</td>
+<td>重复3次或多次</td>
+<td></td>
+<td>a{3,5}</td>
+<td>重复3到5次</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>非贪婪匹配</td>
+<td></td>
+<td>(?:abc)</td>
+<td>非捕获分组</td>
+<td></td>
+</tr>
+<tr>
+<td>(?=abc)</td>
+<td>正向匹配abc</td>
+<td></td>
+<td>(?!abc)</td>
+<td>正向不匹配abc</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>十六进制hh字符</td>
+<td></td>
+<td>\uhhhh</td>
+<td>十六进制hhhh字符</td>
+<td></td>
+</tr>
+<tr>
+<td>\u{hhhh}</td>
+<td>(仅当设置了u标志时)十六进制hhhh字符</td>
+<td></td>
+<td>\cX</td>
+<td>控制字符</td>
+<td></td>
+</tr>
+<tr>
+<td>\0</td>
+<td>空字符</td>
+<td></td>
+<td>\数字（n）</td>
+<td> 匹配第 n 个（）内的值</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>alert字符</td>
+<td></td>
+<td>\t</td>
+<td>制表符</td>
+<td></td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+<td></td>
+<td>\v</td>
+<td>垂直制表符</td>
+<td></td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符</td>
+<td></td>
+<td>\r</td>
+<td>回车符</td>
+<td></td>
+</tr>
+<tr>
+<td>\e</td>
+<td>escape字符</td>
+<td></td>
+<td>[\b]</td>
+<td>退格符</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><h3 id="num"><a href="#num" class="headerlink" title="\num"></a><code>\num</code></h3><p>如下，顺序执行，<code>\1</code> 代表重复第一个 <code>()</code> 内的元素，<code>\2</code> 代表重复第二个 <code>()</code> 内的元素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">(.)(.)\<span class="number">2</span>\<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// abba</span></span><br><span class="line"></span><br><span class="line">(.)(.)\<span class="number">1</span>\<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// abaa</span></span><br><span class="line"></span><br><span class="line">(.)(.)\<span class="number">1</span>\<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//abab</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="匹配回文？"><a href="#匹配回文？" class="headerlink" title="匹配回文？"></a>匹配回文？</h3><p>严格意义上的正则表达式不能匹配<strong>未知长度</strong>的回文字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">aba</span><br><span class="line">aabaa</span><br><span class="line">aaaaaabaaaaaa</span><br></pre></td></tr></table></figure>
+
+<p>因为在看到’b’之后我们必须倒数 x 次以确保它是回文。但是正则表达式，无法计算 x。</p>
+<p>详情<a href="https://stackoverflow.com/questions/233243/how-to-check-that-a-string-is-a-palindrome-using-regular-expressions" target="_blank" rel="noopener">看这里</a></p>
+<h3 id="非"><a href="#非" class="headerlink" title="非"></a>非</h3><p><code>(?!)</code></p>
+<p>比如匹配非 <code>abba</code> 格式的字符串</p>
+<p><code>^(?!.*(.)(.)\2\1)</code></p>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>匹配手机号</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">isMobileValid(number) &#123;</span><br><span class="line">  <span class="keyword">return</span> number &amp;&amp; (<span class="regexp">/^1[345678]\d&#123;9&#125;$/</span>).test(number);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Js-字符处理"><a href="#Js-字符处理" class="headerlink" title="Js 字符处理"></a>Js 字符处理</h2><p>截取字符串的第一位和最后一位</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'abc'</span>;</span><br><span class="line">str.substring(<span class="number">1</span>, str.length<span class="number">-1</span>); <span class="comment">// b</span></span><br></pre></td></tr></table></figure>
+
+<p>文章</p>
+<p><a href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md" target="_blank" rel="noopener">https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

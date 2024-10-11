@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>elixir介绍:未来的编程语言</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    elixir介绍:未来的编程语言
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-07-23T09:31:14.000Z" itemprop="datePublished">2017-07-23</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2018-01-28T09:31:14.000Z" itemprop="dateUpdated">2018-01-28</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <img alt="elixir" src="https://static.hufangyun.com/hexo/img/elixir-logo.jpg"><span class="img-alt">elixir</span>
+
+<blockquote>
+<p>“不要咖啡，不要大象，不要蟒蛇，不要红宝石，只要万金油。””</p>
+</blockquote>
+<p><code>Elixir</code> 美式发音 [ɪˈlɪksɚ] <a href="https://fanyi.baidu.com/#en/zh/elixir" target="_blank" rel="noopener">读音</a></p>
+<p>中文翻译有 灵丹妙药、圣水、万金油</p>
+<p>我并不知道， <code>Elixir</code> 是不是未来的编程语言，我也不是语言的盲目推崇者，每门语言都有自己适合的领域和使用的人群，有自己的劣势和优势。作为编程语言的使用者和学习者，多了解一门语言，不是一件坏事。</p>
+<h2 id="Elixir-简介"><a href="#Elixir-简介" class="headerlink" title="Elixir 简介"></a>Elixir 简介</h2><p><code>Elixir</code> 是一种面向并发的函数式编程语言，运行在工业级、高性能、分布式的 <code>Erlang</code> 虚拟机上。</p>
+<p><strong>标签</strong> 函数式编程、分布式、热代码更新、并发</p>
+<p><code>Elixir</code> 是跑在上 <code>Erlang</code> 虚拟机上的一门语言，创始人是 <code>ruby</code> 社区的主要贡献者之一。所以 <code>Elixir</code> 吸收了很多 <code>ruby</code> 的特性。 </p>
+<p><code>Erlang</code> 是电信设备制造商爱立信旗下实验室产出的一门语言。目的是创造一种可以应对大规模并发活动的编程语言和运行环境。</p>
+<p>如果，我们要开发 web 应用。<code>Elixir</code> 有对应的 web 框架  <a href="http://www.phoenixframework.org/" target="_blank" rel="noopener">Phoenix</a> 。<code>Phoenix</code> 提供了完整的生态工具链。从系统设计、开发、测试、到部署，能够快速的构建产品原型。写一次应用就知道有多舒爽了，像贴心的管家，为你准备好了一切。</p>
+<h2 id="Elixir-介绍"><a href="#Elixir-介绍" class="headerlink" title="Elixir 介绍"></a>Elixir 介绍</h2><p><code>Elixir</code> 是一个基于 <code>Erlang</code> 虚拟机的函数式、面向并行的通用编程语言。<code>Elixir</code> 以 <code>Erlang</code> 为基础，支持分布式、高容错、实时应用程序的开发，同时亦对其进行扩展使之借助宏实现元编程，并通过协议支持多态。</p>
+<p><code>José Valim</code> 是 <code>Elixir</code> 语言的设计者。他创造该语言的目标是在维持与现有 <code>Erlang</code> 工具链及生态环境兼容性的同时，让人们可以在 <code>Erlang</code> 虚拟机上进行扩展性更好的、高生产率的开发。<code>Elixir</code> 是编写高度并行处理，高可靠性应用的极佳选择。</p>
+<h2 id="Elixir主要特性"><a href="#Elixir主要特性" class="headerlink" title="Elixir主要特性"></a>Elixir主要特性</h2><ul>
+<li>基于 <code>Erlang</code> 虚拟机（BEAM）之上。</li>
+<li>与 <code>Erlang</code> 语言的无缝衔接，与 <code>Erlang</code> 的互调几乎无任何额外开销。</li>
+<li>基于宏的元编程能力，语言的抽象语法树作为头等公民。</li>
+<li>基于协议的多态实现。（启发自<code>Clojure</code>）</li>
+<li>通过消息传递（参与者模式）支持 <code>Shared-nothing</code> 并行事务。</li>
+<li>强调利用递归和高阶函数的函数式编程胜过基于副作用和循环的命令式编程。</li>
+<li>一切均为表达式。</li>
+<li>惰性求值，拥有诸如 <code>futures</code> 和 <code>promises</code> 一类的异步流数据类型。</li>
+<li>模式匹配。</li>
+<li><code>Unicode</code> 支持，<code>UTF-8</code> 字符串。</li>
+</ul>
+<h2 id="Actor并发"><a href="#Actor并发" class="headerlink" title="Actor并发"></a>Actor并发</h2><p><code>Elixir</code> 使用 <code>actor</code> 并发模型，<code>actor</code> 是一个无依赖的进程，它不与其他进程共享任何东西。你可以<code>spawn</code> 新进程，向它发消息，并且用 <code>receive</code> 接收消息，仅此而已。这里谈论的 <code>Elixir</code> 进程并不是操作系统的原生进程。它们既慢又笨重。相反，<code>Elixir</code> 使用 <code>Erlang</code> 的进程。这些进程将在所有的处理器中运行（像原生进程一样），但是它们的开销非常小，在普通的机器里创建数十万个 <code>Elixir</code> 进程轻而易举。</p>
+<h2 id="OTP"><a href="#OTP" class="headerlink" title="OTP"></a>OTP</h2><p><code>OTP</code> 是 <code>Open Telecom Platform</code> 的缩写，是爱立信公司开发的开放电信应用平台，这是一个很强大并且很通用的框架，它能帮我们编写大型的、容错的，分布式的系统。</p>
+<p><code>OTP</code> 经常被渲染成解决所有高可用分布式应用困境的法宝。其实未必，但是用它的确可以解决许多原本你需要自己解决的问题，比如服务发现、故障检测与管理、热代码交换和服务器结构安排等。<code>OTP</code> 这个名字主要由于历史原因沿用下来，最初它被用来建立电话交换机，这些设备具有的特性也正是我们希望所有大型在线应用所具备的特性，所以 <code>OTP</code> 现在是一个通用工具，用于开发和管理大型系统。</p>
+<p>我们每学一样东西都要把握它的中心思想，<code>OTP</code> 的中心思想就是把程序的通用部分和业务部分切开，我帮你把通用部分做好，你做你的业务逻辑就行了。如果你看过一些分布式系统，最火的应该是分布式存储系统了，像``Amazon<code>的</code>Dynamo<code>、</code>Google<code>的</code>Bigtable<code>、</code>LiveJournal<code>的</code>memcache<code>等，就知道保证分布式系统的容错能力、数据一致性、请求高并发性是非常困难的。但是他们所用的算法都非常固定，当你去实现另一个分布式系统时，很可能就是参考他们的算法。然后一些技术功底不够的程序员就想，要是能把这些基础的设施都做好，并且提供插件扩展，那多好啊，这样当我想写个分布式数据库的时候就能跟写普通数据库一样简单了。没错，</code>OTP` 就是帮你干那些又脏又累的活。</p>
+<p><code>OTP</code> 实际上是一个包，其中包括了 <code>Erlang</code>、分布式数据库Mnesia和不计其数的库文件，主要如下：</p>
+<ul>
+<li>一个Erlang直译器</li>
+<li>一个Erlang编译器</li>
+<li>服务器之间的通信协定</li>
+<li>Corba Object Request Broker</li>
+<li>一个统计分析工具，名为Dialyzer</li>
+<li>一个分布式数据库服务器，名为Mnesia</li>
+<li>许多软件库</li>
+</ul>
+<p>Elixir一直在使用 <code>OTP</code>，包括 <code>mix</code>、<code>Elixir</code> 编译器，甚至问题跟踪系统都符合 <code>OTP</code> 约定。</p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="https://blog.eood.cn/elixir" target="_blank" rel="noopener">Elixir: 编程语言的未来</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/da47b5d7ef53" target="_blank" rel="noopener">Erlang 和 Elixir 介绍</a></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>英文官网</p>
+<p><a href="https://elixir-lang.org/" target="_blank" rel="noopener">Elixir</a></p>
+<p><a href="http://www.phoenixframework.org/" target="_blank" rel="noopener">Phoenix</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

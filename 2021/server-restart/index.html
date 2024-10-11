@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>记录一次服务器重启应用恢复过程</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    记录一次服务器重启应用恢复过程
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2021-05-12T16:00:00.000Z" itemprop="datePublished">2021-05-13</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2021-05-14T00:27:00.000Z" itemprop="dateUpdated">2021-05-14</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <p>副标题：<strong>哎呀，服务器登录不进去了瞎折腾</strong> </p>
+<blockquote>
+<p>梳理服务器错误操作的整个过程，算是自己的一次复盘 ✍️</p>
+</blockquote>
+<p>本文可以了解到：</p>
+<p>1、ssh 免密登录服务器简单配置</p>
+<p>2、sshd 端口查看和修改</p>
+<p>3、Elixir + Phoenix 服务线上操作</p>
+<p>4、如何查看 Linux 的开机启动项（服务器重启后，哪些服务会自动重启）</p>
+<p>5、<code>systemctl</code> 简介</p>
+<h2 id="背景-🚦"><a href="#背景-🚦" class="headerlink" title="背景 🚦"></a>背景 🚦</h2><p>本来自己云服务器上的应用一直跑的很稳定，也好长时间没打理了。最近收到腾讯云的安全提示，说服务器有高危漏洞 🕷，需要处理一下。</p>
+<h2 id="经过-🚜"><a href="#经过-🚜" class="headerlink" title="经过 🚜"></a>经过 🚜</h2><p>因为应用太过稳定（访问量很小 🤷🏻‍♀️）好久没登录服务器了，先本地终端 ssh 连接服务器，发现被拒绝了。然后我又尝试从腾讯云的网页使用 ssh 标准方式登录也被拒绝了 🐣。</p>
+<p>我以为密码不对，就在腾讯云服务器实例上选择了重启服务器修改密码。（错误操作的开始 😿）</p>
+<p>重启还挺快，也就七八秒，但是我发现我还是登录不进去，就开始脑补，不会被黑了吧 🤖？</p>
+<img src="https://static.hufangyun.com/hexo/img/server-restart.jpg?imageView2/2/w/500">
+
+<p>然后就选择了腾讯云提供的第二种登录方式，翻了一下文档发现默认用户名不是 root， 是 ubuntu</p>
+<p>进入到服务器之后，先确定 ssh 的 sshd 服务有没有启动</p>
+<h4 id="查看-sshd-状态"><a href="#查看-sshd-状态" class="headerlink" title="查看 sshd 状态"></a>查看 sshd 状态</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service sshd status</span><br></pre></td></tr></table></figure>
+
+<p>发现 sshd 服务是正常运行的，但是为什么登录不进去 ❓</p>
+<p>突然想到可能是本地 ssh 配置有问题</p>
+<p>查看 <code>~/.ssh/config</code> 文件发现之前的配置没有了，偶对了，最近换电脑了。这个配置没处理… 😭</p>
+<h3 id="配置-ssh"><a href="#配置-ssh" class="headerlink" title="配置 ssh"></a>配置 ssh</h3><h4 id="重新配置-ssh-config"><a href="#重新配置-ssh-config" class="headerlink" title="重新配置 ~/.ssh/config"></a>重新配置 <code>~/.ssh/config</code></h4><p>添加类似的内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host 这里自定义个字符串</span><br><span class="line">    HostName IP地址</span><br><span class="line">    User 用户名</span><br><span class="line">    Port 端口号</span><br></pre></td></tr></table></figure>
+
+<p>IP地址 可以从云服务的控制台找到。</p>
+<p>突然想起来，默认的 ubuntu 这个账户的权限挺大的，我好像搞了一个权限更小的账户管理应用，但是记不清用户名了，再确认一下 🙈。</p>
+<h4 id="查看服务器上有哪些用户"><a href="#查看服务器上有哪些用户" class="headerlink" title="查看服务器上有哪些用户"></a>查看服务器上有哪些用户</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>从里面找到之前创建的用户。</p>
+<p>欧，我又想起来了。我好像把 ssh 的默认端口也给改了，默认端口不安全，我换成其他的了 🐶。</p>
+<p>这也是为什么网页版的登录不了，网页版默认端口是 22 🙈</p>
+<h4 id="查看-ssh-端口配置"><a href="#查看-ssh-端口配置" class="headerlink" title="查看 ssh 端口配置"></a>查看 ssh 端口配置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<h4 id="直接查看-ssh-服务端口"><a href="#直接查看-ssh-服务端口" class="headerlink" title="直接查看 ssh 服务端口"></a>直接查看 ssh 服务端口</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -tnlp | grep sshd</span><br></pre></td></tr></table></figure>
+
+<p>好了，上面 <code>~/.ssh/config</code> 内需要的内容我们都找好了，配置上。</p>
+<p>还有一步，把自己本地 ssh 的公钥加入到服务器的授权名单里，以后就可以免密登录了。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>服务器可以正常登录了。但是访问了一下，发现应用还挂着 🐤。</p>
+<h3 id="恢复应用"><a href="#恢复应用" class="headerlink" title="恢复应用"></a>恢复应用</h3><p>我这个小应用是使用 Elixir + Phoenix 开发的后端，数据库用的 <code>PostgreSQL</code></p>
+<h4 id="查看-nginx-的状态"><a href="#查看-nginx-的状态" class="headerlink" title="查看 nginx 的状态"></a>查看 nginx 的状态</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service nginx status</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看-PostgreSQL-的状态"><a href="#查看-PostgreSQL-的状态" class="headerlink" title="查看 PostgreSQL 的状态"></a>查看 PostgreSQL 的状态</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service postgresql status</span><br></pre></td></tr></table></figure>
+
+<p>发现数据库服务是正常运行的。</p>
+<h4 id="重启-elixir-Phoenix-应用"><a href="#重启-elixir-Phoenix-应用" class="headerlink" title="重启 elixir + Phoenix 应用"></a>重启 elixir + Phoenix 应用</h4><p>应用放在该用户的 home 文件夹的 www 内，找到应用 onePiece（这个小服务是和海贼王相关的 🏴‍☠️），进入 bin 文件夹，里面有个可执行文件 onePiece</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看帮助</span></span><br><span class="line">./onePiece <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ping 应用 </span></span><br><span class="line">./onePiece ping</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动应用</span></span><br><span class="line">./onePiece start</span><br></pre></td></tr></table></figure>
+
+<p>然后应用正常启动了 ☠️ ⛵️ ⚓️ 🏝</p>
+<h3 id="漏洞修补"><a href="#漏洞修补" class="headerlink" title="漏洞修补"></a>漏洞修补</h3><p>这才是一开始登录服务器的目的呀… 😹</p>
+<p>腾讯云这边做的还挺好，漏洞详情里会给出需要升级的软件的命令。根据命令执行即可。</p>
+<h3 id="systemctl-🎈"><a href="#systemctl-🎈" class="headerlink" title="systemctl 🎈"></a>systemctl 🎈</h3><p>这个过程中，我产生了一个疑问 🤔，<code>nginx</code>、<code>sshd</code>、<code>postgresql</code> 这些服务重启服务器的时候，会自动重启吗？如何查看服务器的开机启动项？</p>
+<p>查找资料的时候发现了 <code>systemctl</code> </p>
+<h4 id="查看可以使用-systemctl-管理的服务"><a href="#查看可以使用-systemctl-管理的服务" class="headerlink" title="查看可以使用 systemctl 管理的服务"></a>查看可以使用 systemctl 管理的服务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl list-unit-files</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看开机启动项"><a href="#查看开机启动项" class="headerlink" title="查看开机启动项"></a>查看开机启动项</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls /etc/systemd/system/multi-user.target.wants/</span><br></pre></td></tr></table></figure>
+
+<p>从这个命令的结果可以看到，我之前有疑问的 <code>nginx</code>、<code>sshd</code>、<code>postgresql</code> 服务器重启的时候都会默认启动。</p>
+<h4 id="把一个服务添加到开机启动"><a href="#把一个服务添加到开机启动" class="headerlink" title="把一个服务添加到开机启动"></a>把一个服务添加到开机启动</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> httpd</span><br></pre></td></tr></table></figure>
+
+<h4 id="systemctl-和-service-命令的区别"><a href="#systemctl-和-service-命令的区别" class="headerlink" title="systemctl 和 service 命令的区别"></a>systemctl 和 service 命令的区别</h4><p>我前面重启服务和查看服务状态都用的 <code>service</code> 命令，其实也可以用 <code>systemctl</code> 命令去管理。</p>
+<p>二者有什么区别哪？简单来说：</p>
+<ul>
+<li><code>systemctl</code> 相比 <code>service</code> 是新一代的 Linux 系统的启动和管理命令</li>
+<li><code>systemctl</code> 命令兼容 <code>service</code></li>
+<li>命令格式不太一样 systemctl 是服务名放在最后 <code>systemctl status httpd</code></li>
+</ul>
+<p><code>systemctl</code> 仅仅是 <code>Systemd</code> 其中一个命令，其实还有更多，包括查看服务器时间、登录用户、启动耗时等等，具体可以参考阮一峰的博文：</p>
+<p><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">Systemd 入门教程：命令篇</a></p>
+<p><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html" target="_blank" rel="noopener">Systemd 入门教程：实战篇</a></p>
+<h2 id="小结-👉"><a href="#小结-👉" class="headerlink" title="小结 👉"></a>小结 👉</h2><p>本来的目的是，去服务器补漏洞的，结果由于长时间不登录服务器，加上不熟悉，瞎折腾了一番，但是整个过程，经历一次也学习到一些新知识。</p>
+<p>我在运维上还有很多不了解的，之后加强学习。</p>
+<p>记录本文也是害怕，万一下一次又双叒叕忘了呐 ☠️ 🙈 🐣 🧶 🤪。</p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+

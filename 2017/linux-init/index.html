@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想,feedId:57360050735182873+userId:42949798389474304" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
+  <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>linux 服务器初始化配置流程</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
+    </script>
+  
+  <meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face.jpg">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    linux 服务器初始化配置流程
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2017-12-08T16:00:00.000Z" itemprop="datePublished">2017-12-09</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2022-11-12T16:00:00.000Z" itemprop="dateUpdated">2022-11-13</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <p><img src="/media/819542712-5a291b0bb9615_articlex.jpeg" alt="819542712-5a291b0bb9615_articlex"><span class="img-alt">819542712-5a291b0bb9615_articlex</span></p>
+<blockquote>
+<p>开发 <code>web</code> 应用的时候，经常需要配置服务器。我在阮一峰老师的 <a href="http://www.ruanyifeng.com/blog/2014/03/server_setup.html" target="_blank" rel="noopener">Linux服务器的初步配置流程</a> 的基础上，整理了这篇笔记。节约以后配置服务器的时间。 </p>
+</blockquote>
+<h2 id="修改-root-密码"><a href="#修改-root-密码" class="headerlink" title="修改 root 密码"></a>修改 root 密码</h2><p>如果服务器的默认账号是 root</p>
+<p><code>root</code> 账户默认没有密码 安全起见 先初始化一个</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="腾讯云服务器"><a href="#腾讯云服务器" class="headerlink" title="腾讯云服务器"></a>腾讯云服务器</h3><p>默认账户是 ubuntu，初始密码是自己设置的。忘记的话可以重置密码。</p>
+<p>修改 root 密码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+
+<p>切换用户</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">su ubuntu</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-Linux-管理员账户"><a href="#创建-Linux-管理员账户" class="headerlink" title="创建 Linux 管理员账户"></a>创建 Linux 管理员账户</h2><blockquote>
+<p>🐧 使用 <code>Linux</code> 服务器的时候，尽量不要使用 <code>root</code> 账号，处理日常操作，我们新建一个管理员账号。</p>
+</blockquote>
+<p>首先，添加一个用户组（这里我自定义的 admin）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">addgroup admin</span><br></pre></td></tr></table></figure>
+
+<p>然后，添加一个新用户（假定为 www）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">useradd -d &#x2F;home&#x2F;www -s &#x2F;bin&#x2F;bash -m www</span><br></pre></td></tr></table></figure>
+
+<p>上面命令中，参数 <code>d</code> 指定用户的主目录，参数 <code>s</code> 指定用户的 <code>shell</code>，参数 <code>m</code> 表示如果该目录不存在，则创建该目录。</p>
+<p>接着，设置新用户的密码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">passwd www</span><br></pre></td></tr></table></figure>
+
+<p>将新用户（www）添加到用户组（admin）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">usermod -a -G admin www</span><br></pre></td></tr></table></figure>
+<p>接着，为新用户设定sudo权限。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo vi &#x2F;etc&#x2F;sudoers</span><br></pre></td></tr></table></figure>
+
+<p>找到下面这一行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root    ALL&#x3D;(ALL:ALL) ALL</span><br></pre></td></tr></table></figure>
+
+<p>在这一行的下面，再添加一行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root    ALL&#x3D;(ALL:ALL) ALL</span><br><span class="line">www    ALL&#x3D;(ALL:ALL) ALL</span><br></pre></td></tr></table></figure>
+
+<p>最后，先退出 <code>root</code> 用户登录，再用新用户的身份登录。</p>
+<h2 id="配置-SSH-服务"><a href="#配置-SSH-服务" class="headerlink" title="配置 SSH 服务"></a>配置 SSH 服务</h2><p>把自己电脑的 <code>ssh</code> 公钥，保存到服务器的 <code>~/.ssh/authorized_keys</code> 文件中</p>
+<p>直接使用下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 默认端口 22</span><br><span class="line">ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub root@123.456.78</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 带端口 25000</span><br><span class="line">ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub -p 25000 root@123.456.78</span><br></pre></td></tr></table></figure>
+
+<p>本地电脑配置 ssh config</p>
+<p>修改 <code>~/.ssh/config</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; Host 字段后面的名称自定义</span><br><span class="line">Host day-root</span><br><span class="line">  hostname 123.456.78</span><br><span class="line">  port 25000</span><br><span class="line">  user root</span><br><span class="line"></span><br><span class="line">Host day</span><br><span class="line">  hostname 123.456.78</span><br><span class="line">  port 25000</span><br><span class="line">  user www</span><br></pre></td></tr></table></figure>
+
+<p>之后 <code>ssh day</code> 无须输入密码，就可以登入服务器了。</p>
+<p>然后，进入服务器，编辑SSH配置文件/etc/ssh/sshd_config。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cp &#x2F;etc&#x2F;ssh&#x2F;sshd_config ~     (备份，复原时使用)</span><br><span class="line">sudo vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件中，将 SSH 的默认端口 22 改掉。假设使用 25000</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Port 25000</span><br></pre></td></tr></table></figure>
+
+<p>如果修改了端口，记的也修改:</p>
+<ul>
+<li>本地的 ssh 配置 ~/.ssh/config 内的端口 </li>
+<li>云服务器的防火墙 ssh 的端口设置</li>
+</ul>
+<p>然后，检查几个设置是否设成下面这样，确保去除前面的#号。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><del>Protocol 2</del></td>
+<td>ssh 协议使用新版的</td>
+</tr>
+<tr>
+<td>PermitRootLogin no</td>
+<td>不允许 root 登录</td>
+</tr>
+<tr>
+<td>PermitEmptyPasswords no</td>
+<td>不允许空密码登录</td>
+</tr>
+<tr>
+<td>PasswordAuthentication no</td>
+<td>使用密码授权登录</td>
+</tr>
+<tr>
+<td>GSSAPIAuthentication no</td>
+<td>加快连接</td>
+</tr>
+<tr>
+<td>PubkeyAuthentication yes</td>
+<td>允许公钥认证</td>
+</tr>
+<tr>
+<td>UseDNS no</td>
+<td>禁用DNS反向解析 会加快速度</td>
+</tr>
+<tr>
+<td>SyslogFacility AUTHPRIV</td>
+<td>记录用户登录信息</td>
+</tr>
+</tbody></table>
+<p>上面主要是禁止 <code>root</code> 用户登录，以及禁止用密码方式登录。</p>
+<p>保存后，退出文件编辑。</p>
+<p>接着，改变authorized_keys文件的权限。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo chmod 600 ~&#x2F;.ssh&#x2F;authorized_keys &amp;&amp; chmod 700 ~&#x2F;.ssh&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>重启 SSHD</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>如果重启失败，报错如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">root@VM-24-5-ubuntu:/home/lighthouse<span class="comment"># sudo service ssh restart</span></span><br><span class="line">Job <span class="keyword">for</span> ssh.service failed because the control process exited with error code.</span><br><span class="line">See <span class="string">"systemctl status ssh.service"</span> and <span class="string">"journalctl -xeu ssh.service"</span> <span class="keyword">for</span> details.</span><br><span class="line">root@VM-24-5-ubuntu:/home/lighthouse<span class="comment"># systemctl status ssh.service</span></span><br><span class="line">× ssh.service - OpenBSD Secure Shell server</span><br><span class="line">     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: failed (Result: <span class="built_in">exit</span>-code) since Sun 2022-11-13 15:44:49 CST; 5s ago</span><br><span class="line">       Docs: man:sshd(8)</span><br><span class="line">             man:sshd_config(5)</span><br><span class="line">    Process: 9511 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=255/EXCEPTION)</span><br><span class="line">        CPU: 6ms</span><br><span class="line"></span><br><span class="line">Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Scheduled restart job, restart counter is at 5.</span><br><span class="line">Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: Stopped OpenBSD Secure Shell server.</span><br><span class="line">Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Start request repeated too quickly.</span><br><span class="line">Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: ssh.service: Failed with result <span class="string">'exit-code'</span>.</span><br><span class="line">Nov 13 15:44:49 VM-24-5-ubuntu systemd[1]: Failed to start OpenBSD Secure Shell server.</span><br></pre></td></tr></table></figure>
+
+<p>大概率是配置文件修改错了，可以使用以下命令检查配置错误。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;usr&#x2F;sbin&#x2F;sshd -T</span><br></pre></td></tr></table></figure>
+<p>根据提示进行修改。</p>
+<h2 id="运行环境配置"><a href="#运行环境配置" class="headerlink" title="运行环境配置"></a>运行环境配置</h2><p>检查服务器的区域设置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">locale</span><br></pre></td></tr></table></figure>
+
+<p>如果结果不是 <code>en_US.UTF-8</code>，建议都设成它。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo locale-gen en_US en_US.UTF-8 en_CA.UTF-8</span><br><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+
+<p>然后，更新软件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>最后，再根据需要，做一些安全设置，比如搭建防火墙，关闭 <code>HTTP</code>、<code>HTTPs</code>、<code>SSH</code> 以外的端口，详细可参考这篇 <a href="http://spenserj.com/blog/2013/07/15/securing-a-linux-server/" target="_blank" rel="noopener">《Securing a Linux Server》</a>。</p>
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><p>使用 tzselect 命令选择需要的时区。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tzselect</span><br></pre></td></tr></table></figure>
+
+<p>设置完后，命令行会提示我们将时区的配置文件添加到 <code>.profile</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">TZ='Asia/Hong_Kong'; export TZ</span><br></pre></td></tr></table></figure>
+
+<p>执行完后，重新登录系统或者刷新 <code>~/.bashrc</code> 文件使其生效</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>更改 Linux 整个系统范围的时区可以使用如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+<p>现在使用 <code>date</code> 命令查看一下时间。</p>
+<h2 id="特别番"><a href="#特别番" class="headerlink" title="特别番"></a>特别番</h2><h3 id="阿里云服务器"><a href="#阿里云服务器" class="headerlink" title="阿里云服务器"></a>阿里云服务器</h3><p>阿里云服务器可以在控制台设置安全组规则。</p>
+<h4 id="什么是安全组"><a href="#什么是安全组" class="headerlink" title="什么是安全组"></a>什么是安全组</h4><p>简单点，给大家举个栗子🌰，我部署了一个 <code>MongoDB</code> 的数据库，我怕别人黑我数据库，我就可以在安全组的规则里设置 <code>公网入方向</code> 拒绝访问 <code>MongoDB</code> 使用的端口 <code>27017</code>。只允许本地 <code>locahost</code> 访问，禁止公网访问。</p>
+<p>下面是教科书版具体解释</p>
+<p>阿里云产品介绍 请看这里 <a href="https://www.alibabacloud.com/help/zh/doc-detail/25387.htm" target="_blank" rel="noopener">安全组</a></p>
+<blockquote>
+<p>安全组是一种虚拟防火墙，具备状态检测包过滤功能。安全组用于设置单台或多台云服务器的网络访问控制，它是重要的网络安全隔离手段，用于在云端划分安全域。</p>
+</blockquote>
+<blockquote>
+<p>安全组是一个逻辑上的分组，这个分组是由同一个地域（Region）内具有相同安全保护需求并相互信任的实例组成。每个实例至少属于一个安全组，在创建的时候就需要指定。同一安全组内的实例之间网络互通，不同安全组的实例之间默认内网不通。可以授权两个安全组之间互访。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.ruanyifeng.com/blog/2014/03/server_setup.html" target="_blank" rel="noopener">Linux服务器的初步配置流程</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.f8cb69.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+
