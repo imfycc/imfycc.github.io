@@ -126,6 +126,6 @@ deploy:
   type: git
   repo:
     coding: https://e.coding.net/Youthink/Youthink.git
-    github: https://github.com/imfycc/imfycc.github.io.git
+    github: git@github.com:imfycc/imfycc.github.io.git
   name: imfycc
   email: hufy3651@foxmail.com
