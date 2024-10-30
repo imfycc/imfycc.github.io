@@ -59,7 +59,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-10-02T07:35:16.000Z" itemprop="dateUpdated">2019-10-02</time>
+    更新 <time datetime="2024-10-30T14:50:00.000Z" itemprop="dateUpdated">2024-10-30</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -87,6 +87,18 @@
 <p>⚠️ 复制提醒。<code>Company</code> 要替换成你自己的目录</p>
 <p>这样，之后 <code>Company</code> 目录下的 <code>git</code> 仓库都会使用对应的 <code>git</code> 用户信息。💪</p>
 <p>这是 git 的一个用法，感兴趣的同学可以看这里 <a href="https://git-scm.com/docs/git-config#_conditional_includes" target="_blank" rel="noopener">conditional includes </a> </p>
+<h2 id="如何在一台电脑上配置多个-ssh-密钥"><a href="#如何在一台电脑上配置多个-ssh-密钥" class="headerlink" title="如何在一台电脑上配置多个 ssh 密钥"></a>如何在一台电脑上配置多个 ssh 密钥</h2><p>上面解决的问题是只有一个 ssh 密钥，但是对应公司和个人不同的 git 账号信息。</p>
+<p>还有一种情况是，一台电脑上有多个人的 ssh 密钥，比如我和小秋都是程序员，有时候一台电脑会同时配置我们俩的 ssh 密钥，分别对应不同的 git 账号。</p>
+<p>除了上面要分目录，还需要设置不同的 ssh 密钥和 git 账号的关系。</p>
+<p>可以在 ~/.ssh 目录再新建一套密钥或者也可以复制已有的到该目录，起不同的名字，比如下面这样是两套 ssh</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">id_rsa</span><br><span class="line">id_rsa.pub</span><br><span class="line"></span><br><span class="line">id_rsa_other</span><br><span class="line">id_rsa_other.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后在 ~/.ssh/config 配置文件分别指定不同的账号使用不同的 ssh 密钥：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 默认账户</span><br><span class="line">Host github.com</span><br><span class="line">   HostName github.com</span><br><span class="line">   User defaultUser &#x2F;&#x2F; 这里改成自己的用户名</span><br><span class="line">   IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">   </span><br><span class="line"># 另一个账户</span><br><span class="line">Host github.com-user1    </span><br><span class="line">   HostName github.com</span><br><span class="line">   User otherUser &#x2F;&#x2F; 这里改成自己的用户名</span><br><span class="line">   IdentityFile ~&#x2F;.ssh&#x2F;id_rsa_other</span><br></pre></td></tr></table></figure>
+
+<p>克隆仓库的时候可以改成这种格式：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com-user1:otherUser/repo_name.git</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://stackoverflow.com/questions/21307793/set-git-config-values-for-all-child-folders" target="_blank" rel="noopener">Set git config values for all child folders</a></p>
 
       </div>
