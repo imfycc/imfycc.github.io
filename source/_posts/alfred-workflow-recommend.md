@@ -1,12 +1,17 @@
 ---
 title: 效率神器 Alfred workflow 插件推荐
 date: 2018-04-20 00:38:07
-updated: 2020-03-20 07:17:07
+updated: 2024-11-02 15:45
+overdue: true
 tags:
 categories: 最热
 ---
 
 {% qnimg alfred.png 'alt:alfred' extend:?imageView2/2/w/750 %}
+
+2024-11-02 更新：
+
+我现在已经不再使用 Alfred 了，macOS 的快捷搜索也换成了 Raycast。Raycast 免费的功能很多，也够用了，加上现在其他的 AI 工具也很方便，就不怎么研究插件了， 这篇文章也要成为历史了。
 
 > 以下是我常用的 Alfred workflow
 

@@ -1,7 +1,8 @@
 ---
 title: 关于我
 date: 2014-01-15 00:00:00
-updated: 2024-10-11 22:35
+updated: 2024-11-02 15:13
+checked: 2024-11-02 15:13
 tags:
 ---
 
@@ -9,13 +10,18 @@ tags:
 
 > 年轻无为，卖码为生
 
-> 喵星人铲屎官、微信自律圈群主、海贼王海米答题小程序开发者
+你好，我是方运。👋
 
-[我的书单](https://hufangyun.com/2016/booklist-my/)
+🧱 主业前端研发，Nodejs全栈方向。
 
-[纠结的用户名](https://hufangyun.com/2017/username/)
+🍎 副业 Apple 生态独立开发者。
 
-[关于转载](https://hufangyun.com/2018/copyright-reprinted/)
+😺 喵星人铲屎官，有两位猫咪好友陪伴。
 
-[与书相伴，时间为线](https://hufangyun.com/2016/books-and-me/)
+📱 已上架 App:
+* 😸 BetterWe 习惯打卡·待办完成·心愿实现
+* 🐓 Any Remember 纪念日·倒数日 任务栏上的小提醒
+
+
+您也可以在这些平台找到我：X、小红书、即刻都叫 imfycc，微博 imfy-cc
 
