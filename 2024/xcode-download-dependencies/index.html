@@ -24,7 +24,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.f8cb69.css">
   <link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <title>开源项目 sinopia 搭建团队内部 npm 服务器</title>
+  <title>Xcode 安装依赖超时问题解决办法</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?ae46047b557574a12bba544bea130043";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -47,7 +47,7 @@
     
   
   <h1 class="title">
-    开源项目 sinopia 搭建团队内部 npm 服务器
+    Xcode 安装依赖超时问题解决办法
   </h1>
   
 
@@ -55,11 +55,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2017-08-01T22:02:42.000Z" itemprop="datePublished">2017-08-02</time>
+        <time datetime="2024-11-05T16:11:09.000Z" itemprop="datePublished">2024-11-06</time>
       </li>
       <li>
         
-    更新 <time datetime="2017-08-01T22:02:42.000Z" itemprop="dateUpdated">2017-08-02</time>
+    更新 <time datetime="2024-11-05T16:11:09.000Z" itemprop="dateUpdated">2024-11-06</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -71,32 +71,13 @@
     <div class="article">
       <div class="content">
         
-        <div class="overdue-remind">
-          本文最后更新于$day天前，文中所描述的信息可能已发生改变。
-        </div>
-        
-        <p><a href="https://www.npmjs.com/package/sinopib#override-public-packages" target="_blank" rel="noopener">Sinopia官方文档</a></p>
-<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><p><strong>1、下载同步官方源。</strong></p>
-<p>先检查私有仓库里是否有要下载的包，没有的话，去 <code>npm</code> 官方的仓库下载。然后第二次再下载的时候，会缓存一份到我们搭建的这个 <code>npm</code> 仓库，以后再使用的话，就很快了。</p>
-<p><strong>2、建立私仓库</strong></p>
-<p>可以把公司内部的 <code>npm</code> 包，存放在里面。</p>
-<p><strong>3、对npm官方的包进行更改</strong></p>
-<p>如果发现，官方的包，有 <code>bug</code>，<code>pr</code> 后，还没有更新，这时候就可以先暂时 <code>publish</code> 到我们自己的仓库。</p>
-<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>1、简单！都不用数据库</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>部署参考上面的官方文档，和下面的参考文档。</p>
-<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>配置文件里的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">crypto.createHash(&#39;sha1&#39;).update(&#39;pass&#39;).digest(&#39;hex&#39;)</span><br></pre></td></tr></table></figure>
+        <p>记录 Xcode 安装依赖超时问题的解决办法。</p>
+<p>原罪就是 Xcode 并不能走代理，即使开全局模式都不行。</p>
+<p>如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 就很快。</p>
+<p>还有一种办法是终端给项目设置代理。然后在项目内执行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xcodebuild -resolvePackageDependencies -scmProvider system</span><br></pre></td></tr></table></figure>
 
-<p>在终端里输入 <code>node</code>,然后输入上面的命令。注：把pass换成 你的密码，然后生成加密的密码。</p>
-<p>设置 <code>npm</code> 包源，这个是会写入 <code>.npmrc</code> 的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm set registry &quot;http:&#x2F;&#x2F;localhost:4873&#x2F;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>公司内部的私有包的 <code>package.json</code> 里可以添加</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;publishConfig&quot;: &#123;</span><br><span class="line">    &quot;registry&quot;: &quot;http:&#x2F;&#x2F;localhost:4873&#x2F;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>1、<a href="https://zhuanlan.zhihu.com/p/20892656" target="_blank" rel="noopener">Sinopia | 从零开始搭建npm仓库</a></p>
-<p>2、<a href="http://m.blog.csdn.net/article/details?id=50938611" target="_blank" rel="noopener">使用sinopia搭建自己的npm服务</a></p>
-<p>3、<a href="http://blog.3gcnbeta.com/2016/04/28/%E8%BD%BB%E6%9D%BE%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84npm%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank" rel="noopener">npm自建服务器</a></p>
+<p>有其他更好的方式也欢迎补充 😆</p>
 
       </div>
         <div class="support-author">
