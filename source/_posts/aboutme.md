@@ -7,8 +7,6 @@ tags:
 
 [![imfycc`s Github Chart](http://ghchart.rshah.org/imfycc)](https://github.com/imfycc "image")
 
-> 年轻无为，卖码为生
-
 你好，我是方运。👋
 
 🧱 主业前端研发，Nodejs全栈方向。
