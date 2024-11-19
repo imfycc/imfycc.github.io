@@ -3,7 +3,7 @@ title: Follow RSS 阅读 App
 date: 2024-10-11 23:14:55
 updated: 2024-10-30 22:10:59
 tags:
-categories:
+categories: 数码
 ---
 
 ### 前言

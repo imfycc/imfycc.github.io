@@ -2,8 +2,8 @@
 title: 记录一次服务器重启应用恢复过程
 date: 2021-05-13
 updated: 2021-05-14 08:27
-tags:
-categories: 技术成长
+tags: 技术成长
+categories: 编程
 ---
 
 副标题：**哎呀，服务器登录不进去了瞎折腾** 

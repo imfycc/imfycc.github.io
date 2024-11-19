@@ -3,7 +3,7 @@ title: iMessage 在国内好用吗？
 date: 2024-11-09 19:08:10
 updated: 2024-11-09 19:08:10
 tags:
-categories:
+categories: 数码
 ---
 
 苹果发布会经常出现系统级别短信软件 iMessage 的一些功能升级介绍，大家好像关注的并不多。因为国内微信使用的非常普遍，iMessage 用的比较少，看起来也没有使用的必要。

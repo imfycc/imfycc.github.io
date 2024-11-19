@@ -3,7 +3,7 @@ title: macOS 重装踩坑记
 date: 2021-03-13
 updated: 2021-05-14 08:11
 tags: 
-categories: 
+categories: 最热
 ---
 
 > 是不是掉坑里了 😂 ？没事别重装系统，不知道下面的内容能不能帮到你，祝你好运 🎉。

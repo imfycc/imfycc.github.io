@@ -3,7 +3,7 @@ title: 短信转发-多设备多平台
 date: 2024-11-02 15:53:02
 updated: 2024-11-09 18:51:00
 tags:
-categories: 
+categories: 数码
 ---
 
 ## iOS ➡️ macOS 同步验证码

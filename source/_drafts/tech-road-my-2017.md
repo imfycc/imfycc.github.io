@@ -2,8 +2,8 @@
 title: 我的技术成长历程-2017
 date: 2018-02-04 12:20:45
 updated: 2018-02-05 02:34:45
-tags:
-categories: 技术成长
+tags: 技术成长
+categories: 编程
 ---
 
 ## 2017
