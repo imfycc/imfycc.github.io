@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>胡方运的博客</title>
+  <icon>https://static.hufangyun.com/face-small.png</icon>
   
-  
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://hufangyun.com/atom.xml" rel="self"/>
   
   <link href="https://hufangyun.com/"/>
   <updated>2024-11-12T01:15:56.000Z</updated>
@@ -14,7 +14,7 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>我的手机流量和宽带套餐性价比方案</title>
@@ -25,21 +25,20 @@
     
     <content type="html"><![CDATA[<p>和大家分享一下我们家现在的手机流量和宽带方案，我感觉非常划算，也稳定用了两年多了。</p><p>📱 我和小秋目前有三个手机号，都是北京移动，月租分别是</p><ul><li>我的手机号月租 0 元</li><li>小秋的主卡 8 元</li><li>小秋的流量卡 10 元</li><li>宽带每年 500 元</li></ul><p>⌛️ 额度：流量 100G 通话 700分钟 家庭宽带 500M</p><p>我感觉挺划算的，也满足我们日常使用，和大家分享一下怎么操作的。</p><p>北京移动每年年初的时候会有个「移动福卡 Pro 版」的套餐，有时候会下架，但是年初会再上架。</p><p>前年年末我问的时候说没有了取消了，但是去年年初我发现又上架了。</p><p>⚠️ 找不到这个套餐也没关系，也有类似的，就是找新手机号送宽带的套餐。</p><p>这个套餐是办理一个新手机号，每年 500元，然后流量 100G 1000分钟通话，不过我办理的时候通话只有 700分钟的了，也不错。</p><p>新手机号小秋在用，只用来打电话和用流量，不注册和绑定任何软件。因为是套餐送的，这个手机号以后就不用了，后面我们叫它流量卡 🌊。</p><p>小秋以前的手机号用了很多年了，绑定了很多软件，就办理了保号套餐 8 元，手机内关闭这个卡的流量功能。日常就是用流量卡的流量。</p><p>🎊 然后把我的手机号设置成流量卡的副卡，这样只需要流量卡每月再交 10 元。这个是开通副卡的费用，但是我的手机卡完全没有费用了，流量和通话都和流量卡共用，月租也没有了。</p><p>就实现了上面的效果：</p><ul><li>小秋的主卡月租 8 元，保号套餐。</li><li>流量卡10 元，开通副卡。</li><li>我的手机卡0 元，或者说费用就是上面流量卡的费用。</li></ul><p>⚠️ 不过注意，换宽带的套餐，有时候需要 100-200 元的光猫安装费用，他们每次都是换新的光猫，并不能直接用以前的，而且需要把以前的光猫自己还到营业厅，不要直接给安装人员。要不然系统里会记录你没还设备，进入黑名单。我上次就直接给了安装人员，结果系统显示我没归还设备，后来打电话找了客服，安装人员又给我快递发了一个光猫，我还到营业厅才解除的黑名单。这个挺坑的。</p><p>换宽带套餐后新机的安装费用也统一，有时候不要新机的安装费，有时候又需要，办理套餐的时候需要问清楚。</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;和大家分享一下我们家现在的手机流量和宽带方案，我感觉非常划算，也稳定用了两年多了。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;和大家分享一下我们家现在的手机流量和宽带方案，我感觉非常划算，也稳定用了两年多了。&lt;/p&gt;
 &lt;p&gt;📱 我和小秋目前有三个手机号，都是北京移动，月租分别是&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;我的手机号月租 0 元&lt;/li&gt;
 &lt;li&gt;小秋的主卡 8 元&lt;/li&gt;
-&lt;li&gt;小秋的流量卡
+&lt;li&gt;小秋的流量卡</summary>
       
     
-    </summary>
     
-      <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
+    
+    <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
     
     
   </entry>
@@ -53,17 +52,16 @@
     
     <content type="html"><![CDATA[<p>苹果发布会经常出现系统级别短信软件 iMessage 的一些功能升级介绍，大家好像关注的并不多。因为国内微信使用的非常普遍，iMessage 用的比较少，看起来也没有使用的必要。</p><p>我和小秋以前也是用微信聊天， 去年偶然间发现用系统自带的 iMessage 聊天挺好的 😃。和大家聊一聊 iMessage 的一些优势：</p><ol><li>👍 可以显示已读。这样有很好的反馈，知道发送的信息对方有没有收到。</li><li>☁️ 所有数据自动保存到 iCloud，有备份不会丢，也可以自动同步到其他设备。</li><li>🔐 iCloud 的数据是保存在个人 iCloud 存储中，相对于微信更安全，隐私性更好一些。</li><li>🔍 系统级别的搜索支持。比如 iMessage 的照片在相册搜索的时候也能搜到，图片中的文字也可以检索到。</li><li>😃 还有我很喜欢的贴纸功能。系统相册中可以方便的提取图片中的人物制作成贴纸，这些贴纸就能在 iMessage 中使用。相当于可以用自己拍的照片制作表情包。我和小秋聊天的时候，就用我们自己照片制作的贴纸当表情包，很有意思。</li></ol><p>不过我觉的这种聊天仅限于亲密关系，除了小秋，我和其他人还是用微信和邮件等方式沟通，这可能也是微信不做已读功能的原因吧。并不是所有人都喜欢显示已读。</p><p>还有近两年 iMessage 收到骚扰短信的情况几乎不见了，之前经常收到乱七八糟诈骗短信，现在治理的好多了。</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;苹果发布会经常出现系统级别短信软件 iMessage 的一些功能升级介绍，大家好像关注的并不多。因为国内微信使用的非常普遍，iMessage 用的比较少，看起来也没有使用的必要。&lt;/p&gt;
-&lt;p&gt;我和小秋以前也是用微信聊天， 去年偶然间发现用系统自带的 iMessage 聊天
+    <summary type="html">&lt;p&gt;苹果发布会经常出现系统级别短信软件 iMessage 的一些功能升级介绍，大家好像关注的并不多。因为国内微信使用的非常普遍，iMessage 用的比较少，看起来也没有使用的必要。&lt;/p&gt;
+&lt;p&gt;我和小秋以前也是用微信聊天， 去年偶然间发现用系统自带的 iMessage 聊天</summary>
       
     
-    </summary>
     
-      <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
+    
+    <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
     
     
   </entry>
@@ -77,19 +75,18 @@
     
     <content type="html"><![CDATA[<ol><li>🎁 分享欲。和大家分享有效的解决方案，分享生活和编程中遇到的事情，也避免别人踩坑。</li><li>🤩 成就感。有自然的浏览量、帮助到了其他人、有人订阅我博客，都很有成就感。</li><li>🗳️ 整理。本地笔记合并整理后，发布到博客上，我会把本地的删除掉，一个笔记整理的过程。</li><li>🔍 搜索。同样的问题下次再遇到，我会优先在自己博客内搜索。</li><li>🧶 练习表达。写博客是一个思考和练习表达的过程。</li></ol>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;ol&gt;
+    <summary type="html">&lt;ol&gt;
 &lt;li&gt;🎁 分享欲。和大家分享有效的解决方案，分享生活和编程中遇到的事情，也避免别人踩坑。&lt;/li&gt;
 &lt;li&gt;🤩 成就感。有自然的浏览量、帮助到了其他人、有人订阅我博客，都很有成就感。&lt;/li&gt;
-&lt;li&gt;🗳️ 整理。本地笔记合并整理后，发布到博客上，我会把本地的删
+&lt;li&gt;🗳️ 整理。本地笔记合并整理后，发布到博客上，我会把本地的删</summary>
       
     
-    </summary>
     
-      <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
@@ -103,21 +100,20 @@
     
     <content type="html"><![CDATA[<p>每年开发者大会之后，我都提前安装 beta 版本的 macOS 系统，体验新特性。</p><p>但是升级后，系统内的 Xcode 也会变成 Beta 版本，原来的 Xcode 就会覆盖一个禁用的标志，无法打开了。</p><p>Xcode Beta 提交新版本无法上架到 App Store，日常开发还是需要使用原来的 Xcode。</p><p>本文记录一下，如何打开原来的 Xcode</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">open /Applications/Xcode.app/Contents/MacOS/Xcode </span><br><span class="line"></span><br><span class="line">xcode-select -p</span><br><span class="line"></span><br><span class="line">sudo xcode-select -s /Applications/Xcode.app/Contents/Developer</span><br></pre></td></tr></table></figure><h2 id="分享-😆"><a href="#分享-😆" class="headerlink" title="分享 😆"></a>分享 😆</h2><p>同时和大家分享一个开源的 Xcode 安装软件 Xcodes，可以下载安装任意版本的 Xcode，很方便。</p><p><a href="https://www.xcodes.app/" target="_blank" rel="noopener">官网</a></p><p><a href="https://github.com/XcodesOrg/XcodesApp" target="_blank" rel="noopener">Xcodes Github</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;每年开发者大会之后，我都提前安装 beta 版本的 macOS 系统，体验新特性。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;每年开发者大会之后，我都提前安装 beta 版本的 macOS 系统，体验新特性。&lt;/p&gt;
 &lt;p&gt;但是升级后，系统内的 Xcode 也会变成 Beta 版本，原来的 Xcode 就会覆盖一个禁用的标志，无法打开了。&lt;/p&gt;
-&lt;p&gt;Xcode Beta 提交新版本无法上架到 
+&lt;p&gt;Xcode Beta 提交新版本无法上架到 </summary>
       
     
-    </summary>
-    
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Xcode" scheme="https://hufangyun.com/tags/Xcode/"/>
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Xcode" scheme="https://hufangyun.com/tags/Xcode/"/>
     
   </entry>
   
@@ -130,22 +126,21 @@
     
     <content type="html"><![CDATA[<p>记录 Xcode 安装依赖超时问题的解决办法。</p><p>原罪就是 Xcode 并不能走代理，即使开全局模式都不行。</p><p>如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 就很快。</p><p>还有一种办法是终端给项目设置代理。然后在项目内执行：</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xcodebuild -resolvePackageDependencies -scmProvider system</span><br></pre></td></tr></table></figure><p>有其他更好的方式也欢迎补充 😆</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;记录 Xcode 安装依赖超时问题的解决办法。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;记录 Xcode 安装依赖超时问题的解决办法。&lt;/p&gt;
 &lt;p&gt;原罪就是 Xcode 并不能走代理，即使开全局模式都不行。&lt;/p&gt;
 &lt;p&gt;如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 就很快。&lt;/p&gt;
-&lt;p&gt;还有一种办法是终端给项
+&lt;p&gt;还有一种办法是终端给项</summary>
       
     
-    </summary>
-    
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Xcode" scheme="https://hufangyun.com/tags/Xcode/"/>
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Xcode" scheme="https://hufangyun.com/tags/Xcode/"/>
     
   </entry>
   
@@ -158,16 +153,15 @@
     
     <content type="html"><![CDATA[<h2 id="iOS-➡️-macOS-同步验证码"><a href="#iOS-➡️-macOS-同步验证码" class="headerlink" title="iOS ➡️ macOS 同步验证码"></a>iOS ➡️ macOS 同步验证码</h2><p>系统已有能力。打开 iCloud iMessage同步即可。iOS 和 macOS 之间可以自动同步短信，手机上收到的验证码，macOS 也能实时收到，很方便。</p><h2 id="iOS-⬅️➡️-iOS-之间同步验证码"><a href="#iOS-⬅️➡️-iOS-之间同步验证码" class="headerlink" title="iOS ⬅️➡️ iOS 之间同步验证码"></a>iOS ⬅️➡️ iOS 之间同步验证码</h2><p>需要下载一个开源软件 ntfy，App Store 可以直接下载。然后通过系统的快捷指令匹配含有验证码字样的信息，通过 ntfy 转发到另一台手机。具体设置方式可以参考这篇文章<br><a href="https://sspai.com/post/84621" target="_blank" rel="noopener">备用机神器！苹果安卓双向同步短信大法 - 少数派</a></p><p>🌰 我现在主要的应用场景是：我和小秋很多账号是共用的，京东用的我的手机号，淘宝 闲鱼用小秋的手机号，这样一些需要积累升级的账号，两个人共用升级更快，每年88vip 都能达标。一些需要开会员的账号买一份就行，算是家庭共用账号。</p><p>有时候登录账户就需要对方的手机验证码，通过这种转发的方式几乎能实时收到对方手机号的验证码，非常方便。</p><h2 id="iOS-➡️-Android-同步验证码"><a href="#iOS-➡️-Android-同步验证码" class="headerlink" title="iOS ➡️ Android 同步验证码"></a>iOS ➡️ Android 同步验证码</h2><p>和上面的同理，也是使用 ntfy 软件实现， ntfy 也有安卓版本，甚至还有网页版，也可以通过网页版给对应设备发一些信息。</p><h2 id="其他平台之间的同步"><a href="#其他平台之间的同步" class="headerlink" title="其他平台之间的同步"></a>其他平台之间的同步</h2><p>安卓 ➡️ iOS：SmsForwarder+Bark</p><p>安卓 ➡️ 安卓：SmsForwarder+PushPlus</p><p>可以参考这个视频 <a href="https://www.bilibili.com/video/BV1kt421n7da/" target="_blank" rel="noopener">短信转发最全教程｜ 2024 全平台</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;iOS-➡️-macOS-同步验证码&quot;&gt;&lt;a href=&quot;#iOS-➡️-macOS-同步验证码&quot; class=&quot;headerlink&quot; title=&quot;iOS ➡️ macOS 同步验证码&quot;&gt;&lt;/a&gt;iOS ➡️ macOS 同步验证码&lt;/h2&gt;&lt;p&gt;系统已有能力
+    <summary type="html">&lt;h2 id=&quot;iOS-➡️-macOS-同步验证码&quot;&gt;&lt;a href=&quot;#iOS-➡️-macOS-同步验证码&quot; class=&quot;headerlink&quot; title=&quot;iOS ➡️ macOS 同步验证码&quot;&gt;&lt;/a&gt;iOS ➡️ macOS 同步验证码&lt;/h2&gt;&lt;p&gt;系统已有能力</summary>
       
     
-    </summary>
     
-      <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
+    
+    <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
     
     
   </entry>
@@ -181,17 +175,16 @@
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近 Follow App 非常火，闲鱼上甚至都有卖邀请码的，哈哈哈，我就是从闲鱼买的，已经用上了，确实非常棒 👍</p><p>虽然已经公测了，没有邀请码部分功能的使用会受到限制，所以还是需要邀请码的，但是我建议没有邀请码的小伙伴，直接去闲鱼买一个，现在一个邀请码的价格已经在 1 ～ 2 元左右了，非常便宜，花钱省时间 😆。</p><h3 id="优势-👍"><a href="#优势-👍" class="headerlink" title="优势 👍"></a>优势 👍</h3><ol><li>Follow App 的优势是万物皆可 RSS，可以把任意平台的内容转成 RSS 在 Follow 中订阅、阅读。</li><li>📢 有通知的效果，不用打开各个平台就能感知到自己关注的博主更新了。</li><li>💰 有奖励 Power 机制，每天早上签到领 Power 是我很期待的事情。</li><li>如果自己写的内容对大家有帮助，也可能获得 Power 助力打赏，激发大家的创作热情。</li><li>可以看到一篇文章哪些人看过，一个订阅源多少人订阅了。</li><li>可以看到自己关注的博主订阅了哪些源，丰富自己的订阅源。</li><li>可以设置自动化规则，对文章进行翻译和 AI 总结等。</li><li>🔗 符合互联网开放、互联的精神。</li></ol><h3 id="劣势-🐣"><a href="#劣势-🐣" class="headerlink" title="劣势 🐣"></a>劣势 🐣</h3><ol><li>一些海外订阅源不稳定，可能连续好几天都不更新。</li><li>微信公众号等封闭的自媒体平台应该不会喜欢 follow 这种软件，因为用户流失了，没有广告收入了。所以 RSS 的开放、互联和国内的自媒体平台是冲突的，平台应该不会喜欢这种协议。</li></ol><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>我要开始更新我的博客了，因为我发现居然有人在 follow 上订阅了我的博客，而且订阅人数一直在增长，这真是太出乎我的意料了。</p><p>感谢 follow 我博客的小伙伴，谢谢大家 🙏。</p><p>认证一下我的博客：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">This message is used to verify that this feed (feedId:57360050735182873) belongs to me (userId:42949798389474304). Join me in enjoying the next generation information browser https:&#x2F;&#x2F;follow.is.</span><br></pre></td></tr></table></figure>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;最近 Follow App 非常火，闲鱼上甚至都有卖邀请码的，哈哈哈，我就是从闲鱼买的，已经用上了，确实非常棒 👍&lt;/p&gt;
-&lt;p&gt;虽然已经
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;最近 Follow App 非常火，闲鱼上甚至都有卖邀请码的，哈哈哈，我就是从闲鱼买的，已经用上了，确实非常棒 👍&lt;/p&gt;
+&lt;p&gt;虽然已经</summary>
       
     
-    </summary>
     
-      <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
+    
+    <category term="数码" scheme="https://hufangyun.com/categories/%E6%95%B0%E7%A0%81/"/>
     
     
   </entry>
@@ -205,24 +198,23 @@
     
     <content type="html"><![CDATA[<p>副标题：<strong>哎呀，服务器登录不进去了瞎折腾</strong> </p><blockquote><p>梳理服务器错误操作的整个过程，算是自己的一次复盘 ✍️</p></blockquote><p>本文可以了解到：</p><p>1、ssh 免密登录服务器简单配置</p><p>2、sshd 端口查看和修改</p><p>3、Elixir + Phoenix 服务线上操作</p><p>4、如何查看 Linux 的开机启动项（服务器重启后，哪些服务会自动重启）</p><p>5、<code>systemctl</code> 简介</p><h2 id="背景-🚦"><a href="#背景-🚦" class="headerlink" title="背景 🚦"></a>背景 🚦</h2><p>本来自己云服务器上的应用一直跑的很稳定，也好长时间没打理了。最近收到腾讯云的安全提示，说服务器有高危漏洞 🕷，需要处理一下。</p><h2 id="经过-🚜"><a href="#经过-🚜" class="headerlink" title="经过 🚜"></a>经过 🚜</h2><p>因为应用太过稳定（访问量很小 🤷🏻‍♀️）好久没登录服务器了，先本地终端 ssh 连接服务器，发现被拒绝了。然后我又尝试从腾讯云的网页使用 ssh 标准方式登录也被拒绝了 🐣。</p><p>我以为密码不对，就在腾讯云服务器实例上选择了重启服务器修改密码。（错误操作的开始 😿）</p><p>重启还挺快，也就七八秒，但是我发现我还是登录不进去，就开始脑补，不会被黑了吧 🤖？</p><img src="https://static.hufangyun.com/hexo/img/server-restart.jpg?imageView2/2/w/500"><p>然后就选择了腾讯云提供的第二种登录方式，翻了一下文档发现默认用户名不是 root， 是 ubuntu</p><p>进入到服务器之后，先确定 ssh 的 sshd 服务有没有启动</p><h4 id="查看-sshd-状态"><a href="#查看-sshd-状态" class="headerlink" title="查看 sshd 状态"></a>查看 sshd 状态</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service sshd status</span><br></pre></td></tr></table></figure><p>发现 sshd 服务是正常运行的，但是为什么登录不进去 ❓</p><p>突然想到可能是本地 ssh 配置有问题</p><p>查看 <code>~/.ssh/config</code> 文件发现之前的配置没有了，偶对了，最近换电脑了。这个配置没处理… 😭</p><h3 id="配置-ssh"><a href="#配置-ssh" class="headerlink" title="配置 ssh"></a>配置 ssh</h3><h4 id="重新配置-ssh-config"><a href="#重新配置-ssh-config" class="headerlink" title="重新配置 ~/.ssh/config"></a>重新配置 <code>~/.ssh/config</code></h4><p>添加类似的内容</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host 这里自定义个字符串</span><br><span class="line">    HostName IP地址</span><br><span class="line">    User 用户名</span><br><span class="line">    Port 端口号</span><br></pre></td></tr></table></figure><p>IP地址 可以从云服务的控制台找到。</p><p>突然想起来，默认的 ubuntu 这个账户的权限挺大的，我好像搞了一个权限更小的账户管理应用，但是记不清用户名了，再确认一下 🙈。</p><h4 id="查看服务器上有哪些用户"><a href="#查看服务器上有哪些用户" class="headerlink" title="查看服务器上有哪些用户"></a>查看服务器上有哪些用户</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure><p>从里面找到之前创建的用户。</p><p>欧，我又想起来了。我好像把 ssh 的默认端口也给改了，默认端口不安全，我换成其他的了 🐶。</p><p>这也是为什么网页版的登录不了，网页版默认端口是 22 🙈</p><h4 id="查看-ssh-端口配置"><a href="#查看-ssh-端口配置" class="headerlink" title="查看 ssh 端口配置"></a>查看 ssh 端口配置</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><p>或者</p><h4 id="直接查看-ssh-服务端口"><a href="#直接查看-ssh-服务端口" class="headerlink" title="直接查看 ssh 服务端口"></a>直接查看 ssh 服务端口</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -tnlp | grep sshd</span><br></pre></td></tr></table></figure><p>好了，上面 <code>~/.ssh/config</code> 内需要的内容我们都找好了，配置上。</p><p>还有一步，把自己本地 ssh 的公钥加入到服务器的授权名单里，以后就可以免密登录了。</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure><p>服务器可以正常登录了。但是访问了一下，发现应用还挂着 🐤。</p><h3 id="恢复应用"><a href="#恢复应用" class="headerlink" title="恢复应用"></a>恢复应用</h3><p>我这个小应用是使用 Elixir + Phoenix 开发的后端，数据库用的 <code>PostgreSQL</code></p><h4 id="查看-nginx-的状态"><a href="#查看-nginx-的状态" class="headerlink" title="查看 nginx 的状态"></a>查看 nginx 的状态</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service nginx status</span><br></pre></td></tr></table></figure><h4 id="查看-PostgreSQL-的状态"><a href="#查看-PostgreSQL-的状态" class="headerlink" title="查看 PostgreSQL 的状态"></a>查看 PostgreSQL 的状态</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service postgresql status</span><br></pre></td></tr></table></figure><p>发现数据库服务是正常运行的。</p><h4 id="重启-elixir-Phoenix-应用"><a href="#重启-elixir-Phoenix-应用" class="headerlink" title="重启 elixir + Phoenix 应用"></a>重启 elixir + Phoenix 应用</h4><p>应用放在该用户的 home 文件夹的 www 内，找到应用 onePiece（这个小服务是和海贼王相关的 🏴‍☠️），进入 bin 文件夹，里面有个可执行文件 onePiece</p><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看帮助</span></span><br><span class="line">./onePiece <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ping 应用 </span></span><br><span class="line">./onePiece ping</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动应用</span></span><br><span class="line">./onePiece start</span><br></pre></td></tr></table></figure><p>然后应用正常启动了 ☠️ ⛵️ ⚓️ 🏝</p><h3 id="漏洞修补"><a href="#漏洞修补" class="headerlink" title="漏洞修补"></a>漏洞修补</h3><p>这才是一开始登录服务器的目的呀… 😹</p><p>腾讯云这边做的还挺好，漏洞详情里会给出需要升级的软件的命令。根据命令执行即可。</p><h3 id="systemctl-🎈"><a href="#systemctl-🎈" class="headerlink" title="systemctl 🎈"></a>systemctl 🎈</h3><p>这个过程中，我产生了一个疑问 🤔，<code>nginx</code>、<code>sshd</code>、<code>postgresql</code> 这些服务重启服务器的时候，会自动重启吗？如何查看服务器的开机启动项？</p><p>查找资料的时候发现了 <code>systemctl</code> </p><h4 id="查看可以使用-systemctl-管理的服务"><a href="#查看可以使用-systemctl-管理的服务" class="headerlink" title="查看可以使用 systemctl 管理的服务"></a>查看可以使用 systemctl 管理的服务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl list-unit-files</span><br></pre></td></tr></table></figure><h4 id="查看开机启动项"><a href="#查看开机启动项" class="headerlink" title="查看开机启动项"></a>查看开机启动项</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls /etc/systemd/system/multi-user.target.wants/</span><br></pre></td></tr></table></figure><p>从这个命令的结果可以看到，我之前有疑问的 <code>nginx</code>、<code>sshd</code>、<code>postgresql</code> 服务器重启的时候都会默认启动。</p><h4 id="把一个服务添加到开机启动"><a href="#把一个服务添加到开机启动" class="headerlink" title="把一个服务添加到开机启动"></a>把一个服务添加到开机启动</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> httpd</span><br></pre></td></tr></table></figure><h4 id="systemctl-和-service-命令的区别"><a href="#systemctl-和-service-命令的区别" class="headerlink" title="systemctl 和 service 命令的区别"></a>systemctl 和 service 命令的区别</h4><p>我前面重启服务和查看服务状态都用的 <code>service</code> 命令，其实也可以用 <code>systemctl</code> 命令去管理。</p><p>二者有什么区别哪？简单来说：</p><ul><li><code>systemctl</code> 相比 <code>service</code> 是新一代的 Linux 系统的启动和管理命令</li><li><code>systemctl</code> 命令兼容 <code>service</code></li><li>命令格式不太一样 systemctl 是服务名放在最后 <code>systemctl status httpd</code></li></ul><p><code>systemctl</code> 仅仅是 <code>Systemd</code> 其中一个命令，其实还有更多，包括查看服务器时间、登录用户、启动耗时等等，具体可以参考阮一峰的博文：</p><p><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">Systemd 入门教程：命令篇</a></p><p><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html" target="_blank" rel="noopener">Systemd 入门教程：实战篇</a></p><h2 id="小结-👉"><a href="#小结-👉" class="headerlink" title="小结 👉"></a>小结 👉</h2><p>本来的目的是，去服务器补漏洞的，结果由于长时间不登录服务器，加上不熟悉，瞎折腾了一番，但是整个过程，经历一次也学习到一些新知识。</p><p>我在运维上还有很多不了解的，之后加强学习。</p><p>记录本文也是害怕，万一下一次又双叒叕忘了呐 ☠️ 🙈 🐣 🧶 🤪。</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;副标题：&lt;strong&gt;哎呀，服务器登录不进去了瞎折腾&lt;/strong&gt; &lt;/p&gt;
+    <summary type="html">&lt;p&gt;副标题：&lt;strong&gt;哎呀，服务器登录不进去了瞎折腾&lt;/strong&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;梳理服务器错误操作的整个过程，算是自己的一次复盘 ✍️&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;本文可以了解到：&lt;/p&gt;
-&lt;p&gt;1、ssh 免密登录服务器简
+&lt;p&gt;1、ssh 免密登录服务器简</summary>
       
     
-    </summary>
-    
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="技术成长" scheme="https://hufangyun.com/tags/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="技术成长" scheme="https://hufangyun.com/tags/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
     
   </entry>
   
@@ -235,19 +227,18 @@
     
     <content type="html"><![CDATA[<blockquote><p>是不是掉坑里了 😂 ？没事别重装系统，不知道下面的内容能不能帮到你，祝你好运 🎉。</p></blockquote><h2 id="长话短说-🚀"><a href="#长话短说-🚀" class="headerlink" title="长话短说 🚀"></a>长话短说 🚀</h2><p>不想看我废话，就直接拉到后面看「解决」篇章吧。</p><h2 id="背景-🚦"><a href="#背景-🚦" class="headerlink" title="背景 🚦"></a>背景 🚦</h2><p>本周只有一天的假期，结果周五晚上我手抽筋 👎，头脑一热 🤯，想重装一下 MacBook Pro 的系统 😭。</p><h3 id="为什么要重装？"><a href="#为什么要重装？" class="headerlink" title="为什么要重装？"></a>为什么要重装？</h3><p>1、我之前用的 Big Sur 的内测版，电池的循环次数和损耗都在正常范围内，却一直显示需要维修，我想重装一下看看是不是系统问题 🔋。</p><p>2、最近这台电脑闲置，想给其他人用，我想恢复出厂设置，让她有一种重新配置新电脑的感觉 ❤️ 。</p><h2 id="经过-🚜"><a href="#经过-🚜" class="headerlink" title="经过 🚜"></a>经过 🚜</h2><h3 id="重装前"><a href="#重装前" class="headerlink" title="重装前"></a>重装前</h3><ul><li>我「时间机器」（Time Machine）内有整个系统的备份</li><li>我已经整理过这台电脑上比较重要的文件了</li><li>我之前有过重装的经历</li><li>我身边还有一台 Mac 🖥</li></ul><p>基于以上的条件，我才敢重装的。</p><p>但还是太年轻了，掉坑里了。本周唯一的一天假期搭进去了。🐙</p><p>我是按照官网 <a href="https://support.apple.com/zh-cn/HT204904" target="_blank" rel="noopener">如何重新安装 macOS</a>这篇文章重装的，我进入恢复模式，把硬盘格式化了。⚠️</p><p>🚦注解：下文中涉及到的 「恢复模式」都是指开机 command （⌘） + r 进入的恢复界面。</p><img src="https://static.hufangyun.com/hexo/img/mac-reinstall-1.jpg?imageView2/2/w/500"><p>然后选择 「Reinstall macOS Big Sur」 重装的时候，一直提示连接不上恢复服务器。😂</p><p>然后根据知乎上的问题<a href="https://www.zhihu.com/question/282626105" target="_blank" rel="noopener">MacBook Pro无法与恢复服务器取得联系？</a></p><p>我尝试过：</p><ul><li>在终端修改时间</li><li>换其他的 wifi 和 热点</li></ul><p>都不行。😂 😂 😂</p><p>选择时间机器恢复也不行，因为系统已经没有了。时间机器恢复，必须要有系统。</p><p>我重启电脑后，因为硬盘格式化了，系统没有了，直接进系统会出现下面的内容。</p><img src="https://static.hufangyun.com/hexo/img/mac-reinstall-2.jpg?imageView2/2/w/500"><p>恢复模式进不去了，每次都是直接进入网络恢复模式，网络恢复模式就很随机。每次进度条走了 15 分钟左右，可能会报错，就像下面这样，出个叹号 👻，也可能运气好又进入到恢复模式了 🤩（几率很低）。</p><img src="https://static.hufangyun.com/hexo/img/mac-reinstall-3.jpg?imageView2/2/w/500"><h2 id="U-盘引导安装"><a href="#U-盘引导安装" class="headerlink" title="U 盘引导安装"></a>U 盘引导安装</h2><p>正常流程走不通，我就想通过 U 盘重装系统。</p><p>根据苹果官网的教程 <a href="https://support.apple.com/zh-cn/HT201372" target="_blank" rel="noopener">如何创建可引导的 macOS 安装器 - Apple 支持</a>，下载系统，制作引导 U 盘</p><p>我好久没用 U 盘了，翻箱倒柜的找个大学时的 8G 的 U 盘。我一开始用的 macOS Mojave 10.14 和 macOS High Sierra 10.13 制作启动盘，因为这两个系统不到 8G。</p><p>发现又坑了。😂 😂 😂</p><p>我 2018 年的 Mac 多了 T2 安全芯片，默认不能 U 盘引导安装。点击 U盘的启动盘，依然是进入网络恢复模式。</p><p><a href="https://support.apple.com/zh-cn/HT208862" target="_blank" rel="noopener">配备 Apple T2 安全芯片的 Mac 机型 - Apple 支持</a></p><p>需要在重装前关闭安全设置。</p><p><a href="https://support.apple.com/zh-cn/HT208198" target="_blank" rel="noopener">关于“启动安全性实用工具” - Apple 支持</a></p><p>但是我知道的太晚了，我已经格式化硬盘了。。。现在再在恢复模式关闭，会提示没有系统账号，系统都没了，账号也没了 😂 😂 😂</p><p>倒是我后来在网上查到一种方案，可以在恢复模式的命令行进入 U盘，从 U 盘唤起安装程序。😘</p><p>能唤起，只是我当前恢复模式的系统是 big sur 的，提示不能比这个版本低。</p><p>最新的 Big Sur 系统 12 G，U 盘至少 16G 吧，最后找邻居借了一个，人家的 U 盘将近 256 G 的。😱</p><p>现在 U 盘都这么大么 🙀</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>主要参考的这个<a href="https://apple.stackexchange.com/a/398527" target="_blank" rel="noopener">提示</a>。</p><p>进入到恢复模式，打开终端根据以下命令唤起 U 盘内的安装程序</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查看挂载了哪些盘</span></span><br><span class="line"></span><br><span class="line">ls /volumes</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找到对应的路径 可以 tab 补全 </span></span><br><span class="line">/volumes/<span class="xml"><span class="tag">&lt;<span class="name">U盘名</span>&gt;</span>/Install\ macOS\ <span class="tag">&lt;<span class="name">对应的系统</span>&gt;</span>.app/Contents/MacOS/InstallAssistant</span></span><br></pre></td></tr></table></figure><p>如果安装失败，安装程序会自动退出。如果还在恢复模式，应该是安装失败了😂。</p><p>安装失败，可以看一下安装程序的日志（安装程序任务栏有个查看日志），我这里也安装失败过一次，查看日志发现有些超时问题，在这里我又根据知乎上的方法（上文提到的），修改的 date 和输入法，结果就可以了 🙀。（这里很玄学，也可能是我零点左右操作的，苹果的服务又链接上了？🙀 🙆🏻‍♂️ 😳 😱）</p><p>安装成功会重启，继续安装过程，系统安装成功。</p><p>折腾了一天 😂 😂 😂</p><p>我的假期泡汤了。。。</p><h2 id="总结-😼"><a href="#总结-😼" class="headerlink" title="总结 😼"></a>总结 😼</h2><p>1、2018 年开始的 Mac 多加了一个 T2 安全芯片，格式化盘前要先关闭安全设置。</p><p>2、如果进入地球的网络恢复模式一直报错，多试几次吧。偶尔会成功的进入恢复界面的。</p><p>3、在高版本的恢复界面，是不能重装低版本的系统的。制作引导盘的时候，要制作大于等于当前系统的引导盘。</p><p>4、即使没有关闭 T2 芯片的安全设置，在恢复模式的命令行可以进入到 U 盘启动安装程序。（最好还是先关闭，万一以后这条不行了）</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;是不是掉坑里了 😂 ？没事别重装系统，不知道下面的内容能不能帮到你，祝你好运 🎉。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;长话短说-🚀&quot;&gt;&lt;a href=&quot;#长话短说-🚀&quot; class=&quot;headerlink&quot; title=&quot;
+&lt;h2 id=&quot;长话短说-🚀&quot;&gt;&lt;a href=&quot;#长话短说-🚀&quot; class=&quot;headerlink&quot; title=&quot;</summary>
       
     
-    </summary>
     
-      <category term="最热" scheme="https://hufangyun.com/categories/%E6%9C%80%E7%83%AD/"/>
+    
+    <category term="最热" scheme="https://hufangyun.com/categories/%E6%9C%80%E7%83%AD/"/>
     
     
   </entry>
@@ -261,20 +252,19 @@
     
     <content type="html"><![CDATA[<p>这是我人生中很特别的一年，我换了一份新工作，拍了婚纱照，买了房，结了婚。😄</p><p>换工作是计划内的事情，买房却很意外。以前我从没想过在北京买房。感觉买不起，但是偶然和朋友去看房，回家算了一下首付，感觉再借点也能够的上，就开始看房买房了。看房的那段时间房价一直再涨，基于至少还会在北京工作5年和北京房子的投资价值，我们俩上车了一套一室一厅。</p><p>现在想一想，或许再晚个一两年攒点钱同小区上车套两室一厅的可能会更好一些。之后换房的压力小一点。买房的过程也感觉我们俩想两个傻狍子，哈哈哈，就这么迅速又意料之外的买房了。但是户型小秋很喜欢，大落地窗。😻</p><p>房子到手后，一直在忙装修，硬装已经结束了，剩下的就是软装和散味。非常期待能够尽快入住。把家里打造成自己最享受的状态。我现在每天去房子里晃荡两趟，早上起床后就顺路去新房洗刷，晚上过去把今天到的快递收一下。小秋问我，你怎么每天都要去新房子里，我说因为我很开心呀。每天去自己的房子里我就很开心。北漂快 5 年了，我终于有自己的房子了，我可以按照自己的心意定制这套房子里的一切，这是我们俩的小家。🏝</p><p>因为买房，就顺势结婚了。小秋一直是我想结婚 👰🏻 的姑娘，只不过领证并没有在我们年初的计划里，就像买房，都是临时起意吧。</p><p>不过在这两件事情之前，因为北京有婚博会，我们俩提前把婚纱照拍了。我很满意，拍的还不错。我计划之后在房子里多搞点电子相框。把小猫咪和各种不错的照片都播放起来。😺</p><h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>今年换了一份新工作，大厂，挺好的工作。周围的同事都很强，挺有挑战，用的技术栈我也喜欢，工作压力也没有那么大，而且公司后面把大小周也取消了，自己的时间更多了。</p><p>不过说实话，我总觉得工作上我投入度不够，我对自己工作上的表现不满意。</p><p>或者说我对自己的职业规划，成为技术大牛，有点失去兴趣，工作时间长了，我不想成长为 Leader，就想当个大头兵。</p><p>现在的状态不但没有前进，好像还在后退。记的刚毕业的时候我可有冲劲了，对技术学习充满激情。工作上也很积极，一直是优秀员工。</p><p>但是现在的我，有点止步不前了。可能是因为我对独立开发这件事情抱有太多的幻想，想兼顾的盘子太多，导致我什么都没做好。</p><h2 id="技术-🚀"><a href="#技术-🚀" class="headerlink" title="技术 🚀"></a>技术 🚀</h2><p>哎，除了换工作促使的学习。今年好像没有什么提高。感觉自己还是相当的菜。🥦</p><h3 id="产出-🍎"><a href="#产出-🍎" class="headerlink" title="产出 🍎"></a>产出 🍎</h3><ul><li><input disabled="" type="checkbox"> 在<a href="https://sspai.com/u/gzsh2iyp/posts" target="_blank" rel="noopener">少数派</a>写一篇文章</li><li><input disabled="" type="checkbox"> 我的习惯、清单软件发布</li><li><input disabled="" type="checkbox"> 重新设计一下我的博客，提高阅读体验</li></ul><p>都没做，今年好像没啥产出。</p><h3 id="体验-🤩"><a href="#体验-🤩" class="headerlink" title="体验 🤩"></a>体验 🤩</h3><ul><li><input disabled="" type="checkbox"> 学会弹尤克里里</li></ul><p>算了，后半年事情太多，这个优先级太低了，没学。</p><h3 id="书籍-📚"><a href="#书籍-📚" class="headerlink" title="书籍 📚"></a>书籍 📚</h3><p>读书列表在这里 <a href="https://hufangyun.com/2016/booklist-my/">我的年度读书清单</a></p><p>很遗憾，我今年几乎没有完整的看完一本书。</p><h3 id="健康-🏃"><a href="#健康-🏃" class="headerlink" title="健康 🏃"></a>健康 🏃</h3><p>每日健身环大冒险</p><p>前半年玩的挺多的，后半年忙装修就顾不上了。</p><h3 id="特别的事情-⭐️"><a href="#特别的事情-⭐️" class="headerlink" title="特别的事情 ⭐️"></a>特别的事情 ⭐️</h3><ul><li>1月15日 打了新冠疫苗。</li><li>「21世纪第21年的第21天」 我离职了。第一份工作。</li><li>入职字节跳动</li><li>因为疫情在北京过年。</li><li>微博第一次中奖，还是大奖。 记账软件钱迹的终生会员</li><li>第一次烫头，哈哈哈，渣男烫。</li><li>韩国艺匠，拍了婚纱照，感觉服务很不错，有投诉机制，服务到用户满意。</li><li>在北京买房了。</li><li>第一次全家人一起做坐火车。</li><li>订婚，双方父母见面。</li><li>领证了，小秋是我前女友了，现在和将来是我妻子。</li></ul><h3 id="电影-🎬"><a href="#电影-🎬" class="headerlink" title="电影 🎬"></a>电影 🎬</h3><p>今年暂时推荐：冰川时代 系列</p><h3 id="买买买-🛒"><a href="#买买买-🛒" class="headerlink" title="买买买 🛒"></a>买买买 🛒</h3><p>我感觉不错的东西都整理在<a href="https://m.jstore.site/store/5ebf816cfbcd910018986da1" target="_blank" rel="noopener">即士多</a>了。</p><p>今年买的幸福产品：</p><ul><li>Switch 健身环</li></ul><p>因为在装修，我买了一大堆的东西，后面感觉不错的和大家分享一下。</p><h3 id="小猫咪-🐈"><a href="#小猫咪-🐈" class="headerlink" title="小猫咪 🐈"></a>小猫咪 🐈</h3><p>有一只叫咕噜的小奶猫来我家暂住了一段时间，小奶猫真的太可爱了~ 😻</p><p>我们家的两只猫，不久就可以有更大的活动空间了。自己家，撒欢跑~</p><h3 id="财务-💰"><a href="#财务-💰" class="headerlink" title="财务 💰"></a>财务 💰</h3><p>买房掏空了积蓄，不过借朋友的钱都还完了，年底稍微恢复了一点元气。明年用钱的地方还很多，可能近几年都攒不下钱了。</p><p>钱都没有，就别提理财了。🤣</p><h3 id="家庭-🏠"><a href="#家庭-🏠" class="headerlink" title="家庭 🏠"></a>家庭 🏠</h3><p>遇到小秋真的非常幸运呀。好好珍惜。😸</p><p>订婚的时候，双方父母见了面。我感觉我真的是太幸运了，岳父和岳母都很和善，两边相处的很融洽。</p><h3 id="软件-💾"><a href="#软件-💾" class="headerlink" title="软件 💾"></a>软件 💾</h3><p>其实我想说说 我来</p><p>『我来』最开始给我的印象是抄袭 notion</p><p>我虽然不用『我来』，但是我一直在关注『我来』的更新。</p><p>除了跟随 notion 功能迭代，本土化做的很好，添加了很多让人兴奋的功能，未来的更新计划也令人期待。功能迭代的很快，体验不错。</p><p>不过这款软件被限制在了国内，因为是抄袭 notion 起步的，这款软件只能在国内市场玩了。而 notion 服务的是全球用户。不过作为一家创业公司，国内笔记市场份额能占住也很强的，收益也很乐观。</p><p>从使用体验和未来发展上我挺看好『我来』的。</p><h3 id="旅行-🌊"><a href="#旅行-🌊" class="headerlink" title="旅行 🌊"></a>旅行 🌊</h3><p>今年没出去旅行，有疫情，没钱，没时间。</p><p>就在北京转了转，去了一次百望山，爬了爬山。</p><p>旅行对我来说，最重要的是和小秋一起去。一起去体验，留下美好的回忆。</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;这是我人生中很特别的一年，我换了一份新工作，拍了婚纱照，买了房，结了婚。😄&lt;/p&gt;
-&lt;p&gt;换工作是计划内的事情，买房却很意外。以前我从没想过在北京买房。感觉买不起，但是偶然和朋友去看房，回家算了一下首付，感觉再借点也能够的上，就开始看房买房了。看房的那段时间房价一直再涨，
+    <summary type="html">&lt;p&gt;这是我人生中很特别的一年，我换了一份新工作，拍了婚纱照，买了房，结了婚。😄&lt;/p&gt;
+&lt;p&gt;换工作是计划内的事情，买房却很意外。以前我从没想过在北京买房。感觉买不起，但是偶然和朋友去看房，回家算了一下首付，感觉再借点也能够的上，就开始看房买房了。看房的那段时间房价一直再涨，</summary>
       
     
-    </summary>
-    
-      <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="年度总结" scheme="https://hufangyun.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="年度总结" scheme="https://hufangyun.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -287,20 +277,19 @@
     
     <content type="html"><![CDATA[<h3 id="书籍-📚"><a href="#书籍-📚" class="headerlink" title="书籍 📚"></a>书籍 📚</h3><p>我今年读了 16 本书，和往年差不多。</p><p>读书列表在这里 <a href="https://hufangyun.com/2016/booklist-my/">我的年度读书清单</a></p><p>后面带 👍 是我有收获，感觉不错的书籍</p><p>我现在想找一款或者自己简单搞一款软件，管理我的读书笔记和摘录。想定时的随机几条摘录，帮助我回想起这本书。要不然有一种，读了很多书，很多都没什么记忆的感觉。😿</p><h3 id="电影-🎬"><a href="#电影-🎬" class="headerlink" title="电影 🎬"></a>电影 🎬</h3><p>之前是记录在豆瓣上，但是最近一直没记录。</p><p>今年推荐：《流浪猫鲍勃》</p><p>可能是因为小猫咪 🐱 的原因，感觉很治愈。</p><h3 id="技术成长-🚀"><a href="#技术成长-🚀" class="headerlink" title="技术成长 🚀"></a>技术成长 🚀</h3><ul><li>梳理了自己的知识体系，学习了很多新知识</li><li>读完了《JavaScript 高级程序设计 第四版》</li></ul><h3 id="产出-🍎"><a href="#产出-🍎" class="headerlink" title="产出 🍎"></a>产出 🍎</h3><h4 id="还不错-👍"><a href="#还不错-👍" class="headerlink" title="还不错 👍"></a>还不错 👍</h4><ul><li>在少数派写了<a href="https://sspai.com/u/gzsh2iyp/posts" target="_blank" rel="noopener">两篇文章</a></li><li><a href="https://www.yuque.com/docs/share/b75e5589-c399-4f0a-a29d-01d678e86f69" target="_blank" rel="noopener">网易有钱记账数据导出脚本</a> 收获了我的第一笔赞赏 💰</li></ul><h4 id="啊哈-😔"><a href="#啊哈-😔" class="headerlink" title="啊哈 😔"></a>啊哈 😔</h4><ul><li>创建了公众号「小猿大圣」</li><li>创建了微信圈子『自律圈』</li><li>成为了印象大使 🐘。（哈哈哈，获得了几个月的会员，提前体验新功能）</li></ul><h3 id="财务-💰"><a href="#财务-💰" class="headerlink" title="财务 💰"></a>财务 💰</h3><p>我今年一直跟着银行螺丝钉定投，年收益率大约 8.5%</p><h3 id="体验-🤩"><a href="#体验-🤩" class="headerlink" title="体验 🤩"></a>体验 🤩</h3><p>这是新加的一项</p><p>能想起来的就是，年底团建体验了卡丁车 🏎</p><p>还有换了房间内家具的布局，每次换布局就像是换了新房子，很开心。😸</p><h3 id="健康-🏃"><a href="#健康-🏃" class="headerlink" title="健康 🏃"></a>健康 🏃</h3><p>有一段时间一直在坚持做俯卧撑大约有两个多月。</p><p>再就是年底和小秋每天去跳绳。</p><p>吃早餐的习惯一直保持的挺好的。</p><p>感觉身体应该挺健康，刚发现公司今年没组织体检~~ 😭</p><h3 id="家庭-🏠"><a href="#家庭-🏠" class="headerlink" title="家庭 🏠"></a>家庭 🏠</h3><p>我堂姐结婚，带小秋回老家。算是带小秋认识了整个大家庭，小秋在我们家有了第一张合照。</p><blockquote><p>2024.10.30 更新：后来我和小秋结婚了，我们大家庭又拍了一张合照，不过这次她是新娘。</p></blockquote><h3 id="特别的事情-⭐️"><a href="#特别的事情-⭐️" class="headerlink" title="特别的事情 ⭐️"></a>特别的事情 ⭐️</h3><ul><li>今年爆发了新冠疫情 😷。</li><li>远程办公了两个周。 👨‍💻 ‍</li><li>我的微信小程序『海贼王海米答题』和『海贼王圈』、『海贼王大图鉴』合作引流。</li><li>又一次晋升通过了🚀。 感谢各位老大对我的认可。</li><li>小秋今年报了公司的吉他课。遇到了一位很好的老师和很多小伙伴。我也有幸去观看了他们的表演，参加了团建 🎸。</li><li>和之前的一位同事又联系上了，好友。很喜欢和他聊天分享 😸。</li><li>年底一直在面试，想去大厂。</li></ul><h3 id="软件-💾"><a href="#软件-💾" class="headerlink" title="软件 💾"></a>软件 💾</h3><h4 id="氢气"><a href="#氢气" class="headerlink" title="氢气"></a>氢气</h4><p>管理自己的衣橱。</p><p>以前觉的自己不需要这样的软件，后来发现整理一下，有利于合理消费。</p><blockquote><p>2024.10.30 更新：这个软件用不了了，登录不进去了。有时候看到小秋一柜子的衣服，有点想自己写一个的冲动。</p></blockquote><h4 id="幕布"><a href="#幕布" class="headerlink" title="幕布"></a>幕布</h4><p>笔记和思维脑图 👍</p><h4 id="图压"><a href="#图压" class="headerlink" title="图压"></a><a href="https://tuya.xinxiao.tech/" target="_blank" rel="noopener">图压</a></h4><p>压缩图片</p><h3 id="买买买-🛒"><a href="#买买买-🛒" class="headerlink" title="买买买 🛒"></a>买买买 🛒</h3><p>我把我感觉不错的东西都整理在<a href="https://m.jstore.site/store/5ebf816cfbcd910018986da1" target="_blank" rel="noopener">即士多</a>。</p><p>今年买的幸福产品：</p><ul><li>石头扫地机器人 T7</li><li>雅迪电动车 Q1 （主要是和之前对比）</li><li>Gosund WIFI 智能插座 （买了很多个）</li></ul><h3 id="小猫咪-🐈"><a href="#小猫咪-🐈" class="headerlink" title="小猫咪 🐈"></a>小猫咪 🐈</h3><img alt="小月饼和大布丁" src="https://static.hufangyun.com/hexo/img/2020-cat.jpg?imageView2/2/w/520"><span class="img-alt">小月饼和大布丁</span><p>今年国庆没回家，顺便帮其他人喂猫。哈哈，撸别人家的猫~</p><p>两只小可爱陪了我们三年了~</p><p>今年两只猫相继泌尿有问题，又是看医生，又是吃药的。不过下半年都好了。大布丁可能自己意识到问题了，现在经常去喝水，尿尿的时候，哗啦啦的尿半天，感觉猫砂盆都要被尿穿了~ 但是听到这种声音，我们俩都很开心 😸 ~~</p><p>一定要让小猫咪多喝水，多运动。如果泌尿出问题，可能会乱尿（任何地方），频繁上厕所，一直刨猫砂，看着都难受 😞。</p><h3 id="旅行-🌊"><a href="#旅行-🌊" class="headerlink" title="旅行 🌊"></a>旅行 🌊</h3><p>今年没出去~</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h3 id=&quot;书籍-📚&quot;&gt;&lt;a href=&quot;#书籍-📚&quot; class=&quot;headerlink&quot; title=&quot;书籍 📚&quot;&gt;&lt;/a&gt;书籍 📚&lt;/h3&gt;&lt;p&gt;我今年读了 16 本书，和往年差不多。&lt;/p&gt;
-&lt;p&gt;读书列表在这里 &lt;a href=&quot;https://hufang
+    <summary type="html">&lt;h3 id=&quot;书籍-📚&quot;&gt;&lt;a href=&quot;#书籍-📚&quot; class=&quot;headerlink&quot; title=&quot;书籍 📚&quot;&gt;&lt;/a&gt;书籍 📚&lt;/h3&gt;&lt;p&gt;我今年读了 16 本书，和往年差不多。&lt;/p&gt;
+&lt;p&gt;读书列表在这里 &lt;a href=&quot;https://hufang</summary>
       
     
-    </summary>
-    
-      <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="年度总结" scheme="https://hufangyun.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="年度总结" scheme="https://hufangyun.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -313,19 +302,18 @@
     
     <content type="html"><![CDATA[<img alt="https" src="https://static.hufangyun.com/hexo/img/https-config.jpg"><span class="img-alt">https</span><blockquote><p>2023年10月06更新</p><p>已经好久没搞过 SSL 证书的申请了，感觉折腾起来应该挺麻烦的，第一反应先去谷歌了一下。然后在前几条搜索里居然看到了自己的博文，哈哈哈。一看时间是 4 年前写的了，但是按照内容走了一遍流程居然没过时，依然适用，太意外了。而且设置证书挺简单的，整个流程输入几个命令就自动设置好了，全程不到 5 分钟。So easy!</p><p>certbot 的命令自动帮你申请证书、配置到 nginx 上，都不需要自己修改和重启 nginx 服务。整个流程很简单。</p><p>这也是写博文的好处吧。做个记录，方便大家，也方便以后的自己。😆</p></blockquote><h2 id="以下是正文"><a href="#以下是正文" class="headerlink" title="以下是正文"></a>以下是正文</h2><p>最近部署了一个新服务，想给域名启用 <code>https</code>，结果搜了半天，在我的博客里只发现了这一篇笔记：<a href="https://hufangyun.com/2017/https-aliyun-free/">阿里云免费证书域名启用 https</a></p><p>😹 只能说给网站启用 <code>https</code> 太简单了，之前都没留下笔记，为了之后方便，简单记录一下。</p><p>我使用的是 <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a> 的免费证书。</p><p>按照下面的操作一步步来就行了。</p><p>1、去 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a> 官网。</p><p>2、在页面上选择一下你用的 <code>Web</code> 服务器和操作系统。比如，我选的 <code>Nginx</code> 和 <code>Ubuntu 22.04</code>。选项里没找到 Ubuntu 22 版本，我选了个 20 的，也是一样的。</p><p>3、页面上会出现操作步骤，按照提示的步骤一步步执行命令就可以了。</p><p>需要注意执行到 <code>sudo certbot --nginx</code> 的时候，会出现两个协议：</p><p>第一个，是问你要不要同意他们的服务协议，选择“同意”。</p><p>第二个，是问你要不要共享你的邮箱给他们，他们偶尔会发一些他们基金会的新闻一类的。我选了“不同意”（因为我不知道以后有没有退订选项 😂）。</p><p>之后 <code>certbot</code> 会自动扫描你的 <code>Nginx</code> 的配置，寻找域名列表然后让你选择想配置 <code>https</code> 证书的域名（好像可以同时配置多个域名）。</p><p>如果没找到域名的话，会让你手动输入一个域名。</p><p>之后会问你，要不要强制把 <code>http</code> 的链接跳转到 <code>https</code> 上，当然选“是”了。</p><p>之后 <code>certbot</code> 会帮你把 <code>Nginx</code> 一切都配置好。你直接访问域名看一下效果即可。服务真是相当的贴心。。。。🎉</p><p>耗叔的这篇文章 <a href="https://coolshell.cn/articles/18094.html" target="_blank" rel="noopener">如何免费的让网站启用HTTPS|酷 壳 - CoolShell</a> 提到配置<code>http2</code> 传输性能更好。</p><blockquote><p>要求 <code>Nginx</code> 版本要大于 <code>1.9.5</code>。<code>HTTP2</code> 具有更快的 <code>HTTPS</code> 传输性能，非常值得开启。需要开启 <code>HTTP/2</code> 其实很简单，只需要在 <code>nginx.conf</code> 的 <code>listen 443 ssl;</code> 后面加上 <code>http2</code> 就好了。如下所示：</p></blockquote><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">listen</span> <span class="number">443</span> ssl http2; <span class="comment"># managed by Certbot </span></span><br><span class="line"><span class="attribute">ssl_certificate</span> /etc/letsencrypt/live/coolshell.cn/fullchain.pem; <span class="comment"># managed by Certbot </span></span><br><span class="line"><span class="attribute">ssl_certificate_key</span> /etc/letsencrypt/live/coolshell.cn/privkey.pem; <span class="comment"># managed by Certbot </span></span><br><span class="line"><span class="attribute">include</span> /etc/letsencrypt/options-ssl-nginx.conf; <span class="comment"># managed by Certbot</span></span><br></pre></td></tr></table></figure><p>然后，<code>nginx -s reload</code> 就好了。</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;img alt=&quot;https&quot; src=&quot;https://static.hufangyun.com/hexo/img/https-config.jpg&quot;&gt;&lt;span class=&quot;img-alt&quot;&gt;https&lt;/span&gt;
+    <summary type="html">&lt;img alt=&quot;https&quot; src=&quot;https://static.hufangyun.com/hexo/img/https-config.jpg&quot;&gt;&lt;span class=&quot;img-alt&quot;&gt;https&lt;/span&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;2023年10月06
+&lt;p&gt;2023年10月06</summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -339,19 +327,18 @@
     
     <content type="html"><![CDATA[<blockquote><p>如果你有多个 git 账户，有没有遇到过提交代码的用户信息混乱的情况？ 如果一劳永逸的解决这个问题那？</p></blockquote><h2 id="分目录配置-git-用户信息"><a href="#分目录配置-git-用户信息" class="headerlink" title="分目录配置 git 用户信息"></a>分目录配置 git 用户信息</h2><p><code>git</code> 可以设置全局的用户信息，然后可以再单独为每个仓库设置用户信息。如果忘记了给项目重置用户信息，可能就会发生上面的问题 — 提交时的邮箱和用户名错了。😓</p><p>如果你喜欢用不同的目录区分个人和公司的项目，可以使用下面的方法配置自己的 <code>git</code> 用户信息。😀</p><p>比如，你把公司的项目都放在了 <code>Company</code> 目录下，个人的项目都放在了 <code>Personal</code> 目录下下面。</p><p>那你可以这么做：</p><p>在 <code>Company</code> 下新建一个 <code>.gitconfig_include</code> 文件，配置你想在该目录下给所有 <code>git</code> 仓库设置的用户信息。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[user]</span><br><span class="line">  name &#x3D; 用户名</span><br><span class="line">  email &#x3D; 邮箱</span><br></pre></td></tr></table></figure><p>然后在 <code>~/.gitconfig</code> 内添加</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[includeIf &quot;gitdir:~&#x2F;Company&#x2F;&quot;]</span><br><span class="line">  path &#x3D; ~&#x2F;Company&#x2F;.gitconfig_include</span><br></pre></td></tr></table></figure><p>⚠️ 复制提醒。<code>Company</code> 要替换成你自己的目录</p><p>这样，之后 <code>Company</code> 目录下的 <code>git</code> 仓库都会使用对应的 <code>git</code> 用户信息。💪</p><p>这是 git 的一个用法，感兴趣的同学可以看这里 <a href="https://git-scm.com/docs/git-config#_conditional_includes" target="_blank" rel="noopener">conditional includes </a> </p><h2 id="如何在一台电脑上配置多个-ssh-密钥"><a href="#如何在一台电脑上配置多个-ssh-密钥" class="headerlink" title="如何在一台电脑上配置多个 ssh 密钥"></a>如何在一台电脑上配置多个 ssh 密钥</h2><p>上面解决的问题是只有一个 ssh 密钥，但是对应公司和个人不同的 git 账号信息。</p><p>还有一种情况是，一台电脑上有多个人的 ssh 密钥，比如我和小秋都是程序员，有时候一台电脑会同时配置我们俩的 ssh 密钥，分别对应不同的 git 账号。</p><p>除了上面要分目录，还需要设置不同的 ssh 密钥和 git 账号的关系。</p><p>可以在 ~/.ssh 目录再新建一套密钥或者也可以复制已有的到该目录，起不同的名字，比如下面这样是两套 ssh</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">id_rsa</span><br><span class="line">id_rsa.pub</span><br><span class="line"></span><br><span class="line">id_rsa_other</span><br><span class="line">id_rsa_other.pub</span><br></pre></td></tr></table></figure><p>然后在 ~/.ssh/config 配置文件分别指定不同的账号使用不同的 ssh 密钥：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 默认账户</span><br><span class="line">Host github.com</span><br><span class="line">   HostName github.com</span><br><span class="line">   User defaultUser &#x2F;&#x2F; 这里改成自己的用户名</span><br><span class="line">   IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">   </span><br><span class="line"># 另一个账户</span><br><span class="line">Host github.com-user1    </span><br><span class="line">   HostName github.com</span><br><span class="line">   User otherUser &#x2F;&#x2F; 这里改成自己的用户名</span><br><span class="line">   IdentityFile ~&#x2F;.ssh&#x2F;id_rsa_other</span><br></pre></td></tr></table></figure><p>克隆仓库的时候可以改成这种格式：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com-user1:otherUser/repo_name.git</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://stackoverflow.com/questions/21307793/set-git-config-values-for-all-child-folders" target="_blank" rel="noopener">Set git config values for all child folders</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;如果你有多个 git 账户，有没有遇到过提交代码的用户信息混乱的情况？ 如果一劳永逸的解决这个问题那？&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;分目录配置-git-用户信息&quot;&gt;&lt;a href=&quot;#分目录配置-git-用户信息&quot; clas
+&lt;h2 id=&quot;分目录配置-git-用户信息&quot;&gt;&lt;a href=&quot;#分目录配置-git-用户信息&quot; clas</summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -365,16 +352,15 @@
     
     <content type="html"><![CDATA[<p>为了更好的理解 JavaScript 的各种语言特性，更好的掌握 JavaScript 的底层原理 😄。我想动手写一个 JavaScript 版的 JavaScript 解释器。简单来说，就是能够运行 JavaScript（以下简称 js ） 代码。我们平时写的 js 代码一般由浏览器或者 Nodejs 的解释器来解释并执行，本文的目标就是写一个能够解释 js 代码的解释器 🚀。</p><p>写一个解释器的工程，想一想就感觉好大。咱们可以拆解一下，一步步来。每实现一个小目标都会很有成就感，不至于望而却步 🐶。</p><h2 id="第一阶段的目标"><a href="#第一阶段的目标" class="headerlink" title="第一阶段的目标"></a>第一阶段的目标</h2><p>✅ 1、首先实现打印值</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="string">'Hello World!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>2、然后实现加减乘除四则运算</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x + y);</span><br></pre></td></tr></table></figure><p>3、然后我们实现函数</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure><p>4、趁热打铁实现闭包。</p><blockquote><p>实现闭包其实我想写一个 js 解释器的初始动机，我本来在写一篇解释什么是 js 闭包的文章，但是我写着写着感觉有点无聊，没什么意思，就想实现个 js 解释器。 从另一个角度理解这个问题。</p></blockquote><p>6、实现 if 条件表达式</p><p>7、实现 for 循环</p><p>8、打包 js 可以在其他文件内使用</p><blockquote><p>将执行结果输出到外部</p></blockquote><p>上面是我的玩具计划。</p><p>😌 ———————— 这是一条分割线 ———————- 😌</p><p>下面是我的开发过程。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>我找到的一些用 js 实现 js 解释器的文章：</p><ul><li><a href="https://zhuanlan.zhihu.com/p/34191831" target="_blank" rel="noopener">微信小程序也要强行热更代码，鹅厂不服你来肛我呀</a></li><li><a href="https://juejin.im/post/5aa25be1518825557b4c5720#heading-11" target="_blank" rel="noopener">从零开始写一个Javascript解析器</a></li><li><a href="https://segmentfault.com/a/1190000017241258" target="_blank" rel="noopener">前端与编译原理——用JS写一个JavaScript解释器</a></li></ul><p>和上面文章相关的 Github 上的 JavaScript 解释器源码</p><blockquote><p>前三个是 TypeScript 项目，最后一个是 JavaScript 项目</p></blockquote><ul><li><a href="https://github.com/bramblex/jsjs" target="_blank" rel="noopener">jsjs</a></li><li><a href="https://github.com/jkeylu/evil-eval" target="_blank" rel="noopener">evil-eval</a></li><li><a href="https://github.com/axetroy/vm.js" target="_blank" rel="noopener">vm.js</a></li><li><a href="https://github.com/jrainlau/canjs" target="_blank" rel="noopener">canjs</a></li></ul><h2 id="热身"><a href="#热身" class="headerlink" title="热身"></a>热身</h2><p>JavaScript 代码转化成抽象语法树（AST）这一步，直接用现成的库实现。这里我们使用 <a href="https://github.com/acornjs/acorn" target="_blank" rel="noopener"><code>acorn</code></a> 库。这是一个 js 的解析器，可以将 js 代码解析成 AST，<code>Babel</code> 最开始也使用了 <code>acorn</code>。</p><p>如果你想了解整个编译器的开发（包括 AST 的生成），可以看这个项目<a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="noopener">微型编译器</a></p><h3 id="抽象语法树（AST）"><a href="#抽象语法树（AST）" class="headerlink" title="抽象语法树（AST）"></a>抽象语法树（AST）</h3><p>大体解释一下。🐵</p><blockquote><p>在计算机科学中，抽象语法树（Abstract Syntax Tree，AST），或简称语法树（Syntax tree），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。之所以说语法是“抽象”的，是因为这里的语法并不会表示出真实语法中出现的每个细节。比如，嵌套括号被隐含在树的结构中，并没有以节点的形式呈现；而类似于 if-condition-then 这样的条件跳转语句，可以使用带有两个分支的节点来表示。  – 维基百科</p></blockquote><p>AST 的作用：</p><ul><li>代码风格检测(eslint等)</li><li>代码的格式化，自动补全</li><li>代码高亮</li><li>代码错误检查</li><li>代码的混淆压缩</li><li>转换代码的工具。如 webpack，rollup。各种代码规范之间的转换，TypeScript JSX 等转换为原生 js</li></ul><p>实际项目中对 AST 的应用：</p><p>我在网上找到的三个案例：🌏</p><p><a href="https://segmentfault.com/a/1190000013423155" target="_blank" rel="noopener">分析统计微信小程序代码使用的 api</a></p><p><a href="https://qianduan.group/posts/5a0fe3cc44aec04413ec3d7d" target="_blank" rel="noopener">支付宝和微信小程序的代码转换</a></p><p><a href="https://tech.meituan.com/2014/10/08/the-practice-of-abstract-syntax-trees-in-javascript.html" target="_blank" rel="noopener">美团的模块依赖关系检测工具</a></p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>1、使用 acorn 将 js 转换成 ast 抽象语法树</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Parser &#125; = <span class="built_in">require</span>(<span class="string">'acorn'</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runjs</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(code = '') &#123;</span><br><span class="line">    <span class="keyword">this</span>.ast = Parser.parse(code);</span><br><span class="line">  &#125;</span><br><span class="line">  run() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.ast);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = Runjs;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Runjs(<span class="string">`</span></span><br><span class="line"><span class="string">  let x = 'Hello World!';</span></span><br><span class="line"><span class="string">  console.log(x);</span></span><br><span class="line"><span class="string">`</span>).run();</span><br></pre></td></tr></table></figure><p>我们可以使用这个工具看一下，解析出来的抽象语法树。😉</p><p><a href="http://esprima.org/demo/parse.html" target="_blank" rel="noopener">Esprima 在线工具</a></p><p><a href="https://astexplorer.net/" target="_blank" rel="noopener">ast</a></p><p>2、解析出来的 AST 每个节点都有个 type 属性，要做一个节点遍历器，处理每一个节点。</p><p>有哪些节点那？可以从这里<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API" target="_blank" rel="noopener">查看</a></p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="string">'Hello World!'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure><p>⬇️ 上面的代码生成的 AST 如下：</p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"type"</span>: <span class="string">"Program"</span>,</span><br><span class="line">  <span class="attr">"body"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"VariableDeclaration"</span>,</span><br><span class="line">      <span class="attr">"declarations"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"type"</span>: <span class="string">"VariableDeclarator"</span>,</span><br><span class="line">          <span class="attr">"id"</span>: &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"Identifier"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"x"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">"init"</span>: &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"Literal"</span>,</span><br><span class="line">            <span class="attr">"value"</span>: <span class="string">"Hello World!"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"kind"</span>: <span class="string">"const"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"ExpressionStatement"</span>,</span><br><span class="line">      <span class="attr">"expression"</span>: &#123;</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"CallExpression"</span>,</span><br><span class="line">        <span class="attr">"callee"</span>: &#123;</span><br><span class="line">          <span class="attr">"type"</span>: <span class="string">"MemberExpression"</span>,</span><br><span class="line">          <span class="attr">"computed"</span>: <span class="literal">false</span>,</span><br><span class="line">          <span class="attr">"object"</span>: &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"Identifier"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"console"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">"property"</span>: &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"Identifier"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"log"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"arguments"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"Identifier"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"x"</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如何实现节点遍历器？</p><p>先定义一个节点控制器 nodeHandler，分别处理每一个节点</p><p>下面是上面用到的节点类型：</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> nodeHandler = &#123;</span><br><span class="line">  Program(nodeIterator) &#123;</span><br><span class="line">    <span class="comment">/*处理 Program 类型的代码 */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  VariableDeclaration(nodeIterator) &#123;</span><br><span class="line">    <span class="comment">/*处理 VariableDeclaration 类型的代码 */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  Identifier(nodeIterator) &#123;&#125;,</span><br><span class="line">  Literal(nodeIterator) &#123;&#125;,</span><br><span class="line">  ExpressionStatement(nodeIterator) &#123;&#125;,</span><br><span class="line">  CallExpression(nodeIterator) &#123;&#125;,</span><br><span class="line">  MemberExpression(nodeIterator) &#123;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>然后实现一个节点遍历器 🆗</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NodeIterator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(node) &#123;</span><br><span class="line">    <span class="keyword">this</span>.node = node;</span><br><span class="line">    <span class="keyword">this</span>.nodeHandler = nodeHandler;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  traverse(node) &#123;</span><br><span class="line">    <span class="keyword">const</span> nodeIterator = <span class="keyword">new</span> NodeIterator(node);</span><br><span class="line">    <span class="keyword">const</span> parse = <span class="keyword">this</span>.nodeHandler[node.type];</span><br><span class="line">    <span class="keyword">if</span> (!parse) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`canjs: Unknown node type "<span class="subst">$&#123;node.type&#125;</span>".`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parse(nodeIterator);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>（未完待续<del>~</del>）🎈</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;为了更好的理解 JavaScript 的各种语言特性，更好的掌握 JavaScript 的底层原理 😄。我想动手写一个 JavaScript 版的 JavaScript 解释器。简单来说，就是能够运行 JavaScript（以下简称 js ） 代码。我们平时写的 js 代
+    <summary type="html">&lt;p&gt;为了更好的理解 JavaScript 的各种语言特性，更好的掌握 JavaScript 的底层原理 😄。我想动手写一个 JavaScript 版的 JavaScript 解释器。简单来说，就是能够运行 JavaScript（以下简称 js ） 代码。我们平时写的 js 代</summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -388,16 +374,15 @@
     
     <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在 webpack 等工具的照料下，我们忘记了很多的东西，比如说 JavaScript 文件的异步加载，异步执行等等内容。唯一能记起是关于 script 的优化可能是把 script 标签放到页面底部。</p><p>某次你看到 ‘<script src="mylib.js" async></script>‘ 这样的引入语句，请问这 async 到底是什么意义呢？</p><h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>1、学习 async 的作用，使用限制等。</p><p>2、有没有其他类似的属性呢？</p><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><p>性能优化</p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>聊 JavaScript 文件的异步加载之前，我们先来看一段 HTML 文档的加载流程。</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://a.com/a.js"</span>&gt;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span></span><br><span class="line">  这里有很多的 HTML 标签和内容</span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span></span><br><span class="line"><span class="handlebars"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure><p>对于上面的 HTML 文档，浏览器的解析过程如下：</p><p>1、浏览器一边下载 HTML 网页，一边开始解析(并不是下载完之后，才开始开始解析)。</p><p>2、解析过程中，浏览器发现 <code>&lt;script&gt;</code> 标签就暂停解析，把网页渲染的控制权转交给 JavaScript 引擎。</p><p>3、如果 <code>&lt;script&gt;</code> 标签引用了外部脚本，就下载该脚本再执行，否则就直接执行代码。</p><p>4、JavaScript 引擎执行完毕，控制权交还渲染引擎，继续解析 HTML 网页。</p><p>加载外部脚本时，浏览器会暂停页面渲染，等待脚本下载并执行完成后再继续渲染。</p><img src="https://static.hufangyun.com/hexo/img/js-async-2.jpg?imageView2/2/w/600"><p>这就是为什么我们一般建议把 <code>&lt;script&gt;</code> 标签放在 <code>&lt;/body&gt;</code> 之前，而不是放在 <code>&lt;head&gt;&lt;/head&gt;</code> 中，因为加载 <code>&lt;script&gt;</code> 中的脚本并执行会阻塞 HTML 页面的渲染，当 JavaScript 文件很大的时候，甚至会长时间出现白屏。</p><p>有没有什么办法可以优化 JavaScript 文件的加载执行，提高页面加载的效率？</p><h2 id="解读-async-和-defer-属性"><a href="#解读-async-和-defer-属性" class="headerlink" title="解读 async 和 defer 属性"></a>解读 async 和 defer 属性</h2><p>翻阅 <a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5 的文档</a> 就会发现，<code>&lt;script&gt;</code> 还有 <code>async</code> 和 <code>defer</code> 两个和脚本加载执行有关的属性。</p><blockquote><p>async - Execute script in parallel //并行执行脚本</p><p>defer - Defer script execution // 延迟执行脚本</p></blockquote><p><a href="https://www.w3.org/TR/html4/interact/scripts.html#18.2.1" target="_blank" rel="noopener">HTML4.1</a>是这么解释 defer 的：</p><blockquote><p>When set, this boolean attribute provides a hint to the user agent that the script is not going to generate any document content (e.g., no “document.write” in javascript) and thus, the user agent can continue parsing and rendering.</p></blockquote><p>就是说浏览器在遇到设置了 defer 的 <code>&lt;script&gt;</code> 时，加载了 JavaScript 文件后，不会立即执行，不会阻塞浏览器解析 HTML，而且如果设置了 defer 不要在 JavaScript 脚本里写 <code>document.write</code>。</p><p><a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a>这么解释 defer 和 async 的：</p><p>此处省略将近 1500 字的英文引用，感兴趣点击的 <a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a> 文档。</p><p>对省略的原文总结如下：</p><p>1、defer 和 async 只对外部加载的脚本有效果，<code>&lt;script&gt;</code> 包含的 JavaScript 代码块无效。</p><p>2、必须设置了 <code>src</code> 属性，不然 defer 和 async 也无效。</p><p>3、defer 和 async 这两个值是布尔类型的。</p><p>4、如果设置了 async 属性，会并行加载脚本文件并执行，下载时不会阻塞 HTML 的解析，但是脚本执行的时候会阻塞 HTML 的解析。如果没有设置 async 属性，但是设置了 defer 属性，也会并行加载脚本文件，但是会等到页面完成解析再去执行。如果这两个属性都没有设置，会阻塞页面解析，加载并执行脚本文件。三种方式的对比图如下：</p><img alt="图片来源：www.w3c.org" src="https://static.hufangyun.com/hexo/img/js-async-1.jpg?imageView2/2/w/600"><span class="img-alt">图片来源：www.w3c.org</span><p><a href="https://www.w3.org/TR/html53/semantics-scripting.html#element-attrdef-script-defer" target="_blank" rel="noopener">HTML5.3</a>的文档把第四条补充了一下。。。</p><p>1、defer 对 module 脚本是无效的，但是 async 是有效的</p><p>2、如果同时设置了 defer 和 async 为 true， 以 defer 为准</p><h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p>通过给 <code>&lt;script&gt;</code> 标签设置 defer 属性，将脚本文件设置为延迟加载，当浏览器遇到带有 defer 属性的 <code>&lt;script&gt;</code> 标签时，会再开启一个线程去下载 JavaScript 文件，同时继续解析 HTML 文档，等 HTML 全部解析完毕 DOM 加载完成之后(也就是DOMContentLoaded 事件之后 onload 事件之前)，再去执行加载好的 JavaScript 文件。多个js文件的执行顺序就是它们在页面中出现的顺序。</p><p>async 属性和 defer 属性类似，也是会开启一个线程去下载 JavaScript 文件，但和defer 不同的是，它会在下载完成后立刻执行，而不是会等到 DOM 加载完成之后再执行，所以还是有可能会造成阻塞。对多个带有 async 的 JavaScript 文件，它不能像defer 那样保证按顺序执行，它是哪个 JavaScript 文件先下载完就先执行哪个。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>什么时候用 defer，什么时候用 async 呢？</p><p>一般来说，两者之间的选择则是看脚本之间是否有依赖关系，有依赖的话应当要保证执行顺序，应当使用 defer 没有依赖的话使用 async。要注意的是两者都不应该使用 <code>document.write</code>，这个导致整个页面被清除。</p><p>模块化的代码、测试代码或者监听代码使用 async。</p><p>这两个值是布尔类型的，在 HTML 里面只写属性名即可。</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://a.com/a.js"</span> <span class="attr">async</span>&gt;</span></span><br></pre></td></tr></table></figure><p>如果不考虑兼容 IE 浏览器，完全可以将 <code>&lt;script&gt;</code> 放在 <code>&lt;head&gt;</code> 里，同时守设置 defer 属性，这样 HTML 解析的时候，可以并行下载 JavaScript 脚本，等 HTML 页面解析完，JavaScript 脚本在开始执行，充分利用资源。比如查看 gitlab 页面源码。</p><h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>defer 是 HTML4 就有的属性，而 async 是 HTML5 新加入的属性。defer 出现的早，IE6 及以上的浏览器基本都支持，可以放心用。 async IE10 就开始支持了，移动端的支持比较好。不考虑 IE 的话，两个属性都可以放心使用。</p><p>兼容性可以点击这里查看<a href="https://caniuse.com" target="_blank" rel="noopener">caniuse</a></p><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>如果同时设置了 defer 和 async 为 true，浏览器会怎么执行？</p><p>我们做个小实验。</p><p>新建一个文件夹，文件结构如下：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── 1.js</span><br><span class="line">├── 2.js</span><br><span class="line">└── index.html</span><br></pre></td></tr></table></figure><p>1.js 如下:</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alert(<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>2.js 如下</p><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure><p>index.html 的内容如下：</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"./1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"./2.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试 async 和 defer <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  alert(3);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p>设置两个 js 是为了排除 async 和 defer 先后顺序的影响。</p><p>FireFox、Chrome、Safari、三个浏览器的执行结构都是 3、1、2，说明同时设置了 defer 和 async 为 true， 以 defer 为准。</p><h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" target="_blank" rel="noopener">async vs defer attributes</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5bcdaed7e51d457a8254e1b7" target="_blank" rel="noopener">网页性能优化之异步加载js文件 - 掘金</a></p><p><a href="https://www.w3.org/TR/html4/interact/scripts.html#18.2.1" target="_blank" rel="noopener">HTML4.1</a></p><p><a href="https://www.w3.org/TR/html51/semantics-scripting.html" target="_blank" rel="noopener">HTML5.1</a></p><p><a href="https://www.w3.org/TR/html53/semantics-scripting.html#element-attrdef-script-defer" target="_blank" rel="noopener">HTML5.3</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在 webpack 等工具的照料下，我们忘记了很多的东西，比如说 JavaScript 文件的异步加载，异步执行等等内容。唯一能记起是关于 
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在 webpack 等工具的照料下，我们忘记了很多的东西，比如说 JavaScript 文件的异步加载，异步执行等等内容。唯一能记起是关于 </summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -411,18 +396,17 @@
     
     <content type="html"><![CDATA[<img src="https://static.hufangyun.com/hexo/img/git.jpg?imageView2/2/w/600"><h3 id="1、修改上一次提交的邮箱和用户名"><a href="#1、修改上一次提交的邮箱和用户名" class="headerlink" title="1、修改上一次提交的邮箱和用户名"></a>1、修改上一次提交的邮箱和用户名</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend --reset-author</span><br></pre></td></tr></table></figure><h3 id="2、批量修改多次提交的邮箱和用户名"><a href="#2、批量修改多次提交的邮箱和用户名" class="headerlink" title="2、批量修改多次提交的邮箱和用户名"></a>2、批量修改多次提交的邮箱和用户名</h3><p>新建一个 <code>shell</code> 脚本 <code>changeGitInfo.sh</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line">git filter-branch --env-filter <span class="string">'</span></span><br><span class="line"><span class="string">an="$GIT_AUTHOR_NAME"</span></span><br><span class="line"><span class="string">am="$GIT_AUTHOR_EMAIL"</span></span><br><span class="line"><span class="string">cn="$GIT_COMMITTER_NAME"</span></span><br><span class="line"><span class="string">cm="$GIT_COMMITTER_EMAIL"</span></span><br><span class="line"><span class="string">if [ "$GIT_COMMITTER_EMAIL" = "这里写你原来的邮箱" ]</span></span><br><span class="line"><span class="string">then</span></span><br><span class="line"><span class="string">cn="你想替换成的用户名"</span></span><br><span class="line"><span class="string">cm="你想替换成的邮箱"</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">if [ "$GIT_AUTHOR_EMAIL" = "这里写你原来的邮箱" ]</span></span><br><span class="line"><span class="string">then</span></span><br><span class="line"><span class="string">an="你想替换成的用户名"</span></span><br><span class="line"><span class="string">am="你想替换成的邮箱"</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">export GIT_AUTHOR_NAME="$an"</span></span><br><span class="line"><span class="string">export GIT_AUTHOR_EMAIL="$am"</span></span><br><span class="line"><span class="string">export GIT_COMMITTER_NAME="$cn"</span></span><br><span class="line"><span class="string">export GIT_COMMITTER_EMAIL="$cm"</span></span><br><span class="line"><span class="string">'</span></span><br></pre></td></tr></table></figure><p>在 <code>git</code> 仓库(项目)下运行一下，该脚本即可。</p><h2 id="如果避免上面的问题？"><a href="#如果避免上面的问题？" class="headerlink" title="如果避免上面的问题？"></a>如果避免上面的问题？</h2><p>可以看我的这篇博文 <a href="https://hufangyun.com/2019/multi-git-account/">如何管理多个 git 账号</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;img src=&quot;https://static.hufangyun.com/hexo/img/git.jpg?imageView2/2/w/600&quot;&gt;
+    <summary type="html">&lt;img src=&quot;https://static.hufangyun.com/hexo/img/git.jpg?imageView2/2/w/600&quot;&gt;
 
-&lt;h3 id=&quot;1、修改上一次提交的邮箱和用户名&quot;&gt;&lt;a href=&quot;#1、修改上一次提交的邮箱和用户名&quot; class=&quot;h
+&lt;h3 id=&quot;1、修改上一次提交的邮箱和用户名&quot;&gt;&lt;a href=&quot;#1、修改上一次提交的邮箱和用户名&quot; class=&quot;h</summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -436,16 +420,15 @@
     
     <content type="html"><![CDATA[<h2 id="Google-Chrome-canary-dev-beta-stable-4-个版本的区别"><a href="#Google-Chrome-canary-dev-beta-stable-4-个版本的区别" class="headerlink" title="Google Chrome canary dev beta stable 4 个版本的区别"></a>Google Chrome canary dev beta stable 4 个版本的区别</h2><p>** 开发流程是这样的 **</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">canary -&gt; dev -&gt; beta -&gt; stable</span><br></pre></td></tr></table></figure><img alt="chrome version" src="https://static.hufangyun.com/hexo/img/chrome-version-diff.jpg?imageView2/2/w/750"><span class="img-alt">chrome version</span><p><code>canary</code> 是最激进的，几乎每天都更新。</p><p><code>stable</code> 是稳定版，是面向普通用户，平均六周更新一次</p><p><code>canary</code> 和 <code>stable</code> 会相差 2 个左右的版本。比如 <code>stable</code> 版本现在（2018年6月26日）是 67，<code>canary</code> 现在是 69。</p><img alt="chrome update" src="https://static.hufangyun.com/hexo/img/chrome-update-time.jpg?imageView2/2/w/750"><span class="img-alt">chrome update</span><h2 id="Chromium-和-Chrome-的区别"><a href="#Chromium-和-Chrome-的区别" class="headerlink" title="Chromium 和 Chrome 的区别"></a>Chromium 和 Chrome 的区别</h2><ul><li><p><code>Chromium</code> 是一个开源的浏览器。 </p></li><li><p><code>Chrome</code> 是基于 <code>Chromium</code> 而来。</p></li><li><p><code>Chromium</code> 更新速度和 <code>canary</code> 是一致的。</p></li><li><p><code>Chromium</code> 作为一个开源项目去掉了一些不开源的东西，比如 <code>Google</code> 的标识和 <code>flash</code> 插件等等。 </p></li></ul><h2 id="从哪里可以看到-Chrome-的更新"><a href="#从哪里可以看到-Chrome-的更新" class="headerlink" title="从哪里可以看到 Chrome 的更新"></a>从哪里可以看到 Chrome 的更新</h2><h3 id="Canary-版"><a href="#Canary-版" class="headerlink" title="Canary 版"></a>Canary 版</h3><p><code>Canary</code> 版 几乎每天都更新，但是没有更新日志。只能通过源码的提交记录查看。<a href="https://chromium.googlesource.com/chromium/src/" target="_blank" rel="noopener">项目地址</a></p><p>然后找到 <code>tags</code> 比如 [<code>69.0.3473.1</code>]</p><p>新页面里点击 <code>log</code> 即可查看每次的提交</p><h2 id="Dev-版"><a href="#Dev-版" class="headerlink" title="Dev 版"></a>Dev 版</h2><p><a href="https://blog.chromium.org/" target="_blank" rel="noopener">https://blog.chromium.org/</a></p><h2 id="Stable-版"><a href="#Stable-版" class="headerlink" title="Stable 版"></a>Stable 版</h2><p><a href="https://chromereleases.googleblog.com/" target="_blank" rel="noopener">https://chromereleases.googleblog.com/</a></p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot;&gt;&lt;a href=&quot;#Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot; class=&quot;headerlink&quot; title=&quot;Go
+    <summary type="html">&lt;h2 id=&quot;Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot;&gt;&lt;a href=&quot;#Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot; class=&quot;headerlink&quot; title=&quot;Go</summary>
       
     
-    </summary>
     
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -459,17 +442,16 @@
     
     <content type="html"><![CDATA[<h2 id="前言-🔗"><a href="#前言-🔗" class="headerlink" title="前言 🔗"></a>前言 🔗</h2><blockquote><p>目标是很美好的事情，你可能会有许多目标：减肥🏃‍♂️、找到一个更好的工作👔、搬进一个更大的房子🏡（或者更小的房子）、写本小说、学习演奏电吉他🎸、编写一个超级 <code>Rails</code> 应用程序或者完全掌握 <code>Erlang</code>。</p></blockquote><blockquote><p>但是很多目标都是一个模式——崇高的、泛泛的“我希望在某某方面更好”。减肥就是一个最好的例子🌰。</p></blockquote><blockquote><p>大多数人想要更苗条🧜‍♀️（特别是我们这些长时间坐在电脑前的人）。<br>但“我想要苗条”并不是一个非常明确的目标（虽然可能是一个很好的愿景——长期、理想的状态）。</p></blockquote><blockquote><p>你体重需要减多少斤？你仰卧举重准备练多少公斤的？何时完成？你准备控制热量还是增加锻炼？⚽️</p></blockquote><blockquote><p>类似地，说你想“学习 <code>Erlang</code> 是不错，但是这到底是什么意思？想要学到什么程度？想用它来做什么？如何开始？<br>为了帮助你专注于自己的目标，能够更好地实现它，请允许我推荐一种风靡一时的来自于咨询领域的诀窍：使用 <code>SMART</code> 方法实现你的目标。🥇</p></blockquote><p><img src="/media/20160621110804644.png" alt="20160621110804644"><span class="img-alt">20160621110804644</span></p><blockquote><p>图片取自 Google Image</p></blockquote><h2 id="什么是-SMART-💪"><a href="#什么是-SMART-💪" class="headerlink" title="什么是 SMART 💪"></a>什么是 <code>SMART</code> 💪</h2><p><strong><code>SMART</code> 代表具体的、可度量的、可实现的、相关的和时间可控的（Specific, Measurable, Achievable, Relevant, and Time-boxed）</strong></p><h3 id="具体的-✅"><a href="#具体的-✅" class="headerlink" title="具体的 ✅"></a>具体的 ✅</h3><p>首先，一个目标任务应该是具体的。也就是说，只说 “我想学习Erlang” 是不够的。应该把事情具体化，例如“我想要用Erlang编写一个可以动态生成内容的Web服务器”。</p><h3 id="可度量的-⏰"><a href="#可度量的-⏰" class="headerlink" title="可度量的 ⏰"></a>可度量的 ⏰</h3><p>如何知道你何时完成？这一直是我最喜欢问的一个问题。为了努力实现目标任务，不管采用什么方法，你必须能够度量它。</p><p>但是一定要采取稳扎稳打、步步为营的过程。你不能期望一周之内减掉五十英镑或者利用一个周末就学会一门全新的编程语言和它的全部函数库。度量你的目标任务，但是要采取增量进步的方法。👣</p><p>你不必看清你去往何处。不必看清你的目的地和沿途的一切。你只需要看清面前的一两米即可。 </p><h3 id="可实现的👍"><a href="#可实现的👍" class="headerlink" title="可实现的👍"></a>可实现的👍</h3><p>我想要攀登K2峰，想在中东建立永久和平。这一切不会发生。😂</p><p>至少，对我来说是这样。这些都是很好的目标，但是不现实。对我来说在当前的现实情况下无法实现。🤪</p><p>因此，先确定目标是否合理。你也许可以在下周用新语言编写一段 “Hello,World!” 或者一个简单应用，但是你可能无法编写一个完整的Web应用框架和一个带有神经网络优化算法的用户界面构造器。</p><p>从你现在所处的情况着眼，让每一个目标都可实现。🚀</p><h3 id="相关的🔗"><a href="#相关的🔗" class="headerlink" title="相关的🔗"></a>相关的🔗</h3><p>这个目标真的与你有关吗——对你重要吗？🏆你对此有热情吗？是在你控制之下的事情吗？<br>如果不是，这个目标就是不相关的。<br>目标需要相关，需要在你掌控之中🎉。</p><h3 id="时间可控的🕰"><a href="#时间可控的🕰" class="headerlink" title="时间可控的🕰"></a>时间可控的🕰</h3><p>这意味着你需要设定一个最后期限⏱。没有期限，目标会逐步衰退，永远被每天更紧急的事情所排挤。这样它永远都不会实现🥊。</p><p><strong>再强调一遍，稳扎稳打。采取循序渐进、比较细小的里程碑。当实现它们后，你会更有动力去实现下一个里程碑。</strong></p><h2 id="建立SMART任务实现你的目标。⌛️"><a href="#建立SMART任务实现你的目标。⌛️" class="headerlink" title="建立SMART任务实现你的目标。⌛️"></a>建立SMART任务实现你的目标。⌛️</h2><p>这种方法帮助你从自己的角度😀（“我”）、从更积极的角度（“我要”）😘来明确目标，要么用一般现在时，要么给出明确的时间表述（“我会💪在xx时间之前完成zyzzy”）。</p><h2 id="更大背景下的目标🚀"><a href="#更大背景下的目标🚀" class="headerlink" title="更大背景下的目标🚀"></a>更大背景下的目标🚀</h2><p>设定目标是第一步。</p><p>下一步行动是创建小任务以帮助你每天或每隔一段时间都能达到某种程度。你创建的小任务越多，你就越容易看清自己与目标的距离。</p><blockquote><p>本文大部分内容由小猿大圣摘录自 《程序员的思维修炼:开发认知潜能的九堂课 (图灵程序设计丛书)》</p></blockquote>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;h2 id=&quot;前言-🔗&quot;&gt;&lt;a href=&quot;#前言-🔗&quot; class=&quot;headerlink&quot; title=&quot;前言 🔗&quot;&gt;&lt;/a&gt;前言 🔗&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;目标是很美好的事情，你可能会有许多目标：减肥🏃‍♂️、找到一个更好的工作👔、搬进一个更
+    <summary type="html">&lt;h2 id=&quot;前言-🔗&quot;&gt;&lt;a href=&quot;#前言-🔗&quot; class=&quot;headerlink&quot; title=&quot;前言 🔗&quot;&gt;&lt;/a&gt;前言 🔗&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;目标是很美好的事情，你可能会有许多目标：减肥🏃‍♂️、找到一个更好的工作👔、搬进一个更</summary>
       
     
-    </summary>
     
-      <category term="读书" scheme="https://hufangyun.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    <category term="读书" scheme="https://hufangyun.com/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
   </entry>
@@ -483,22 +465,21 @@
     
     <content type="html"><![CDATA[<blockquote><p>《程序员的思维修炼:开发认知潜能的九堂课 (图灵程序设计丛书)》读书笔记 </p></blockquote><h2 id="德雷福斯模型的5个阶段"><a href="#德雷福斯模型的5个阶段" class="headerlink" title="德雷福斯模型的5个阶段"></a>德雷福斯模型的5个阶段</h2><p><img src="/media/15256037912881.png" alt=""></p><h2 id="有效的使用德雷福斯模型"><a href="#有效的使用德雷福斯模型" class="headerlink" title="有效的使用德雷福斯模型"></a>有效的使用德雷福斯模型</h2><ul><li>需要一个明确定义的任务。 ⏱</li><li>任务需要有适当难度——有挑战性但可行。⏰</li><li>任务环境可以提供大量反馈，以便于你采取行动。🛠</li><li>提供重复犯错和纠正错误的机会。稳步做这种实践十年，你就会达到目标。💯</li></ul>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;《程序员的思维修炼:开发认知潜能的九堂课 (图灵程序设计丛书)》读书笔记 &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;德雷福斯模型的5个阶段&quot;&gt;&lt;a href=&quot;#德雷福斯模型的5个阶段&quot; class=&quot;headerlink&quot; title
+&lt;h2 id=&quot;德雷福斯模型的5个阶段&quot;&gt;&lt;a href=&quot;#德雷福斯模型的5个阶段&quot; class=&quot;headerlink&quot; title</summary>
       
     
-    </summary>
-    
-      <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="技术成长" scheme="https://hufangyun.com/tags/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
+    <category term="编程" scheme="https://hufangyun.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="技术成长" scheme="https://hufangyun.com/tags/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
     
   </entry>
   
@@ -511,17 +492,16 @@
     
     <content type="html"><![CDATA[<p>最近，发现自己写的博文，被别人转载了。有商业性质的网站、有个人博主，也有各种爬虫自动采集收录。</p><p>比如这篇 <a href="https://hufangyun.com/2017/short-url/">短网址(short URL)系统的原理及其实现</a>, 我发现这篇文章在谷歌和百度搜索的时候，前5、6页搜索结果都找不到我自己的原文地址😭，只有必应第一条搜索结果是我自己的博客 😂</p><h2 id="我不希望文章被复制粘贴转载-❌"><a href="#我不希望文章被复制粘贴转载-❌" class="headerlink" title="我不希望文章被复制粘贴转载 ❌"></a>我不希望文章被复制粘贴转载 ❌</h2><ul><li><strong>我的博客是经常更新的。</strong> 🚀 我的博文是按照更新时间排序的，在编程技术领域以及社会这个大家庭中，我还很年轻，写的东西难免会有错误，或者认知上的不成熟，一旦我发现有错误或者内容补充，我会不定期的更新文章内容。但是复制粘贴转载的文章，并不会随着我更新而更新，错误的内容会一直保留，给之后的阅读者留下隐患。</li><li><strong>我不能更好的收到反馈。</strong> 我发现很多转载的文章下面，有对我文章内容的疑问和勘误，转载文章的人，并不会去解释这些疑问，而我作为文章的原创作者，也收不到别人指正的错误。对文章的阅读者和作者的我，都没有很好的反馈。</li><li><strong>阅读效果不佳。</strong> 最让我受不了的是，我在写作的时候使用了 <code>Markdown</code> 的语法画的流程图很多网站不支持显示，显示的全是代码。还有我用的表情 🐻，他们也显示不出来。。。。</li></ul><h2 id="我希望的转载方式-✅"><a href="#我希望的转载方式-✅" class="headerlink" title="我希望的转载方式 ✅"></a>我希望的转载方式 ✅</h2><p><strong>分享链接转载，指向我的博文。</strong> 我觉的这是最好的转载方式，互赢。</p><p><strong>如果，</strong> 非要复制粘贴的转载，请联系我 <strong>获得授权</strong>，未经许可禁止转载。</p><p>我会在文章的开头注明授权给了谁。我文章更新的时候，也通知转载文章的地方更新。</p><p>邮箱地址：<code>hufy78#gmail.com</code> <code>hufy3651#foxmail.com</code> <code>#</code> 换成 <code>@</code></p><h2 id="关于原创自己总结的方法"><a href="#关于原创自己总结的方法" class="headerlink" title="关于原创自己总结的方法"></a>关于原创自己总结的方法</h2><p>1、有自己的文章风格。这个好像很难。。。</p><p>2、有代码实例，指向自己的网站、Github</p><p>3、图片截图包含自己的博客域名目录等</p><p>4、截图带上自己的水印</p><p>5、每篇文章后面带上转载声明</p><p>6、文章内容示例含有自己的标识</p><h2 id="使用别人的原创"><a href="#使用别人的原创" class="headerlink" title="使用别人的原创"></a>使用别人的原创</h2><p>换位思考，以后我使用别人的图片和摘选的内容时，我会带上来源地址和作者署名，尊重原创。💪</p>]]></content>
     
-    <summary type="html">
     
       
       
-        &lt;p&gt;最近，发现自己写的博文，被别人转载了。有商业性质的网站、有个人博主，也有各种爬虫自动采集收录。&lt;/p&gt;
-&lt;p&gt;比如这篇 &lt;a href=&quot;https://hufangyun.com/2017/short-url/&quot;&gt;短网址(short URL)系统的原理及其实现&lt;/a&gt;, 
+    <summary type="html">&lt;p&gt;最近，发现自己写的博文，被别人转载了。有商业性质的网站、有个人博主，也有各种爬虫自动采集收录。&lt;/p&gt;
+&lt;p&gt;比如这篇 &lt;a href=&quot;https://hufangyun.com/2017/short-url/&quot;&gt;短网址(short URL)系统的原理及其实现&lt;/a&gt;, </summary>
       
     
-    </summary>
     
-      <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
