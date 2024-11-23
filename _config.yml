@@ -56,11 +56,11 @@ index_generator:
 pagination_dir: page
 
 #RSS订阅
-plugin:
-- hexo-generator-feed
-type: atom
-path: atom.xml
-limit: 20
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  icon: https://static.hufangyun.com/face-small.png
 
 # search hexo-generator-json-content
 jsonContent:
