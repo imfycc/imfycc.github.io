@@ -5,7 +5,7 @@ updated: 2024-11-06 08:37
 tags:
 ---
 
-[![imfycc`s Github Chart](http://ghchart.rshah.org/imfycc)](https://github.com/imfycc "image")
+[![imfycc`s Github Chart](https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg)](https://github.com/imfycc "image")
 
 你好，我是方运。👋
 
