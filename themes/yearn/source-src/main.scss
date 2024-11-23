@@ -58,7 +58,7 @@ h2, h3, h4 {
 /*************** index *******************/
 
 .left-aside {
-  width: 256px;
+  width: 257px;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -243,6 +243,10 @@ h2, h3, h4 {
     list-style: none;
     float: left;
     margin: 10px 0px 5px 10px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
 
     a {
       padding: 5px 11px;
@@ -823,6 +827,17 @@ h2, h3, h4 {
       background: #15a829;
       color: #ffffff;
       padding: 7px 12px;
+      border: 0;
+    }
+    &:first-child.current {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border: 0;
+    }
+    &:last-child.current {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      border: 0;
     }
   }
   .extend {
@@ -830,14 +845,14 @@ h2, h3, h4 {
     border: 1px solid #dddddd;
 
     &.prev {
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
     }
 
     &.next {
       margin-left: -1px;
-      border-bottom-right-radius: 3px;
-      border-top-right-radius: 3px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
     }
   }
 
