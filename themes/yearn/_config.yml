@@ -2,14 +2,17 @@
 menu:
   关于: /2014/aboutme/
 subnav:
-  github: "https://github.com/imfycc"
+  #github: "https://github.com/imfycc"
+  follow: "https://app.follow.is/share/feeds/57360050735182873"
+  jike: "https://web.okjike.com/u/5005922E-4A9D-4197-BE4D-82A6215D9C4C"
+  xiaohongshu: "https://www.xiaohongshu.com/user/profile/5b9dd4c026b94a0001bda524"
   weibo: "http://weibo.com/u/5263249441"
+  email: "mailto:hufy3651@163.com"
   #zhihu: "https://www.zhihu.com/people/hu-yang-11-57/"
-  email: "mailto:hufy78@gmail.com"
-  makers-union: "https://union.zhaodao.ai/#random"
+  #makers-union: "https://union.zhaodao.ai/#random"
   #sf: "https://segmentfault.com/u/youthink"
   #youthol: "http://www.youthol.cn"
-  rss: "/atom.xml"
+  #rss: "/atom.xml"
 
 description: 天马行空，爱生活，爱coding
 
@@ -26,7 +29,7 @@ favicon: "https://static.hufangyun.com/favicon.ico"
 #你的头像url
 
 
-avatar: https://static.hufangyun.com/face.jpg
+avatar: https://static.hufangyun.com/face-small.png
 
 # 首页左侧边栏背景图片
 # 可配置多个 随机挑选一张
