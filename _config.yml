@@ -18,6 +18,13 @@ permalink: :year/:title/
 permalink_defaults:
   lang: en
 
+category_order:
+  - 最热
+  - 数码
+  - 编程
+  - 随笔
+  - 读书
+
 # Directory
 source_dir: source
 public_dir: public
