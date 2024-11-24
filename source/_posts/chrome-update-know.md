@@ -3,7 +3,7 @@ title: 从哪里了解 Google Chrome 升级的新特性
 date: 2018-06-26 19:36:25
 updated: 2020-05-23
 tags:
-categories: 编程
+categories: 最热
 ---
 
 ## Google Chrome canary dev beta stable 4 个版本的区别

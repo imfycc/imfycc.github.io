@@ -3,6 +3,7 @@ title: 关于我
 date: 2014-01-15 00:00:00
 updated: 2024-11-23 21:43
 tags:
+categories: 最热
 ---
 
 [![imfycc`s Github Chart](https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg)](https://github.com/imfycc "image")
