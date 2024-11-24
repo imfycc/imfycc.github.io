@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
@@ -33,10 +33,10 @@
     <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1ff30348.js","daovoice");daovoice('init',{app_id: "1ff30348"});daovoice('update');
     </script>
   
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="胡方运的博客" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="胡方运的博客" type="application/atom+xml">
 </head>
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="pattern-placeholder" height="230"></canvas>
+<canvas id="pattern-placeholder" height="230"></canvas>
 <div class="navbar-header">
   <a class="blog-title" href="/">胡方运的博客</a>
   <a class="face-img" href="/">
@@ -72,10 +72,10 @@
     <div class="article">
       <div class="content">
         
-        <p>记录 Xcode 安装依赖超时问题的解决办法。</p>
-<p>原罪就是 Xcode 并不能走代理，即使开全局模式都不行。</p>
-<p>如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 就很快。</p>
-<p>还有一种办法是终端给项目设置代理。然后在项目内执行：</p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>记录 Xcode 安装依赖超时问题的解决办法。</p>
+<p>原因就是 Xcode 并不能走代理，即使开全局模式都不行。</p>
+<p>如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 安装依赖就很快。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>还有一种办法是终端给项目设置代理。然后在项目内执行：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xcodebuild -resolvePackageDependencies -scmProvider system</span><br></pre></td></tr></table></figure>
 
 <p>有其他更好的方式也欢迎补充 😆</p>
@@ -129,8 +129,8 @@
 <div class="footer">
   <div class="info">
     <p>
-    七牛云加速 | <a href="https://hexo.io" target="_blank" rel="noopener"> Hexo </a> 强力驱动 |
-      <a href="https://github.com/Youthink/hexo-themes-yearn" target="_blank" rel="noopener"> Yearn </a>
+    七牛云加速 | <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
       主题
     </p>
       <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
@@ -170,7 +170,7 @@
     }
     console.log('%c' + o, textStyle);
   });
-}(consoleConfig));</script><script type="text/javascript" src="/./js/main.953c9e.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.953c9e.js"></script>
 
 </body>
 </html>
