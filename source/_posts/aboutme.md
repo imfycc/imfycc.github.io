@@ -7,11 +7,11 @@ tags:
 categories: 最热
 ---
 
-[![imfycc`s Github Chart](https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg)](https://github.com/imfycc "image")
+[![imfycc`s Github Chart](https://raw.githubusercontent.com/imfycc/imfycc/output/github-contribution-grid-snake.svg)](https://github.com/imfycc "image")
 
 你好，我是方运。👋
 
-🧱 主业前端研发，Nodejs全栈方向。
+🧱 主业前端研发，Nodejs 全栈方向。
 
 🍎 副业 Apple 生态独立开发者。
 
