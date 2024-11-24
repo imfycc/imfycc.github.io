@@ -2,6 +2,7 @@
 title: zsh oh-my-zsh 插件推荐
 date: 2017-05-04 10:57:31
 updated: 2018-11-12 23:31:31
+order: 1
 tags:
 categories: 最热
 ---
