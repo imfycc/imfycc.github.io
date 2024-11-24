@@ -6,12 +6,14 @@ tags: Xcode
 categories: 编程
 ---
 
+## 背景
 记录 Xcode 安装依赖超时问题的解决办法。
 
-原罪就是 Xcode 并不能走代理，即使开全局模式都不行。
+原因就是 Xcode 并不能走代理，即使开全局模式都不行。
 
-如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 就很快。
+如果能在路由器上配置代理，那么 Xcode 的 Swift package manager 安装依赖就很快。
 
+## 方法
 还有一种办法是终端给项目设置代理。然后在项目内执行：
 
 ```shell

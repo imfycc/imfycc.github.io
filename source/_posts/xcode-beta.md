@@ -6,6 +6,7 @@ tags: Xcode
 categories: 编程
 ---
 
+## 背景
 每年开发者大会之后，我都提前安装 beta 版本的 macOS 系统，体验新特性。
 
 但是升级后，系统内的 Xcode 也会变成 Beta 版本，原来的 Xcode 就会覆盖一个禁用的标志，无法打开了。
@@ -13,6 +14,8 @@ categories: 编程
 Xcode Beta 提交新版本无法上架到 App Store，日常开发还是需要使用原来的 Xcode。
 
 本文记录一下，如何打开原来的 Xcode
+
+## 方法
 
 ```shell
 open /Applications/Xcode.app/Contents/MacOS/Xcode 
