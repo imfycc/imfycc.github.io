@@ -4,9 +4,13 @@ Theme Name: Sugar
 Theme URI: https://hufangyun.com
 Description: Hexo themes
 Version: 0.8
-Author: 小猿大圣
+Author: imfycc
 Author URI: https://hufangyun.com
 */
+
+:root {
+  --primary-color: #07c160;
+}
 
 /********* Global *********/
 
@@ -16,6 +20,7 @@ Author URI: https://hufangyun.com
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 * {
   margin:0;
   padding:0;
@@ -25,7 +30,7 @@ Author URI: https://hufangyun.com
 body {
   font-family: -apple-system,"Helvetica Neue", "Helvetica", "Arial","PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: #333333;
 }
@@ -115,7 +120,7 @@ h2, h3, h4 {
     .tip {
       padding: 0 14px;
       position: absolute;
-      background-color: #2DCB70;
+      background-color: var(--primary-color);
       opacity: 0;
       border-radius: 7%;
       top: 105px;
@@ -134,7 +139,7 @@ h2, h3, h4 {
         left: 50%;
         margin-left: -6px;
         border: 7px solid transparent;
-        border-bottom-color: #2DCB70;
+        border-bottom-color: var(--primary-color);
       }
     }
   }
@@ -163,7 +168,7 @@ h2, h3, h4 {
       margin-right: 30px;
 
       a {
-        color: #009800;
+        color: var(--primary-color);
         font-size: 18px;
         font-weight: bold;
       }
@@ -259,13 +264,13 @@ h2, h3, h4 {
       color: #555555;
 
       &:hover {
-        border: 1px solid #6bd95b;
+        border: 1px solid var(--primary-color);
       }
     }
     .active {
-      background: #6bd95b;
+      background: var(--primary-color);
       color: #ffffff;
-      border: 1px solid #6bd95b;
+      border: 1px solid var(--primary-color);
     }
   }
 }
@@ -304,7 +309,7 @@ h2, h3, h4 {
 }
 
 .current-menu-item a {
-  background-color: #6bd95b;
+  background-color: var(--primary-color);
   color:#fff;
 }
 
@@ -332,7 +337,7 @@ h2, h3, h4 {
         color: #88909a;
 
         &:hover {
-          color: #49be38;
+          color: var(--primary-color);
         }
       }
     }
@@ -482,7 +487,7 @@ h2, h3, h4 {
   p {
     margin: 22px 0;
     color: #555;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     text-align: justify;
 
@@ -519,7 +524,7 @@ h2, h3, h4 {
     padding: 15px 20px;
     margin: 20px 0;
     background-color: #F6F6F6;
-    border-left: 3px solid #49be38;
+    border-left: 3px solid var(--primary-color);
     border-radius: 3px;
     word-break: break-word;
 
@@ -556,8 +561,8 @@ h2, h3, h4 {
       }
     }
     a {
-      color: #49be38;
-      border-bottom: 1px solid #49be38;
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
 
       &:hover {
         color:  #c7254e;
@@ -578,7 +583,7 @@ h2, h3, h4 {
       padding-left: 20px;
 
       li {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.6;
         color: #555;
         margin: 8px 0;
@@ -594,7 +599,7 @@ h2, h3, h4 {
     }
 
     ol {
-      margin: 30px 45px;
+      margin: 30px 0;
 
       li {
         list-style-type: decimal;
@@ -653,7 +658,7 @@ h2, h3, h4 {
 	padding: 25px;
 	margin-bottom: 40px;
 	background-color: whitesmoke;
-	border-left: 4px solid #49be38;
+	border-left: 4px solid var(--primary-color);
   border-radius: 3px;
 	box-sizing: border-box;
 	box-shadow: 0 0 1px #d9d9d9;
@@ -668,8 +673,8 @@ h2, h3, h4 {
 .support-author .btn-pay {
 	margin: 10px 15px 10px 0;
 	color: white;
-	border-color: #49be38;
-	background-color: #49be38;
+	border-color: var(--primary-color);
+	background-color: var(--primary-color);
 	border-radius: 4px;
 	padding: 4px 12px;
 	font-size: 14px;
@@ -724,7 +729,7 @@ h2, h3, h4 {
     a {
       color: #333;
       &:hover {
-        color: #49be38;
+        color: var(--primary-color);
       }
     }
   }
@@ -778,7 +783,7 @@ h2, h3, h4 {
 	-o-text-overflow: ellipsis;
 }
 .leftAside .hoverShow .titleList .archive li a{
-	font-size:14px;
+	font-size: 15px;
 }
 .leftAside .hoverShow .titleList .tabs a{
 	background-color:#6666FF;
@@ -825,7 +830,7 @@ h2, h3, h4 {
     border: 1px solid #dddddd;
 
     &.current {
-      background: #15a829;
+      background: var(--primary-color);
       color: #ffffff;
       padding: 7px 12px;
       border: 0;
@@ -913,8 +918,8 @@ h2, h3, h4 {
     top: 0;
     left: 20px;
     margin-top: 13px;
-    -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
-    box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
+    -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px var(--primary-color);
+    box-shadow: 20px 0px #fdbc40, 40px 0px var(--primary-color);
     z-index: 3;
   }
 }
@@ -1035,7 +1040,7 @@ h2, h3, h4 {
 
 .left-aside {
   width: 100%;
-  padding: 13px 0px 53px;
+  padding: 20px 0px 53px;
   border-right: none;
   position: static;
   background: #FFF;
@@ -1077,15 +1082,17 @@ h2, h3, h4 {
   margin: 0 auto;
   margin-left: 0px;
   .right-main {
-    .category {
-      margin-left: -10px;
-    }
     margin-top: 20px;
     float: none;
     padding-left: 0px;
     width: 90%;
     padding-top: 15px;
     margin: 0 auto;
+
+    .list {
+      margin-top: 0;
+      width: 100%;
+    }
   }
 }
 .item {
@@ -1093,11 +1100,23 @@ h2, h3, h4 {
 }
 
 .page-nav {
-  width: 200px;
+  width: unset;
+  margin: 10px auto 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .hosted {
-  margin: 20px auto;
+  margin: 20px auto 0;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      margin: 0 15px;
+    }
+  }
 }
 
 /************ 文章页 **************/
