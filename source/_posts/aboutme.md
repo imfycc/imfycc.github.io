@@ -7,7 +7,10 @@ tags:
 categories: 最热
 ---
 
-[![imfycc`s Github Chart](https://raw.githubusercontent.com/imfycc/imfycc/output/github-contribution-grid-snake.svg)](https://github.com/imfycc "image")
+<a href="https://github.com/imfycc">
+    <img src="https://raw.githubusercontent.com/imfycc/imfycc/output/github-contribution-grid-snake.svg">
+</a>
+<span class="img-alt">imfycc`s Github Contributions Chart</span>
 
 你好，我是方运。👋
 
