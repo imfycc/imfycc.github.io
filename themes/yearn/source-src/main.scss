@@ -211,6 +211,9 @@ h2, h3, h4 {
     border-radius: 10px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
     #search-result {
       li {
         border-top: 1px dashed #dadada;
