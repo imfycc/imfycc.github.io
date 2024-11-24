@@ -202,7 +202,8 @@ h2, h3, h4 {
     top: 45px;
     top: 45px;
     left: -60%;
-    width: 400px;
+    width: 500px;
+    border-radius: 10px;
     max-height: 400px;
     overflow-y: scroll;
     display: none;
@@ -215,7 +216,11 @@ h2, h3, h4 {
         border-top: 1px solid #dadada;
         padding: 10px 15px;
         margin-left: 0px;
-        width: 370px;
+        width: 100%;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
 
         a {
           font-size: 15px;
