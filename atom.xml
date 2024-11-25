@@ -6,7 +6,7 @@
   <link href="https://hufangyun.com/atom.xml" rel="self"/>
   
   <link href="https://hufangyun.com/"/>
-  <updated>2024-11-12T01:15:56.000Z</updated>
+  <updated>2024-11-25T15:35:48.000Z</updated>
   <id>https://hufangyun.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我和 Apple 开发的缘分</title>
+    <link href="https://hufangyun.com/2024/apple-dev-love/"/>
+    <id>https://hufangyun.com/2024/apple-dev-love/</id>
+    <published>2024-11-25T15:35:48.000Z</published>
+    <updated>2024-11-25T15:35:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Apple-开发者会员-🍎"><a href="#Apple-开发者会员-🍎" class="headerlink" title="Apple 开发者会员 🍎"></a>Apple 开发者会员 🍎</h2><p>今年 1 月 1 日的时候我又开通了 Apple 开发一年的会员，本来想 1 月 1 日注册，这个日子很好记，同时也代表一个新的开始，没想到因为时差问题，Apple 是从 12 月 31 开始计算的。</p><p>哈哈哈，生活真是处处充满惊喜和意外。不过这也是个很好记的日子，寓意是辞旧迎新？🧨</p><p>上面说了「又」。是的，这不是我第一次缴费了，我之前有一年也买了一年开发者会员想开发 App，但是一年什么都没干，白交了一年的学费，属实冲动消费了。</p><p>其实没有开发者会员也是能开发 App 的，只是一些功能比如 iCloud 同步，自己开发的 App 用不了，也没法上架。</p><p>⚠️ 所以我建议大家先把自己的 App 开发出来，等要上架了，再开通发者会员也来得及，不要冲动消费。</p><h2 id="产出"><a href="#产出" class="headerlink" title="产出"></a>产出</h2><p>第一年的会员没有产出，那今年那？</p><p>可能是 12 月 31 日的寓意起作用了，挥手告别过去，我今年开发过 4 款 App 📱。</p><p>两款上架了，上架的都盈利了。一款待上架阶段，一款算是调研阶段。</p><p>其中一款，收益还可以，每天能卖出去 1-3 份，让我对独立开发这个方向看到一点希望 💰。</p><h2 id="缘分从何谈起？💗"><a href="#缘分从何谈起？💗" class="headerlink" title="缘分从何谈起？💗"></a>缘分从何谈起？💗</h2><p>回到主题，聊一聊缘分，大四快毕业的时候，我们学校和校外的 IT 培训班合作，让我们去培训班免费体验 7 天，能选的培训班都在一线城市，还管吃管住，这不就是免费的 7 天旅行吗？大家都相当开心 😆。</p><p>我选的北京的一个培训班，当时培训班有两个方向，一个 iOS 开发，一个前端开发，我当时前端比较熟悉，不假思索的选前端，但是选前端的人太多了，名额满了，我就只能去 iOS 班了，刚进班里，老师说又有了一个前端开发的名额，谁想去，我第一个举手了，但是还有一位女生也想去，老师说女士优先，就让这位女同学去了前端班。</p><p>我就这样留在了 iOS 班。iOS 班开发 App 是没有手机真机的，只有一台很卡入门级别配置还很老的 Mac mini，外接的显示器也很糊，就这我也是第一次接触 macOS 呀。</p><p>老师讲完课让我们根据讲的内容自由发挥，最后他选出做的最好的前三名的小组，前三名是有奖品的。</p><p>老师讲的内容就是怎么做一个 iOS 的登录页面，我很快就做出来了，然后又加了背景图、按钮颜色等自由发挥的内容，老师看到我作业后说，这个是我钦点的第一名了。因为我做的是最快、最完整的，还有自由发挥的额外内容。</p><p>很意外，就这么拿了一个一等奖 🏆。</p><p>可能因为是体验课，大部分同学都没认真听，也没把这个奖品当回事，我做了，就这样拿了一个一等奖。</p><p>奖品是一个程序员风格的双肩包 🎒，大约 200 元左右。质量很好，我背了挺长时间。</p><p>我们是三个人一组，一等奖是我们小组三个人都有这个包。我们组有一位同学，一直在睡觉，他很惊讶，说自己睡了一觉起来我们组得了一等奖，白得一个包。哈哈哈哈。</p><p>这就是我和 Apple 开发最早的缘分 💗。</p><p>那次培训班之旅，洗脑还是挺成功的，回学校的火车上，还是有不少人对培训老师讲的培训前景，以及这个行业的高薪心动了，甚至有人都不想考研了，打算直接去培训。</p><p>不过回到学校后不少人也冷静下来了，该考研考研，该实习实习。</p><p>毕业后我并没有做 iOS 开发，因为没有这个基础，我没有 iOS 开发的设备，对一个普通学生来说，这些设备很昂贵。其次周围也没有这样的氛围，我周围的人都在做前端或者后端，我继续从事了我已经很熟悉的前端开发。</p><p>实习的时候我分期买了第一部 iPhone，后买又买了 iPad，感觉苹果的设备很精致，系统设计交互很特别。</p><p>再后来自己有收入了，也买了不少的 Apple 设备，当我同时拥有 Mac 和 iPhone 的时候我有过为什么不试试 Apple 开发的想法？ 💡</p><h2 id="最好的时刻"><a href="#最好的时刻" class="headerlink" title="最好的时刻"></a>最好的时刻</h2><p>至今我从事前端开发 7 年多了，兜兜转转，我又开始接触 Apple 生态的开发了。想法落地，我开始尝试 iOS 和 macOS 开发，可能一切都是最好的安排。今年有了 AI 的加持，写个 App 比以前更容易了。</p><h2 id="奇妙-🍀"><a href="#奇妙-🍀" class="headerlink" title="奇妙 🍀"></a>奇妙 🍀</h2><p>兜兜转转，我又回到这条道路上。又开始了 Apple 生态的软件开发，我觉的很奇妙。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Apple-开发者会员-🍎&quot;&gt;&lt;a href=&quot;#Apple-开发者会员-🍎&quot; class=&quot;headerlink&quot; title=&quot;Apple 开发者会员 🍎&quot;&gt;&lt;/a&gt;Apple 开发者会员 🍎&lt;/h2&gt;&lt;p&gt;今年 1 月 1 日的时候我又开通了 App</summary>
+      
+    
+    
+    
+    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="apple" scheme="https://hufangyun.com/tags/apple/"/>
+    
+  </entry>
   
   <entry>
     <title>我的手机流量和宽带套餐性价比方案</title>
@@ -475,29 +499,6 @@
     
     
     <category term="技术成长" scheme="https://hufangyun.com/tags/%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于转载</title>
-    <link href="https://hufangyun.com/2018/copyright-reprinted/"/>
-    <id>https://hufangyun.com/2018/copyright-reprinted/</id>
-    <published>2018-04-26T08:52:30.000Z</published>
-    <updated>2018-04-27T08:52:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近，发现自己写的博文，被别人转载了。有商业性质的网站、有个人博主，也有各种爬虫自动采集收录。</p><p>比如这篇 <a href="https://hufangyun.com/2017/short-url/">短网址(short URL)系统的原理及其实现</a>, 我发现这篇文章在谷歌和百度搜索的时候，前5、6页搜索结果都找不到我自己的原文地址😭，只有必应第一条搜索结果是我自己的博客 😂</p><h2 id="我不希望文章被复制粘贴转载-❌"><a href="#我不希望文章被复制粘贴转载-❌" class="headerlink" title="我不希望文章被复制粘贴转载 ❌"></a>我不希望文章被复制粘贴转载 ❌</h2><ul><li><strong>我的博客是经常更新的。</strong> 🚀 我的博文是按照更新时间排序的，在编程技术领域以及社会这个大家庭中，我还很年轻，写的东西难免会有错误，或者认知上的不成熟，一旦我发现有错误或者内容补充，我会不定期的更新文章内容。但是复制粘贴转载的文章，并不会随着我更新而更新，错误的内容会一直保留，给之后的阅读者留下隐患。</li><li><strong>我不能更好的收到反馈。</strong> 我发现很多转载的文章下面，有对我文章内容的疑问和勘误，转载文章的人，并不会去解释这些疑问，而我作为文章的原创作者，也收不到别人指正的错误。对文章的阅读者和作者的我，都没有很好的反馈。</li><li><strong>阅读效果不佳。</strong> 最让我受不了的是，我在写作的时候使用了 <code>Markdown</code> 的语法画的流程图很多网站不支持显示，显示的全是代码。还有我用的表情 🐻，他们也显示不出来。。。。</li></ul><h2 id="我希望的转载方式-✅"><a href="#我希望的转载方式-✅" class="headerlink" title="我希望的转载方式 ✅"></a>我希望的转载方式 ✅</h2><p><strong>分享链接转载，指向我的博文。</strong> 我觉的这是最好的转载方式，互赢。</p><p><strong>如果，</strong> 非要复制粘贴的转载，请联系我 <strong>获得授权</strong>，未经许可禁止转载。</p><p>我会在文章的开头注明授权给了谁。我文章更新的时候，也通知转载文章的地方更新。</p><p>邮箱地址：<code>hufy78#gmail.com</code> <code>hufy3651#foxmail.com</code> <code>#</code> 换成 <code>@</code></p><h2 id="关于原创自己总结的方法"><a href="#关于原创自己总结的方法" class="headerlink" title="关于原创自己总结的方法"></a>关于原创自己总结的方法</h2><p>1、有自己的文章风格。这个好像很难。。。</p><p>2、有代码实例，指向自己的网站、Github</p><p>3、图片截图包含自己的博客域名目录等</p><p>4、截图带上自己的水印</p><p>5、每篇文章后面带上转载声明</p><p>6、文章内容示例含有自己的标识</p><h2 id="使用别人的原创"><a href="#使用别人的原创" class="headerlink" title="使用别人的原创"></a>使用别人的原创</h2><p>换位思考，以后我使用别人的图片和摘选的内容时，我会带上来源地址和作者署名，尊重原创。💪</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;最近，发现自己写的博文，被别人转载了。有商业性质的网站、有个人博主，也有各种爬虫自动采集收录。&lt;/p&gt;
-&lt;p&gt;比如这篇 &lt;a href=&quot;https://hufangyun.com/2017/short-url/&quot;&gt;短网址(short URL)系统的原理及其实现&lt;/a&gt;, </summary>
-      
-    
-    
-    
-    <category term="随笔" scheme="https://hufangyun.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
   </entry>
   
