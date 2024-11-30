@@ -14,7 +14,7 @@ function pattern(width = window.innerWidth) {
     color_space: 'lab',
     color_function: false,
     stroke_width: 1.2,
-    seed: window.location.href
+    seed: document.title
   });
 }
 
