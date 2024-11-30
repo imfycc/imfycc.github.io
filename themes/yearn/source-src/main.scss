@@ -197,17 +197,18 @@ h2, h3, h4 {
   .category {
     ul {
       display: inline-flex;
+      flex-wrap: wrap;
     }
     li {
       list-style: none;
-      margin: 15px 5px 5px 10px;
+      margin: 15px 10px 5px 0px;
   
       &:first-child {
         margin-left: 0px;
       }
   
       a {
-        padding: 8px 12px;
+        padding: 8px 15px;
         border: 1px solid #d9d9d9;
         border-radius: 20px;
         box-sizing: border-box;
@@ -215,6 +216,7 @@ h2, h3, h4 {
         font-weight: 800;
         line-height: 1.5;
         color: #555555;
+        word-break: keep-all;
   
         &:hover {
           border: 1px solid var(--primary-color);
@@ -1240,8 +1242,12 @@ h2, h3, h4 {
         width: 90%;
         margin: 0 auto;
 
-        .category li a {
-          padding: 8px 10px;
+        .category li {
+          margin: 15px 8px 5px 0px;
+          a {
+            font-size: 14px;
+            padding: 8px 10px;
+          }
         }
         .list {
           margin-top: 35px;
