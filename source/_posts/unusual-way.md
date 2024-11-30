@@ -3,7 +3,7 @@ title: 不平凡之路
 date: 2014-11-15 12:16:00
 updated: 2017-05-28 07:26:14
 tags:
-categories: 随笔
+categories: 读书
 ---
 
 在去济南的动车上看到的一段话：

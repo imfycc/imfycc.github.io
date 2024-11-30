@@ -2,8 +2,9 @@
 title: 父母患病和医保问题，一定要点击来看看 提前避坑
 date: 2024-11-30 15:09:30
 updated: 2024-11-30 15:09:30
+order: 3
 tags: 疾病
-categories: 生活
+categories: 最热
 ---
 
 ## 开篇
