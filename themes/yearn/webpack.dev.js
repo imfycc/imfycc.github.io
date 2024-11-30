@@ -1,6 +1,6 @@
-const merge = require("webpack-merge");
+const { merge }  = require("webpack-merge");
 const common = require('./webpack.common.js');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -9,7 +9,9 @@ module.exports = merge(common, {
     filename: 'js/[name].js',
   },
   plugins: [
-    new ExtractTextPlugin('style/[name].css')
+    new MiniCssExtractPlugin({
+      filename: 'style/[name].css'
+    }),
   ],
   watch: true
 });

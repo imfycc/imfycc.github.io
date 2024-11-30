@@ -2,9 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // https://github.com/kangax/html-minifier#options-quick-reference
@@ -19,34 +17,26 @@ module.exports = {
   output: {
     filename: 'js/[name].[hash:6].js',
     publicPath: "./",
-    path: path.resolve(__dirname, 'source')
+    path: path.resolve(__dirname, 'source'),
+    clean: {
+      keep: /^(?!source\/js|source\/style).*/, // 使用正则表达式来指定保留的内容，这里表示保留除了source/js和source/style目录及其内容之外的所有内容
+      dry: false, // 设置为false，表示实际执行清理操作，若设置为true则只是模拟清理，查看会清理哪些内容而不真正执行
+    }
   },
 
   module: {
     rules: [{
-      test: /\.(scss|sass|css)$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: [
+      test: /\.s?css$/,
+      use: [
+          MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => {
-                return [
-                  require('autoprefixer')()
-                ]
-              }
-            }
-          },
+          'postcss-loader',
           'sass-loader'
-        ]
-      })
+      ]
     }]
   },
 
   plugins: [
-    new CleanWebpackPlugin(['source/js', 'source/style']),
     new HtmlWebpackPlugin({
       inject: false,
       cache:false,
@@ -61,12 +51,6 @@ module.exports = {
       template: './source-src/css.ejs',
       filename: '../layout/_partial/css.ejs'
     })
-  ],
-
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin()
-    ]
-  }
+  ]
 };
 
