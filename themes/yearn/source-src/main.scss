@@ -124,7 +124,7 @@ h2, h3, h4 {
       list-style: none;
       margin: 60px 10px 20px;
       img {
-        width: 31px;
+        width: 34px;
         transition: All ease-in-out 0.4s;
 
         &:hover {
@@ -961,14 +961,14 @@ h2, h3, h4 {
     }
   }
   .page-number {
-    padding: 6px 12px;
+    padding: 9px 14px;
     margin-left: -1px;
     border: 1px solid #dddddd;
 
     &.current {
       background: var(--primary-color);
       color: #ffffff;
-      padding: 7px 12px;
+      padding: 10px 15px;
       border: 0;
     }
     &:first-child.current {
@@ -983,7 +983,7 @@ h2, h3, h4 {
     }
   }
   .extend {
-    padding: 6px 12px;
+    padding: 9px 14px;
     border: 1px solid #dddddd;
 
     &.prev {
@@ -999,7 +999,7 @@ h2, h3, h4 {
   }
 
   .space {
-    padding: 6px 7px;
+    padding: 9px 11px;
     margin-left: -1px;
     border: 1px solid #ddd;
   }
@@ -1174,6 +1174,9 @@ h2, h3, h4 {
   .left-aside .sns li {
     list-style: none;
     margin: 60px 15px 20px;
+    img {
+      width: 38px;
+    }
   }
   .middle-aside {
     margin-left: 26%;
@@ -1221,7 +1224,7 @@ h2, h3, h4 {
         li {
           margin: 10px 10px 6px;
           img {
-            width: 28px;
+            width: 31px;
           }
         }
         .tip {
@@ -1245,7 +1248,7 @@ h2, h3, h4 {
         .category li {
           margin: 15px 8px 5px 0px;
           a {
-            font-size: 14px;
+            font-size: 15px;
             padding: 8px 10px;
           }
         }
