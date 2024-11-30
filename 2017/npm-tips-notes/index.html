@@ -16,10 +16,10 @@
   <link rel="dns-prefetch" href="https://api.github.com">
   <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   
-  <link rel="stylesheet" type="text/css" href="/./style/main.6d5886.css">
+  <link rel="stylesheet" type="text/css" href="/./style/main.292db3.css">
   <link rel="shortcut icon" href="https://static.hufangyun.com/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <title>npm 技巧汇总(含国内填坑指南)</title>
+  <title>npm 技巧汇总(含国内填坑方法)</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?279edd956f5d814ddf08af30b654b4c6";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -39,7 +39,7 @@
     
   
   <h1 class="title">
-    npm 技巧汇总(含国内填坑指南)
+    npm 技巧汇总(含国内填坑方法)
   </h1>
   
 
@@ -71,23 +71,23 @@
 <p>因为中国社会主义特色，部分代码库在下载的时候，有些坎坷。可以做以下的配置优化</p>
 </blockquote>
 <h3 id="npm-使用国内源"><a href="#npm-使用国内源" class="headerlink" title="npm 使用国内源"></a><code>npm</code> 使用国内源</h3><p>使用 <code>cnpm</code> 的源</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry http:&#x2F;&#x2F;registry.cnpmjs.org</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry http://registry.cnpmjs.org</span><br></pre></td></tr></table></figure>
 <p>或者使用淘宝的源</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>除了上面使用命令的方式，也可以直接在 <code>~/.npmrc</code> 文件添加</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <h3 id="设置变量"><a href="#设置变量" class="headerlink" title="设置变量"></a>设置变量</h3><blockquote>
 <p>以下几个地址，也替换成淘宝的源，加快下载速度。</p>
 </blockquote>
 <p>在 <code>~/.npmrc</code> 文件添加</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sass_binary_site&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node-sass&#x2F;</span><br><span class="line">phantomjs_cdnurl&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;phantomjs&#x2F;</span><br><span class="line">electron_mirror&#x3D;https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;electron&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</span><br><span class="line">phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/</span><br><span class="line">electron_mirror=https://npm.taobao.org/mirrors/electron/</span><br></pre></td></tr></table></figure>
 
-<h2 id="npm-其他技巧"><a href="#npm-其他技巧" class="headerlink" title="npm 其他技巧"></a><code>npm</code> 其他技巧</h2><h3 id="npm-检查-package-json-中未声明的-package"><a href="#npm-检查-package-json-中未声明的-package" class="headerlink" title="npm 检查 package.json 中未声明的 package"></a><code>npm</code> 检查 <code>package.json</code> 中未声明的 <code>package</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm prune</span><br></pre></td></tr></table></figure>
+<h2 id="npm-其他技巧"><a href="#npm-其他技巧" class="headerlink" title="npm 其他技巧"></a><code>npm</code> 其他技巧</h2><h3 id="npm-检查-package-json-中未声明的-package"><a href="#npm-检查-package-json-中未声明的-package" class="headerlink" title="npm 检查 package.json 中未声明的 package"></a><code>npm</code> 检查 <code>package.json</code> 中未声明的 <code>package</code></h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm prune</span><br></pre></td></tr></table></figure>
 
 <p>运行 <code>prune</code> 命令，<code>npm CLI</code> 会读取 <code>package.json</code>，并将结果与项目的 <code>/node_modules</code> 目录进行对比，并打印出不在 <code>package.json</code> 之列的模块列表。</p>
-<h3 id="npm-改变所有项目的默认前缀"><a href="#npm-改变所有项目的默认前缀" class="headerlink" title="npm 改变所有项目的默认前缀"></a><code>npm</code> 改变所有项目的默认前缀</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set save-prefix ~</span><br></pre></td></tr></table></figure>
+<h3 id="npm-改变所有项目的默认前缀"><a href="#npm-改变所有项目的默认前缀" class="headerlink" title="npm 改变所有项目的默认前缀"></a><code>npm</code> 改变所有项目的默认前缀</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set save-prefix ~</span><br></pre></td></tr></table></figure>
 <p>使用 <code>~</code> 比默认的 <code>^</code> 行为更加保守。</p>
 <p><code>~</code> 将依赖锁定在小版本，允许使用 <code>npm update</code> 安装补丁版本。</p>
 <p><code>^</code> 将依赖锁定在主版本，允许使用 <code>npm update</code> 更新小版本。</p>
@@ -96,13 +96,10 @@
 </blockquote>
 <p>大部分库默认使用的 <code>python2</code>,因为 <code>Mac</code> 本身就内置了。如果你的电脑上安装了 <code>python</code> 的默认版本是 <code>3.x</code>,打包的时候就会报错。可以这样设置：</p>
 <p>使用命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set python python2.7</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set python python2.7</span><br></pre></td></tr></table></figure>
 
 <p>或者在 <code>~/.npmrc</code> 文件添加下面这一行：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python&#x3D;python2.7</span><br></pre></td></tr></table></figure>
-
-
-
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python=python2.7</span><br></pre></td></tr></table></figure>
 
 
       </div>
@@ -163,39 +160,7 @@
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<script>//console
-  var consoleConfig = '\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
-  var canConsole = true;
-  var consoleInfo = (function(consoleConfig) {
-  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
-    return;
-  }
-  var consoleColor = '#6190e8';
-  var _console;
-  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
-  var textStyle = 'color: ' + consoleColor + ';';
-
-  consoleConfig.map(o => {
-    var num = (o.match(/%c/g) || []).length;
-    if(/^http(s)?:\/\//.test(o)) {
-      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
-      return;
-    }
-    if (num > 0) {
-      var logArguments = [];
-      for (var i = 0; i < num; i++) {
-        if (i % 2 === 0) {
-          logArguments.push(backgroundTextStyle);
-        } else {
-          logArguments.push(textStyle);
-        }
-      }
-      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
-      return;
-    }
-    console.log('%c' + o, textStyle);
-  });
-}(consoleConfig));</script><script type="text/javascript" src="/./js/main.6d5886.js"></script>
+<script>var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(n){if(canConsole&&n&&!(n.length<1)){var o,l="#6190e8",c="padding: 1px 5px;color: #fff;background: "+l+";",e="color: "+l+";";n.map((n=>{var l=(n.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(n))console.log("%c     ","background: url("+n+") no-repeat left center;font-size: 180px;");else if(l>0){for(var t=[],f=0;f<l;f++)f%2==0?t.push(c):t.push(e);(o=console).log.apply(o,["%c"+n,e].concat(t))}else console.log("%c"+n,e)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.292db3.js"></script>
 
 </body>
 </html>
