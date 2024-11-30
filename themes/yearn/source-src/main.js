@@ -123,6 +123,19 @@ function render(data) {
     var result = document.getElementById('search-result');
     result.innerHTML = html.join('');
   }
+
+  const searchInput = document.getElementById('search');
+
+  searchInput.addEventListener('blur', function () {
+      document.querySelector('.search-result-box').style.display = 'none';
+  });
+
+  searchInput.addEventListener('input', function () {
+      const inputValue = searchInput.value.trim();
+      if (inputValue === '') {
+          document.querySelector('.search-result-box').style.display = 'none';
+      }
+  });
 }
 
 function keyDown() {
