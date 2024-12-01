@@ -2,7 +2,7 @@
 title: 提前避坑：父母患病和医保问题
 date: 2024-11-30 15:09:30
 updated: 2024-11-30 15:09:30
-order: 3
+order: 5
 tags: 疾病
 categories: 最热
 ---
