@@ -16,7 +16,7 @@
   <link rel="dns-prefetch" href="https://api.github.com">
   <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   
-  <link rel="stylesheet" type="text/css" href="/./style/main.1a668a.css">
+  <link rel="stylesheet" type="text/css" href="/./style/main.d1768d.css">
   <link rel="shortcut icon" href="https://static.hufangyun.com/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <title>macOS 重装踩坑记</title>
@@ -78,12 +78,12 @@
 </ul>
 <p>基于以上的条件，我才敢重装的。</p>
 <p>但还是太年轻了，掉坑里了。本周唯一的一天假期搭进去了。🐙</p>
-<p>我是按照官网 <a href="https://support.apple.com/zh-cn/HT204904" target="_blank" rel="noopener">如何重新安装 macOS</a>这篇文章重装的，我进入恢复模式，把硬盘格式化了。⚠️</p>
+<p>我是按照官网 <a href="https://support.apple.com/zh-cn/HT204904">如何重新安装 macOS</a>这篇文章重装的，我进入恢复模式，把硬盘格式化了。⚠️</p>
 <p>🚦注解：下文中涉及到的 「恢复模式」都是指开机 command （⌘） + r 进入的恢复界面。</p>
 <img src="https://static.hufangyun.com/hexo/img/mac-reinstall-1.jpg?imageView2/2/w/500">
 
 <p>然后选择 「Reinstall macOS Big Sur」 重装的时候，一直提示连接不上恢复服务器。😂</p>
-<p>然后根据知乎上的问题<a href="https://www.zhihu.com/question/282626105" target="_blank" rel="noopener">MacBook Pro无法与恢复服务器取得联系？</a></p>
+<p>然后根据知乎上的问题<a href="https://www.zhihu.com/question/282626105">MacBook Pro无法与恢复服务器取得联系？</a></p>
 <p>我尝试过：</p>
 <ul>
 <li>在终端修改时间</li>
@@ -98,21 +98,21 @@
 <img src="https://static.hufangyun.com/hexo/img/mac-reinstall-3.jpg?imageView2/2/w/500">
 
 <h2 id="U-盘引导安装"><a href="#U-盘引导安装" class="headerlink" title="U 盘引导安装"></a>U 盘引导安装</h2><p>正常流程走不通，我就想通过 U 盘重装系统。</p>
-<p>根据苹果官网的教程 <a href="https://support.apple.com/zh-cn/HT201372" target="_blank" rel="noopener">如何创建可引导的 macOS 安装器 - Apple 支持</a>，下载系统，制作引导 U 盘</p>
+<p>根据苹果官网的教程 <a href="https://support.apple.com/zh-cn/HT201372">如何创建可引导的 macOS 安装器 - Apple 支持</a>，下载系统，制作引导 U 盘</p>
 <p>我好久没用 U 盘了，翻箱倒柜的找个大学时的 8G 的 U 盘。我一开始用的 macOS Mojave 10.14 和 macOS High Sierra 10.13 制作启动盘，因为这两个系统不到 8G。</p>
 <p>发现又坑了。😂 😂 😂</p>
 <p>我 2018 年的 Mac 多了 T2 安全芯片，默认不能 U 盘引导安装。点击 U盘的启动盘，依然是进入网络恢复模式。</p>
-<p><a href="https://support.apple.com/zh-cn/HT208862" target="_blank" rel="noopener">配备 Apple T2 安全芯片的 Mac 机型 - Apple 支持</a></p>
+<p><a href="https://support.apple.com/zh-cn/HT208862">配备 Apple T2 安全芯片的 Mac 机型 - Apple 支持</a></p>
 <p>需要在重装前关闭安全设置。</p>
-<p><a href="https://support.apple.com/zh-cn/HT208198" target="_blank" rel="noopener">关于“启动安全性实用工具” - Apple 支持</a></p>
+<p><a href="https://support.apple.com/zh-cn/HT208198">关于“启动安全性实用工具” - Apple 支持</a></p>
 <p>但是我知道的太晚了，我已经格式化硬盘了。。。现在再在恢复模式关闭，会提示没有系统账号，系统都没了，账号也没了 😂 😂 😂</p>
 <p>倒是我后来在网上查到一种方案，可以在恢复模式的命令行进入 U盘，从 U 盘唤起安装程序。😘</p>
 <p>能唤起，只是我当前恢复模式的系统是 big sur 的，提示不能比这个版本低。</p>
 <p>最新的 Big Sur 系统 12 G，U 盘至少 16G 吧，最后找邻居借了一个，人家的 U 盘将近 256 G 的。😱</p>
 <p>现在 U 盘都这么大么 🙀</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>主要参考的这个<a href="https://apple.stackexchange.com/a/398527" target="_blank" rel="noopener">提示</a>。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>主要参考的这个<a href="https://apple.stackexchange.com/a/398527">提示</a>。</p>
 <p>进入到恢复模式，打开终端根据以下命令唤起 U 盘内的安装程序</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查看挂载了哪些盘</span></span><br><span class="line"></span><br><span class="line">ls /volumes</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找到对应的路径 可以 tab 补全 </span></span><br><span class="line">/volumes/<span class="xml"><span class="tag">&lt;<span class="name">U盘名</span>&gt;</span>/Install\ macOS\ <span class="tag">&lt;<span class="name">对应的系统</span>&gt;</span>.app/Contents/MacOS/InstallAssistant</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查看挂载了哪些盘</span></span><br><span class="line"></span><br><span class="line">ls /volumes</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找到对应的路径 可以 tab 补全 </span></span><br><span class="line">/volumes/<span class="language-xml"><span class="tag">&lt;<span class="name">U盘名</span>&gt;</span>/Install\ macOS\ <span class="tag">&lt;<span class="name">对应的系统</span>&gt;</span>.app/Contents/MacOS/InstallAssistant</span></span><br></pre></td></tr></table></figure>
 
 <p>如果安装失败，安装程序会自动退出。如果还在恢复模式，应该是安装失败了😂。</p>
 <p>安装失败，可以看一下安装程序的日志（安装程序任务栏有个查看日志），我这里也安装失败过一次，查看日志发现有些超时问题，在这里我又根据知乎上的方法（上文提到的），修改的 date 和输入法，结果就可以了 🙀。（这里很玄学，也可能是我零点左右操作的，苹果的服务又链接上了？🙀 🙆🏻‍♂️ 😳 😱）</p>
@@ -182,7 +182,7 @@
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<script>var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(o){if(canConsole&&o&&!(o.length<1)){var n,c="#6190e8",e="padding: 1px 5px;color: #fff;background: "+c+";",l="color: "+c+";";o.map((o=>{var c=(o.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(o))console.log("%c     ","background: url("+o+") no-repeat left center;font-size: 180px;");else if(c>0){for(var a=[],t=0;t<c;t++)t%2==0?a.push(e):a.push(l);(n=console).log.apply(n,["%c"+o,l].concat(a))}else console.log("%c"+o,l)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.1a668a.js"></script>
+<script defer="defer">var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(o){if(canConsole&&o&&!(o.length<1)){var n,c="#6190e8",e="padding: 1px 5px;color: #fff;background: "+c+";",l="color: "+c+";";o.map((o=>{var c=(o.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(o))console.log("%c     ","background: url("+o+") no-repeat left center;font-size: 180px;");else if(c>0){for(var a=[],t=0;t<c;t++)t%2==0?a.push(e):a.push(l);(n=console).log.apply(n,["%c"+o,l].concat(a))}else console.log("%c"+o,l)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.d1768d.js"></script>
 
 </body>
 </html>

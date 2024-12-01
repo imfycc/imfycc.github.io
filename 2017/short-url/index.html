@@ -16,7 +16,7 @@
   <link rel="dns-prefetch" href="https://api.github.com">
   <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
   
-  <link rel="stylesheet" type="text/css" href="/./style/main.1a668a.css">
+  <link rel="stylesheet" type="text/css" href="/./style/main.d1768d.css">
   <link rel="shortcut icon" href="https://static.hufangyun.com/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <title>短网址(short URL)系统的原理及其实现</title>
@@ -69,31 +69,31 @@
 </blockquote>
 <h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>做一个短链接生成器，可以将一个长链接缩短成一个短链接。 </p>
 <h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><blockquote>
-<p>由 <a href="https://gigalixir.com/" target="_blank" rel="noopener">Gigalixir</a> 提供免费部署服务，该地址只用于体验，⚠️ 不提供数据维护存储。</p>
+<p>由 <a href="https://gigalixir.com/">Gigalixir</a> 提供免费部署服务，该地址只用于体验，⚠️ 不提供数据维护存储。</p>
 </blockquote>
-<p><a href="https://fearless-trustworthy-aidi.gigalixirapp.com/" target="_blank" rel="noopener">体验地址</a></p>
+<p><a href="https://fearless-trustworthy-aidi.gigalixirapp.com/">体验地址</a></p>
 <h2 id="要发车了-🚌"><a href="#要发车了-🚌" class="headerlink" title="要发车了 🚌"></a>要发车了 🚌</h2><p>发车前，和大家说一下</p>
-<p>如果不想重复的造轮子，想开箱即用，可以使用基于 <code>PHP</code> 的开源软件 <a href="https://github.com/YOURLS/YOURLS" target="_blank" rel="noopener">YOURLS</a>。<code>YOURLS</code> 还可以和 <code>WordPress</code> 整合到一起，功能强大，可扩展性高。</p>
+<p>如果不想重复的造轮子，想开箱即用，可以使用基于 <code>PHP</code> 的开源软件 <a href="https://github.com/YOURLS/YOURLS">YOURLS</a>。<code>YOURLS</code> 还可以和 <code>WordPress</code> 整合到一起，功能强大，可扩展性高。</p>
 <blockquote>
 <p>本文记录了开发短网址系统的整个过程，包括初期的算法调研、模块设计、数据库设计、功能扩展等。</p>
 </blockquote>
 <h2 id="什么是短链接-🔗"><a href="#什么是短链接-🔗" class="headerlink" title="什么是短链接 🔗"></a>什么是短链接 🔗</h2><blockquote>
-<p>就是把普通网址，转换成比较短的网址。比如：<a href="http://t.cn/RlB2PdD" target="_blank" rel="noopener">http://t.cn/RlB2PdD</a> 这种，在微博这些限制字数的应用里。好处不言而喻。短、字符少、美观、便于发布、传播。 </p>
+<p>就是把普通网址，转换成比较短的网址。比如：<a href="http://t.cn/RlB2PdD">http://t.cn/RlB2PdD</a> 这种，在微博这些限制字数的应用里。好处不言而喻。短、字符少、美观、便于发布、传播。 </p>
 </blockquote>
-<p>百度短网址 <a href="http://dwz.cn/" target="_blank" rel="noopener">http://dwz.cn/</a><br>谷歌短网址服务 <a href="https://goo.gl/" target="_blank" rel="noopener">https://goo.gl/</a> （需科学上网）号称是最快的 🚀</p>
-<h2 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h2><p>当我们在浏览器里输入 <a href="http://t.cn/RlB2PdD" target="_blank" rel="noopener">http://t.cn/RlB2PdD</a> 时</p>
+<p>百度短网址 <a href="http://dwz.cn/">http://dwz.cn/</a><br>谷歌短网址服务 <a href="https://goo.gl/">https://goo.gl/</a> （需科学上网）号称是最快的 🚀</p>
+<h2 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h2><p>当我们在浏览器里输入 <a href="http://t.cn/RlB2PdD">http://t.cn/RlB2PdD</a> 时</p>
 <ol>
-<li>DNS首先解析获得 <a href="http://t.cn" target="_blank" rel="noopener">http://t.cn</a> 的 <code>IP</code> 地址</li>
+<li>DNS首先解析获得 <a href="http://t.cn/">http://t.cn</a> 的 <code>IP</code> 地址</li>
 <li>当 <code>DNS</code> 获得 <code>IP</code> 地址以后（比如：74.125.225.72），会向这个地址发送 <code>HTTP</code> <code>GET</code> 请求，查询短码 <code>RlB2PdD</code></li>
-<li><a href="http://t.cn" target="_blank" rel="noopener">http://t.cn</a> 服务器会通过短码 <code>RlB2PdD</code> 获取对应的长 URL</li>
-<li>请求通过 <code>HTTP</code> <code>301</code> 转到对应的长 URL <a href="https://m.helijia.com" target="_blank" rel="noopener">https://m.helijia.com</a> 。</li>
+<li><a href="http://t.cn/">http://t.cn</a> 服务器会通过短码 <code>RlB2PdD</code> 获取对应的长 URL</li>
+<li>请求通过 <code>HTTP</code> <code>301</code> 转到对应的长 URL <a href="https://m.helijia.com/">https://m.helijia.com</a> 。</li>
 </ol>
 <p>这里有个小的知识点，为什么要用 301 跳转而不是 302 呐？</p>
 <blockquote>
 <p>301 是永久重定向，302 是临时重定向。短地址一经生成就不会变化，所以用 301 是符合 <code>http</code> 语义的。同时对服务器压力也会有一定减少。<br>但是如果使用了 <code>301</code>，我们就无法统计到短地址被点击的次数了。而这个点击次数是一个非常有意思的大数据分析数据源。能够分析出的东西非常非常多。所以选择302虽然会增加服务器压力，但是我想是一个更好的选择。 </p>
 </blockquote>
 <blockquote>
-<p>来自知乎 iammutex 的<a href="https://www.zhihu.com/question/29270034/answer/46446911" target="_blank" rel="noopener">答案</a></p>
+<p>来自知乎 iammutex 的<a href="https://www.zhihu.com/question/29270034/answer/46446911">答案</a></p>
 </blockquote>
 <h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>网上比较流行的算法有两种 自增序列算法、 摘要算法</p>
 <h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><p><strong>自增序列算法</strong> 也叫永不重复算法</p>
@@ -101,8 +101,8 @@
 <p>如下图：十进制 10000，对应不同进制的字符表示。 </p>
 <img src="https://static.hufangyun.com/hexo/img/short-url.png?imageView2/2/w/300">
 
-<p>短址的长度一般设为 6 位，而每一位是由 <code>[a - z, A - Z, 0 - 9]</code> 总共 62 个字母组成的，所以 6 位的话，总共会有 62^6 ~= 568亿种组合，基本上够用了。</p>
-<p>哈哈，这里附上一个进制转换工具 <a href="http://tool.lu/hexconvert/" target="_blank" rel="noopener">http://tool.lu/hexconvert/</a> 上图的数据就是用这个工具生成的。</p>
+<p>短址的长度一般设为 6 位，而每一位是由 <code>[a - z, A - Z, 0 - 9]</code> 总共 62 个字母组成的，所以 6 位的话，总共会有 62^6 ~&#x3D; 568亿种组合，基本上够用了。</p>
+<p>哈哈，这里附上一个进制转换工具 <a href="http://tool.lu/hexconvert/">http://tool.lu/hexconvert/</a> 上图的数据就是用这个工具生成的。</p>
 <p>具体的算法实现，自行谷歌。</p>
 <h3 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h3><ol>
 <li>将长网址 <code>md5</code> 生成 32 位签名串,分为 4 段, 每段 8 个字节</li>
@@ -111,13 +111,13 @@
 <li>总的 <code>md5</code> 串可以获得 4 个 6 位串,取里面的任意一个就可作为这个长 url 的短 url 地址</li>
 </ol>
 <p>这种算法,虽然会生成4个,但是仍然存在重复几率</p>
-<h3 id="两种算法对比"><a href="#两种算法对比" class="headerlink" title="两种算法对比"></a>两种算法对比</h3><p>第一种算法的好处就是简单好理解，永不重复。但是短码的长度不固定，随着 id 变大从一位长度开始递增。如果非要让短码长度固定也可以就是让 id 从指定的数字开始递增就可以了。百度短网址用的这种算法。上文说的开源短网址项目 <code>YOURLS</code> 也是采用了这种算法。<a href="https://github.com/YOURLS/YOURLS/blob/master/includes/functions.php" target="_blank" rel="noopener">源码学习</a></p>
+<h3 id="两种算法对比"><a href="#两种算法对比" class="headerlink" title="两种算法对比"></a>两种算法对比</h3><p>第一种算法的好处就是简单好理解，永不重复。但是短码的长度不固定，随着 id 变大从一位长度开始递增。如果非要让短码长度固定也可以就是让 id 从指定的数字开始递增就可以了。百度短网址用的这种算法。上文说的开源短网址项目 <code>YOURLS</code> 也是采用了这种算法。<a href="https://github.com/YOURLS/YOURLS/blob/master/includes/functions.php">源码学习</a></p>
 <p>第二种算法，存在碰撞（重复）的可能性，虽然几率很小。短码位数是比较固定的。不会从一位长度递增到多位的。据说微博使用的这种算法。</p>
 <p>我使用的算法一。有一个不太好的地方就是出现的短码是有序的，可能会不安全。我的处理方式是构造 62进制的字母不要按顺序排列。因为想实现自定义短码的功能，我又对算法一进行了优化，下文会介绍。</p>
 <h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><h3 id="自增序列算法流程图"><a href="#自增序列算法流程图" class="headerlink" title="自增序列算法流程图"></a>自增序列算法流程图</h3><div id="flowchart-0" class="flow-chart"></div>
 
 <blockquote>
-<p>只实现长链接转化为短链接的功能，不是很麻烦。在调研的过程中我发现<a href="https://www.dwz.cn" target="_blank" rel="noopener">百度短网址</a>可以自定义短码，我觉的这个功能挺不错，结果复杂度就是上图到下图的变化。😭</p>
+<p>只实现长链接转化为短链接的功能，不是很麻烦。在调研的过程中我发现<a href="https://www.dwz.cn/">百度短网址</a>可以自定义短码，我觉的这个功能挺不错，结果复杂度就是上图到下图的变化。😭</p>
 </blockquote>
 <h3 id="自增序列算法-用户自定义短码-流程图"><a href="#自增序列算法-用户自定义短码-流程图" class="headerlink" title="自增序列算法 + 用户自定义短码 流程图"></a>自增序列算法 + 用户自定义短码 流程图</h3><div id="flowchart-1" class="flow-chart"></div>
 
@@ -206,7 +206,7 @@
 <p>管理后台：删除、数据量</p>
 <p>登录：权限管理</p>
 <p>设置密码：输入密码才可以继续访问</p>
-<h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p>使用 Elixir + phoenix 技术栈 <a href="https://github.com/imfycc/short_url" target="_blank" rel="noopener">short_url</a> </p>
+<h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p>使用 Elixir + phoenix 技术栈 <a href="https://github.com/imfycc/short_url">short_url</a> </p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
 e=>end: 结束
 io1=>inputoutput: 输入网址
@@ -318,7 +318,7 @@ cond5(yes)->io3->e</textarea><textarea id="flowchart-1-options" style="display: 
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<script>var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(o){if(canConsole&&o&&!(o.length<1)){var n,c="#6190e8",e="padding: 1px 5px;color: #fff;background: "+c+";",l="color: "+c+";";o.map((o=>{var c=(o.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(o))console.log("%c     ","background: url("+o+") no-repeat left center;font-size: 180px;");else if(c>0){for(var a=[],t=0;t<c;t++)t%2==0?a.push(e):a.push(l);(n=console).log.apply(n,["%c"+o,l].concat(a))}else console.log("%c"+o,l)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.1a668a.js"></script>
+<script defer="defer">var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(o){if(canConsole&&o&&!(o.length<1)){var n,c="#6190e8",e="padding: 1px 5px;color: #fff;background: "+c+";",l="color: "+c+";";o.map((o=>{var c=(o.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(o))console.log("%c     ","background: url("+o+") no-repeat left center;font-size: 180px;");else if(c>0){for(var a=[],t=0;t<c;t++)t%2==0?a.push(e):a.push(l);(n=console).log.apply(n,["%c"+o,l].concat(a))}else console.log("%c"+o,l)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.d1768d.js"></script>
 
 </body>
 </html>
