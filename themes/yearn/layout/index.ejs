@@ -45,7 +45,7 @@
             </div>
             <div class="list">
                 <div>
-                    <% if (is_current("categories/最热/")) {
+                    <% if (is_current("categories/hot/")) {
                         page.posts.sort('order').each(function(post, index){ %>
                             <%- partial('_partial/post/title',{post: post,index: true}) %>
                     <% }) } else { %>
@@ -104,13 +104,21 @@
         <div class="aside-box  my-app">
             <h3>我的 App</h3>
             <div class="content">
-                <p><span>📱</span>这里未来展示我的 App</p>
-            </div>
-        </div>
-        <div class="aside-box tag-cloud">
-            <h3>标签云</h3>
-            <div class="content">
-                <div id="tag-cloud"></div>
+                <a class="app" href="">
+                    <img src="./img/better-we.png" alt="BetterWe App logo">
+                    <div class="info">
+                        <p class="name">BetterWe - 积累积分 · 兑换心愿</p>
+                        <p class="description">习惯 · 待办 · 积分 · 心愿</p>
+                    </div>
+                </a>
+                <div class="line"></div>
+                <a class="app" href="">
+                    <img src="./img/any-remember.png" alt="BetterWe App logo">
+                    <div class="info">
+                        <p class="name">Any Remember - 轮播提醒</p>
+                        <p class="description">任务栏上的小提醒</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

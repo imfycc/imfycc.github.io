@@ -236,12 +236,13 @@ h2, h3, h4 {
 }
 
 .right-aside {
-  margin-top: 30px;
   width: 18%;
   min-width: 320px;
-  margin-right: 2%;
+  padding: 0 2%;
+  border-left: 1px solid #d9d9d9;
 
   .search {
+    margin-top: 30px;
     color: #717171;
     line-height: 40px;
     position: relative;
@@ -323,7 +324,7 @@ h2, h3, h4 {
   }
   .about-me {
     color: #FFF;
-    background: #BC99FE;
+    background: #72D997;
 
     h3 {
       border-left: 5px solid #F6DF79;
@@ -354,31 +355,57 @@ h2, h3, h4 {
 
   .my-app {
     background: #FEF5FA;
-    color: #555;
+    color: #666;
 
     h3 {
       border-left: 5px solid #BC99FE;
     }
     .content {
-      font-size: 15px;
-      padding: 5px;
-      line-height: 2;
-      font-weight: 500;
-      .hello {
-        margin-bottom: 10px;
-      }
-      .more {
-        margin-top: 10px;
-        a {
-          color: #BC99FE;
-          &:hover {
-            color: #72D997;
+      margin-top: 15px;
+      .app {
+        display: flex;
+        align-items: center;
+        padding: 6px 0;
+        border: 1px solid transparent;
+
+        &:hover {
+          border: 1px solid #BC99FE;
+          border-radius: 5px;
+        }
+        img {
+          width: 64px;
+          height: 64px;
+        }
+        .info {
+          margin-left: 3px;
+          p {
+            line-height: 27px;
+          }
+          .name {
+            color: #555;
+            font-weight: 600;
+          }
+          .description {
+            color: #666;
+            font-size: 15px;
           }
         }
       }
-      span {
-        margin-right: 10px;
-        font-size: 16px;
+      .line {
+        position: relative;
+        width: 75%;
+        margin-left: 70px;
+        &:before {
+          position: absolute;
+          display: block;
+          content: "";
+          top: -50%;
+          left: -50%;
+          right: -50%;
+          bottom: -50%;
+          border-bottom: 1px solid #999;
+          transform: scale(0.5);
+        }
       }
     }
   }
@@ -389,28 +416,6 @@ h2, h3, h4 {
 
     h3 {
       border-left: 5px solid #F6DF79;
-    }
-    .content {
-      font-size: 15px;
-      padding: 5px;
-      line-height: 2;
-      font-weight: 500;
-      .hello {
-        margin-bottom: 10px;
-      }
-      .more {
-        margin-top: 10px;
-        a {
-          color: #BC99FE;
-          &:hover {
-            color: #F6DF79;
-          }
-        }
-      }
-      span {
-        margin-right: 10px;
-        font-size: 16px;
-      }
     }
   }
 }
@@ -1269,6 +1274,7 @@ h2, h3, h4 {
     .right-aside {
       width: unset;
       margin: 30px 4%;
+      border-left: unset;
 
       .search .search-result-box {
         left: 0%;
