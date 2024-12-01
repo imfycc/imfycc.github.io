@@ -25,6 +25,14 @@ category_order:
   - 随笔
   - 读书
 
+category_map:
+  最新: new
+  最热: hot
+  数码: digital
+  编程: coding
+  随笔: essay
+  读书: reading
+
 # Directory
 source_dir: source
 public_dir: public
