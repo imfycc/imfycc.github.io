@@ -1,9 +1,5 @@
 import './main.scss';
 import Trianglify from './trianglify.min.js';
-import TagCloud from './tag.cloud.js';
-
-// 标签云
-window.tagCloud = TagCloud;
 
 //article page Topbar and title banckground
 function pattern(width = window.innerWidth) {
