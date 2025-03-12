@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="胡方运,小猿大圣,编程,程序员,个人博客,Youthink,imfycc,Web" />
+  <meta name="description" content="小猿大圣的个人博客,胡方运的博客,编程随想" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.7d2764.css">
+  <link rel="shortcut icon" href="https://static.hufangyun.com/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <title>macOS App 开发 iCloud 不同步问题解决</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?279edd956f5d814ddf08af30b654b4c6";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8946921327705037" crossorigin="anonymous"></script>
+  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="胡方运的博客" type="application/rss+xml">
+</head>
+<body>
+<canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">胡方运的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://static.hufangyun.com/face-small.png">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    macOS App 开发 iCloud 不同步问题解决
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2025-03-12T15:13:54.000Z" itemprop="datePublished">2025-03-12</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2025-03-12T15:13:54.000Z" itemprop="dateUpdated">2025-03-12</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://apps.apple.com/zh/app/%E9%83%BD%E8%AE%B0%E5%BE%97/id6477067769">时光鸡 - 纪念日·轮播提醒</a> 我又做了 iOS 的第一个版本，想通过 CloudKit 实现两端的数据同步。但是同样的代码 iOS 正常，数据可以正常同步到 iCloud，但是 macOS 的始终不行。</p>
+<p>我在这个问题上调试了很久才解决掉，记录一下解决过程。</p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><ol>
+<li>同样的代码 iOS 开发环境和商店版本都是正常可以同步 iCloud 数据。</li>
+<li>同样的代码 macOS 版本开发环境可以正常同步数据，但是线上版本不行。</li>
+</ol>
+<p>如果你也遇到了 macOS 开发环境 iCloud 能正常同步数据，但是 TestFlight 和线上版本却不行，可以看看我下面的处理过程。</p>
+<p>我 iOS 版本数据同步是正常的，就排除了类似配置错误或者这个 CloudKit Database 不可用等可能性。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>参考这个案例 <a href="https://stackoverflow.com/questions/74279246/swiftui-macos-app-not-syncing-with-icloud">SwiftUI macOS app not syncing with iCloud</a></p>
+<p>Apple 开发者论坛也有同样的问题备份 <a href="https://developer.apple.com/forums/thread/719135">SwiftUI macOS应用程序无法与iCloud同步</a></p>
+<p>Well, the answer was simple and yet hard to find. It seems when you convert a Core Data app to work with CloudKit you need to add <code>CloudKit.framework</code> to the <code>Frameworks, Libraries, and Embedded Content</code> section. without it, the app will work when running in debug mode (via Xcode) but once it’s in production, signed and notarized, it won’t. Even if you have the right entitlements, all pointing to production, etc.</p>
+<p>翻译一下：</p>
+<p>嗯，答案很简单，但很难找到。似乎当您将 Core Data 应用程序转换为与 CloudKit 一起使用时，您需要添加 <code>CloudKit.framework</code> 到 <code>Frameworks, Libraries, and Embedded Content</code> 部分。如果没有它，应用程序将在调试模式下运行时（通过 Xcode）工作，但一旦它投入生产、签名和公证，它就不会工作。即使您拥有正确的权利，所有权利都指向生产等。</p>
+<p>选择你的 Targets，第一个 General Tab 里面有个 <code>Frameworks, Libraries, and Embedded Content</code>，点击 ➕ 添加 <code>CloudKit.framework</code>，Embed 选择 <code>Do Not Embed</code></p>
+<h2 id="报错的日志"><a href="#报错的日志" class="headerlink" title="报错的日志"></a>报错的日志</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate _performSetupRequest:]_block_invoke(1242): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt;: Failed to set up CloudKit integration for store: &lt;NSSQLCore: 0x13dc04080&gt; (URL: file:///Users/admin/Library/Containers/xxx)</span><br><span class="line">&lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate recoverFromError:](2312): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt; - Attempting recovery from error: &lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">Error retrieving daemon to get network transfer endpoint: Error Domain=NSCocoaErrorDomain Code=4099 &quot;The connection to service named com.apple.cloudd was invalidated: failed at lookup with error 159 - Sandbox restriction.&quot; UserInfo=&#123;NSDebugDescription=The connection to service named com.apple.cloudd was invalidated: failed at lookup with error 159 - Sandbox restriction.&#125;</span><br><span class="line"></span><br><span class="line">Error getting network transfer endpoint: &lt;CKError 0x600000600990: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate resetAfterError:andKeepContainer:](612): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt; - resetting internal state after error: &lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我的报错日志和 Apple 开发者论坛上提到的这个案例完全一致 <a href="https://developer.apple.com/forums/thread/765948?answerId=808981022#808981022">SwiftData iCloud sync breaks after disabling and re-enabling iCloud
+</a></p>
+<p>不过他的解决办法不是上面提到的 <code>CloudKit.framework</code> 而是 <code>com.apple.developer.icloud-container-environment</code> 这个属性写的 <code>Development</code> 导致上线后出现了问题，改成 <code>Production</code> 就好了。我感觉这个配置还挺好用的，我就直接固定成 <code>Production</code> 了，这样开发环境也直接连接线上数据库，反正都是连接我个人的 iCloud 不影响其他用户的数据。</p>
+<p>该属性的 Apple 文档地址：<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment">https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment</a></p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+            <a href="https://hufangyun.com/2018/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '3b064dc018768ed172b8',
+    clientSecret: '403c6f397465f7fa14cfb02668011929102421d1',
+    repo: 'Youthink.github.io',
+    owner: 'Youthink',
+    admin: ['Youthink'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   </div>
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    七牛云加速 | <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+      <p>&copy;2013-2024 胡方运的博客 鲁ICP备15009509号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script defer="defer">var consoleConfig="\n欢迎访问 https://hufangyun.com ，围观我的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为本人开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/imfycc/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n".split(","),canConsole= true,consoleInfo=function(o){if(canConsole&&o&&!(o.length<1)){var n,c="#6190e8",e="padding: 1px 5px;color: #fff;background: "+c+";",l="color: "+c+";";o.map((o=>{var c=(o.match(/%c/g)||[]).length;if(/^http(s)?:\/\//.test(o))console.log("%c     ","background: url("+o+") no-repeat left center;font-size: 180px;");else if(c>0){for(var f=[],p=0;p<c;p++)p%2==0?f.push(e):f.push(l);(n=console).log.apply(n,["%c"+o,l].concat(f))}else console.log("%c"+o,l)}))}}(consoleConfig)</script><script type="text/javascript" src="/./js/main.7d2764.js"></script>
+
+</body>
+</html>
+

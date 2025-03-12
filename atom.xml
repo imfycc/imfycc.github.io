@@ -15,8 +15,32 @@
     <atom:link href="https://hufangyun.com/atom.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 12 Mar 2025 01:00:32 GMT</pubDate>
+    <pubDate>Wed, 12 Mar 2025 15:13:54 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>macOS App 开发 iCloud 不同步问题解决</title>
+      <link>https://hufangyun.com/2025/swiftui-macos-app-icloud-not-sync-fix/</link>
+      <guid>https://hufangyun.com/2025/swiftui-macos-app-icloud-not-sync-fix/</guid>
+      <pubDate>Wed, 12 Mar 2025 15:13:54 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/zh/app/%E9%83%BD%E8%AE%B0%E5%BE%97/id6</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://apps.apple.com/zh/app/%E9%83%BD%E8%AE%B0%E5%BE%97/id6477067769">时光鸡 - 纪念日·轮播提醒</a> 我又做了 iOS 的第一个版本，想通过 CloudKit 实现两端的数据同步。但是同样的代码 iOS 正常，数据可以正常同步到 iCloud，但是 macOS 的始终不行。</p><p>我在这个问题上调试了很久才解决掉，记录一下解决过程。</p><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><ol><li>同样的代码 iOS 开发环境和商店版本都是正常可以同步 iCloud 数据。</li><li>同样的代码 macOS 版本开发环境可以正常同步数据，但是线上版本不行。</li></ol><p>如果你也遇到了 macOS 开发环境 iCloud 能正常同步数据，但是 TestFlight 和线上版本却不行，可以看看我下面的处理过程。</p><p>我 iOS 版本数据同步是正常的，就排除了类似配置错误或者这个 CloudKit Database 不可用等可能性。</p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>参考这个案例 <a href="https://stackoverflow.com/questions/74279246/swiftui-macos-app-not-syncing-with-icloud">SwiftUI macOS app not syncing with iCloud</a></p><p>Apple 开发者论坛也有同样的问题备份 <a href="https://developer.apple.com/forums/thread/719135">SwiftUI macOS应用程序无法与iCloud同步</a></p><p>Well, the answer was simple and yet hard to find. It seems when you convert a Core Data app to work with CloudKit you need to add <code>CloudKit.framework</code> to the <code>Frameworks, Libraries, and Embedded Content</code> section. without it, the app will work when running in debug mode (via Xcode) but once it’s in production, signed and notarized, it won’t. Even if you have the right entitlements, all pointing to production, etc.</p><p>翻译一下：</p><p>嗯，答案很简单，但很难找到。似乎当您将 Core Data 应用程序转换为与 CloudKit 一起使用时，您需要添加 <code>CloudKit.framework</code> 到 <code>Frameworks, Libraries, and Embedded Content</code> 部分。如果没有它，应用程序将在调试模式下运行时（通过 Xcode）工作，但一旦它投入生产、签名和公证，它就不会工作。即使您拥有正确的权利，所有权利都指向生产等。</p><p>选择你的 Targets，第一个 General Tab 里面有个 <code>Frameworks, Libraries, and Embedded Content</code>，点击 ➕ 添加 <code>CloudKit.framework</code>，Embed 选择 <code>Do Not Embed</code></p><h2 id="报错的日志"><a href="#报错的日志" class="headerlink" title="报错的日志"></a>报错的日志</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate _performSetupRequest:]_block_invoke(1242): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt;: Failed to set up CloudKit integration for store: &lt;NSSQLCore: 0x13dc04080&gt; (URL: file:///Users/admin/Library/Containers/xxx)</span><br><span class="line">&lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate recoverFromError:](2312): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt; - Attempting recovery from error: &lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">Error retrieving daemon to get network transfer endpoint: Error Domain=NSCocoaErrorDomain Code=4099 &quot;The connection to service named com.apple.cloudd was invalidated: failed at lookup with error 159 - Sandbox restriction.&quot; UserInfo=&#123;NSDebugDescription=The connection to service named com.apple.cloudd was invalidated: failed at lookup with error 159 - Sandbox restriction.&#125;</span><br><span class="line"></span><br><span class="line">Error getting network transfer endpoint: &lt;CKError 0x600000600990: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br><span class="line"></span><br><span class="line">error: CoreData+CloudKit: -[NSCloudKitMirroringDelegate resetAfterError:andKeepContainer:](612): &lt;NSCloudKitMirroringDelegate: 0x60000377c000&gt; - resetting internal state after error: &lt;CKError 0x60000064adf0: &quot;Service Unavailable&quot; (6/NSCocoaErrorDomain:4099); &quot;Error connecting to CloudKit daemon. This could happen for many reasons, for example a daemon exit, a device reboot, a race with the connection inactivity monitor, invalid entitlements, and more. Check the logs around this time to investigate the cause of this error.&quot;; Retry after 5.0 seconds&gt;</span><br></pre></td></tr></table></figure><p>我的报错日志和 Apple 开发者论坛上提到的这个案例完全一致 <a href="https://developer.apple.com/forums/thread/765948?answerId=808981022#808981022">SwiftData iCloud sync breaks after disabling and re-enabling iCloud</a></p><p>不过他的解决办法不是上面提到的 <code>CloudKit.framework</code> 而是 <code>com.apple.developer.icloud-container-environment</code> 这个属性写的 <code>Development</code> 导致上线后出现了问题，改成 <code>Production</code> 就好了。我感觉这个配置还挺好用的，我就直接固定成 <code>Production</code> 了，这样开发环境也直接连接线上数据库，反正都是连接我个人的 iCloud 不影响其他用户的数据。</p><p>该属性的 Apple 文档地址：<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment">https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://hufangyun.com/categories/coding/">编程</category>
+      
+      
+      
+      <comments>https://hufangyun.com/2025/swiftui-macos-app-icloud-not-sync-fix/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>机票还能这么买！随心飞低价旅行攻略</title>
@@ -515,30 +539,6 @@
       
       
       <comments>https://hufangyun.com/2018/git-change-user-info/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>从哪里了解 Google Chrome 升级的新特性</title>
-      <link>https://hufangyun.com/2018/chrome-update-know/</link>
-      <guid>https://hufangyun.com/2018/chrome-update-know/</guid>
-      <pubDate>Tue, 26 Jun 2018 11:36:25 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot;&gt;&lt;a href=&quot;#Google-Chrome-canary-dev-beta-stable-4-个版本的区别&quot; class=&quot;headerlink&quot; title=&quot;Go</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Google-Chrome-canary-dev-beta-stable-4-个版本的区别"><a href="#Google-Chrome-canary-dev-beta-stable-4-个版本的区别" class="headerlink" title="Google Chrome canary dev beta stable 4 个版本的区别"></a>Google Chrome canary dev beta stable 4 个版本的区别</h2><p>** 开发流程是这样的 **</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">canary -&gt; dev -&gt; beta -&gt; stable</span><br></pre></td></tr></table></figure><img alt="chrome version" src="https://static.hufangyun.com/hexo/img/chrome-version-diff.jpg?imageView2/2/w/750"><span class="img-alt">chrome version</span><p><code>canary</code> 是最激进的，几乎每天都更新。</p><p><code>stable</code> 是稳定版，是面向普通用户，平均六周更新一次</p><p><code>canary</code> 和 <code>stable</code> 会相差 2 个左右的版本。比如 <code>stable</code> 版本现在（2018年6月26日）是 67，<code>canary</code> 现在是 69。</p><img alt="chrome update" src="https://static.hufangyun.com/hexo/img/chrome-update-time.jpg?imageView2/2/w/750"><span class="img-alt">chrome update</span><h2 id="Chromium-和-Chrome-的区别"><a href="#Chromium-和-Chrome-的区别" class="headerlink" title="Chromium 和 Chrome 的区别"></a>Chromium 和 Chrome 的区别</h2><ul><li><p><code>Chromium</code> 是一个开源的浏览器。 </p></li><li><p><code>Chrome</code> 是基于 <code>Chromium</code> 而来。</p></li><li><p><code>Chromium</code> 更新速度和 <code>canary</code> 是一致的。</p></li><li><p><code>Chromium</code> 作为一个开源项目去掉了一些不开源的东西，比如 <code>Google</code> 的标识和 <code>flash</code> 插件等等。 </p></li></ul><h2 id="从哪里可以看到-Chrome-的更新"><a href="#从哪里可以看到-Chrome-的更新" class="headerlink" title="从哪里可以看到 Chrome 的更新"></a>从哪里可以看到 Chrome 的更新</h2><h3 id="Canary-版"><a href="#Canary-版" class="headerlink" title="Canary 版"></a>Canary 版</h3><p><code>Canary</code> 版 几乎每天都更新，但是没有更新日志。只能通过源码的提交记录查看。<a href="https://chromium.googlesource.com/chromium/src/" target="_blank" rel="noopener">项目地址</a></p><p>然后找到 <code>tags</code> 比如 [<code>69.0.3473.1</code>]</p><p>新页面里点击 <code>log</code> 即可查看每次的提交</p><h2 id="Dev-版"><a href="#Dev-版" class="headerlink" title="Dev 版"></a>Dev 版</h2><p><a href="https://blog.chromium.org/" target="_blank" rel="noopener">https://blog.chromium.org/</a></p><h2 id="Stable-版"><a href="#Stable-版" class="headerlink" title="Stable 版"></a>Stable 版</h2><p><a href="https://chromereleases.googleblog.com/" target="_blank" rel="noopener">https://chromereleases.googleblog.com/</a></p>]]></content:encoded>
-      
-      
-      <category domain="https://hufangyun.com/categories/hot/">最热</category>
-      
-      
-      
-      <comments>https://hufangyun.com/2018/chrome-update-know/#disqus_thread</comments>
       
     </item>
     
