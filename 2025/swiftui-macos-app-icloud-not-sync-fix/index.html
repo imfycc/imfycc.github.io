@@ -64,10 +64,10 @@
     <div class="article">
       <div class="content">
         
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://apps.apple.com/zh/app/%E9%83%BD%E8%AE%B0%E5%BE%97/id6477067769">时光鸡 - 纪念日·轮播提醒</a> 我又做了 iOS 的第一个版本，想通过 CloudKit 实现两端的数据同步。但是同样的代码 iOS 正常，数据可以正常同步到 iCloud，但是 macOS 的始终不行。</p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://apps.apple.com/zh/app/%E9%83%BD%E8%AE%B0%E5%BE%97/id6477067769">时光鸡 - 纪念日·轮播提醒</a> 我又做了 iOS 的第一个版本，想通过 CloudKit 实现两端的数据同步。但是同样的代码 iOS 正常，数据可以正常同步到 iCloud，macOS 的始终不行。</p>
 <p>我在这个问题上调试了很久才解决掉，记录一下解决过程。</p>
 <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><ol>
-<li>同样的代码 iOS 开发环境和商店版本都是正常可以同步 iCloud 数据。</li>
+<li>同样的代码 iOS 开发环境和商店版本都正常可以同步 iCloud 数据。</li>
 <li>同样的代码 macOS 版本开发环境可以正常同步数据，但是线上版本不行。</li>
 </ol>
 <p>如果你也遇到了 macOS 开发环境 iCloud 能正常同步数据，但是 TestFlight 和线上版本却不行，可以看看我下面的处理过程。</p>
@@ -83,7 +83,7 @@
 <p>我的报错日志和 Apple 开发者论坛上提到的这个案例完全一致 <a href="https://developer.apple.com/forums/thread/765948?answerId=808981022#808981022">SwiftData iCloud sync breaks after disabling and re-enabling iCloud
 </a></p>
 <p>不过他的解决办法不是上面提到的 <code>CloudKit.framework</code> 而是 <code>com.apple.developer.icloud-container-environment</code> 这个属性写的 <code>Development</code> 导致上线后出现了问题，改成 <code>Production</code> 就好了。我感觉这个配置还挺好用的，我就直接固定成 <code>Production</code> 了，这样开发环境也直接连接线上数据库，反正都是连接我个人的 iCloud 不影响其他用户的数据。</p>
-<p>该属性的 Apple 文档地址：<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment">https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment</a></p>
+<p>该属性的 <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.icloud-container-environment">Apple 文档地址</a></p>
 
       </div>
         <div class="support-author">
